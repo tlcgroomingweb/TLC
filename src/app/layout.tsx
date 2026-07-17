@@ -18,16 +18,15 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "TLC Grooming | Dog & Cat Grooming in Ottawa",
+    default: "TLC Grooming | Dog Grooming in Ottawa",
     template: "%s | TLC Grooming",
   },
   description:
-    "Gentle dog and cat grooming, walk-in nail trims, and pet care from an experienced Gloucester team serving Ottawa since 1986.",
+    "Gentle dog grooming, walk-in nail trims, and pet care from an experienced Gloucester team serving Ottawa since 1986.",
   applicationName: "TLC Grooming",
   keywords: [
     "Ottawa pet grooming",
     "Gloucester dog grooming",
-    "Ottawa cat grooming",
     "dog groomer Ottawa",
     "pet nail trim Ottawa",
   ],
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     siteName: "TLC Grooming and Sharpening Services",
-    title: "TLC Grooming | Dog & Cat Grooming in Ottawa",
+    title: "TLC Grooming | Dog Grooming in Ottawa",
     description:
       "Gentle grooming and practical pet care from an experienced local team in Gloucester.",
   },

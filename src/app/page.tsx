@@ -2,7 +2,6 @@ import Image from "next/image";
 import { SiteHeader } from "@/components/site-header";
 import {
   bookingUrl,
-  catServices,
   mapEmbedUrl,
   packages,
   services,
@@ -15,7 +14,7 @@ const businessJsonLd = {
   "@type": "PetStore",
   name: site.name,
   description:
-    "Dog and cat grooming, walk-in nail trims, and pet care in Gloucester, Ontario.",
+    "Dog grooming, walk-in nail trims, and pet care in Gloucester, Ontario.",
   telephone: "+1-613-745-5808",
   email: site.email,
   image: site.imageUrls,
@@ -66,8 +65,8 @@ export default function Home() {
                   Gentle grooming for pets who feel like <em>family.</em>
                 </h1>
                 <p className={styles.lead}>
-                  Dog and cat grooming, walk-in nail trims, and thoughtful care
-                  from an experienced local team in Gloucester.
+                  Dog grooming, walk-in nail trims, and thoughtful care from an
+                  experienced local team in Gloucester.
                 </p>
                 <div className={styles.heroActions}>
                   <a className={styles.primaryButton} href="#book">
@@ -80,7 +79,7 @@ export default function Home() {
                 </div>
                 <ul className={styles.heroNotes} aria-label="Service highlights">
                   <li>Optional crating</li>
-                  <li>Dogs & cats</li>
+                  <li>Full-service grooming</li>
                   <li>Walk-in care</li>
                 </ul>
               </div>
@@ -97,8 +96,8 @@ export default function Home() {
                 </div>
                 <div className={styles.heroImageSmall}>
                   <Image
-                    src={site.imageUrls[2]}
-                    alt="Cat grooming at TLC Grooming"
+                    src={site.imageUrls[1]}
+                    alt="Small dog after grooming at TLC Grooming"
                     fill
                     sizes="(max-width: 640px) 32vw, 170px"
                   />
@@ -119,8 +118,8 @@ export default function Home() {
                 <span>Serving Ottawa families</span>
               </div>
               <div>
-                <strong>Dogs & cats</strong>
-                <span>Full grooming and upkeep</span>
+                <strong>Full-service care</strong>
+                <span>Baths, tidy-ups and full grooms</span>
               </div>
               <div>
                 <strong>Walk-ins</strong>
@@ -158,47 +157,6 @@ export default function Home() {
                   <strong>{service.price}</strong>
                 </article>
               ))}
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.catSection} id="cat-grooming">
-          <div className={styles.shell}>
-            <div className={styles.catCard}>
-              <div className={styles.catPhoto}>
-                <Image
-                  src={site.imageUrls[2]}
-                  alt="Cat after grooming at TLC"
-                  fill
-                  sizes="(max-width: 900px) 92vw, 48vw"
-                />
-                <div className={styles.catSchedule}>
-                  <span>Cat grooming</span>
-                  <strong>Mondays · 10am–2pm</strong>
-                </div>
-              </div>
-              <div className={styles.catContent}>
-                <span className={styles.kicker}>Care for feline clients</span>
-                <h2>A dedicated grooming window for cats.</h2>
-                <p>
-                  Book a Monday appointment for bath, coat care or a creative
-                  trim. New cat-grooming clients receive $10 off.
-                </p>
-                <div className={styles.catPrices}>
-                  {catServices.map((service) => (
-                    <div className={styles.catPrice} key={service.title}>
-                      <span>
-                        <strong>{service.title}</strong>
-                        <small>{service.description}</small>
-                      </span>
-                      <b>{service.price}</b>
-                    </div>
-                  ))}
-                </div>
-                <small className={styles.priceNote}>
-                  Prices vary based on coat condition and behaviour.
-                </small>
-              </div>
             </div>
           </div>
         </section>
@@ -385,7 +343,7 @@ export default function Home() {
             <span>TLC</span>
             <strong>TLC Grooming</strong>
           </a>
-          <p>Gentle dog & cat grooming in Ottawa since 1986.</p>
+          <p>Gentle dog grooming in Ottawa since 1986.</p>
           <div className={styles.footerLinks}>
             <a href="#services">Services</a>
             <a href="#packages">Packages</a>

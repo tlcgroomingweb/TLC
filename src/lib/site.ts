@@ -15,13 +15,11 @@ export const site = {
   imageUrls: [
     "https://www.tlc4dogs.com/uploads/2/8/2/4/28247963/img-3642.jpg",
     "https://www.tlc4dogs.com/uploads/2/8/2/4/28247963/img-3507.png",
-    "https://www.tlc4dogs.com/uploads/2/8/2/4/28247963/cat-groom_orig.jpg",
   ],
 } as const;
 
 export const navItems = [
   { label: "Services", href: "#services" },
-  { label: "Cat grooming", href: "#cat-grooming" },
   { label: "Packages", href: "#packages" },
   { label: "Why TLC", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -97,28 +95,5 @@ export const packages = [
       "Nail grind included",
       "Finishing accessory by request",
     ],
-  },
-] as const;
-
-export const catServices = [
-  {
-    title: "Bath & Tidy",
-    description: "Bath, brush, nail trim and ear cleaning",
-    price: "$65–$95",
-  },
-  {
-    title: "Full Groom",
-    description: "Trim hair with a guard comb",
-    price: "$100–$130",
-  },
-  {
-    title: "Lion Cut",
-    description: "Short body with a fluffy mane",
-    price: "$105–$135",
-  },
-  {
-    title: "Dragon Cut",
-    description: "Creative full-body sculpting",
-    price: "$140–$160",
   },
 ] as const;

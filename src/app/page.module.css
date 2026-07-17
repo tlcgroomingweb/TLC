@@ -26,8 +26,8 @@
   right: -240px;
   width: 700px;
   height: 700px;
-  background: #f8d68f;
-  opacity: 0.5;
+  background: #bfe6f5;
+  opacity: 0.72;
 }
 
 .hero::after {
@@ -35,8 +35,8 @@
   left: -170px;
   width: 310px;
   height: 310px;
-  background: #cde2e0;
-  opacity: 0.6;
+  background: #79c7e3;
+  opacity: 0.35;
 }
 
 .heroGrid {
@@ -64,7 +64,7 @@
   align-items: center;
   gap: 9px;
   margin-bottom: 22px;
-  border: 1px solid rgba(31, 115, 117, 0.15);
+  border: 1px solid rgba(85, 173, 209, 0.25);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.62);
   padding: 9px 13px;
@@ -75,13 +75,12 @@
   height: 8px;
   border-radius: 999px;
   background: var(--coral);
-  box-shadow: 0 0 0 5px rgba(222, 116, 91, 0.12);
+  box-shadow: 0 0 0 5px rgba(44, 150, 191, 0.12);
 }
 
 .hero h1,
 .sectionHeading h2,
 .centerHeading h2,
-.catContent h2,
 .aboutCopy h2,
 .bookingCopy h2,
 .contactCopy h2 {
@@ -136,7 +135,8 @@
 
 .primaryButton {
   background: var(--gold);
-  box-shadow: 0 14px 30px rgba(242, 184, 75, 0.3);
+  box-shadow: 0 14px 30px rgba(23, 107, 145, 0.28);
+  color: white;
 }
 
 .secondaryButton {
@@ -176,16 +176,14 @@
 
 .heroImageMain,
 .heroImageSmall,
-.aboutPhotoLarge,
-.catPhoto {
+.aboutPhotoLarge {
   position: relative;
   overflow: hidden;
 }
 
 .heroImageMain img,
 .heroImageSmall img,
-.aboutPhotoLarge img,
-.catPhoto > img {
+.aboutPhotoLarge img {
   object-fit: cover;
 }
 
@@ -194,8 +192,8 @@
   inset: 0 34px 28px 0;
   border: 10px solid rgba(255, 255, 255, 0.88);
   border-radius: 46% 46% 30px 30px;
-  background: #d7cabd;
-  box-shadow: 0 30px 70px rgba(65, 47, 33, 0.18);
+  background: #c8e4ee;
+  box-shadow: 0 30px 70px rgba(14, 79, 112, 0.18);
   transform: rotate(1deg);
 }
 
@@ -208,7 +206,7 @@
   border: 8px solid var(--background);
   border-radius: 30px;
   background: var(--surface-soft);
-  box-shadow: 0 22px 50px rgba(54, 41, 31, 0.22);
+  box-shadow: 0 22px 50px rgba(14, 79, 112, 0.2);
   transform: rotate(4deg);
 }
 
@@ -221,8 +219,8 @@
   gap: 11px;
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 18px;
-  background: rgba(255, 253, 248, 0.94);
-  box-shadow: 0 18px 45px rgba(57, 44, 33, 0.16);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 45px rgba(14, 79, 112, 0.14);
   padding: 13px 16px;
   backdrop-filter: blur(10px);
 }
@@ -233,7 +231,7 @@
   height: 36px;
   place-items: center;
   border-radius: 12px;
-  background: #f7ddd4;
+  background: var(--surface-soft);
   color: var(--coral);
 }
 
@@ -258,8 +256,8 @@
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid var(--line);
   border-radius: 22px;
-  background: rgba(255, 253, 248, 0.75);
-  box-shadow: 0 15px 40px rgba(62, 46, 32, 0.06);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 15px 40px rgba(14, 79, 112, 0.07);
 }
 
 .trustStrip > div {
@@ -287,7 +285,6 @@
 }
 
 .section,
-.catSection,
 .aboutSection,
 .bookingSection,
 .contactSection {
@@ -304,7 +301,6 @@
 
 .sectionHeading h2,
 .centerHeading h2,
-.catContent h2,
 .aboutCopy h2,
 .bookingCopy h2,
 .contactCopy h2 {
@@ -315,7 +311,6 @@
 
 .sectionHeading p,
 .centerHeading p,
-.catContent > p,
 .aboutCopy > p,
 .bookingCopy > p,
 .contactCopy > p {
@@ -346,8 +341,8 @@
 }
 
 .serviceCard:hover {
-  border-color: rgba(31, 115, 117, 0.35);
-  box-shadow: 0 20px 46px rgba(59, 44, 31, 0.09);
+  border-color: rgba(85, 173, 209, 0.55);
+  box-shadow: 0 20px 46px rgba(14, 79, 112, 0.1);
   transform: translateY(-5px);
 }
 
@@ -381,117 +376,8 @@
   font-size: 0.87rem;
 }
 
-.catSection {
-  background: var(--teal-dark);
-}
-
-.catCard {
-  display: grid;
-  overflow: hidden;
-  grid-template-columns: 0.9fr 1.1fr;
-  border-radius: 32px;
-  background: #fff7e8;
-  box-shadow: 0 34px 80px rgba(4, 32, 35, 0.3);
-}
-
-.catPhoto {
-  min-height: 630px;
-  background: #d9c9b9;
-}
-
-.catPhoto::after {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 55%, rgba(20, 17, 14, 0.5));
-  content: "";
-}
-
-.catSchedule {
-  position: absolute;
-  z-index: 1;
-  right: 24px;
-  bottom: 24px;
-  left: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 18px;
-  background: rgba(255, 253, 248, 0.9);
-  padding: 17px 19px;
-  backdrop-filter: blur(12px);
-}
-
-.catSchedule span,
-.catSchedule strong {
-  display: block;
-}
-
-.catSchedule span {
-  color: var(--teal-dark);
-  font-size: 0.73rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.catSchedule strong {
-  margin-top: 3px;
-  font-size: 1.03rem;
-}
-
-.catContent {
-  padding: 58px;
-}
-
-.catContent h2 {
-  max-width: 600px;
-}
-
-.catContent > p {
-  max-width: 610px;
-  margin: 21px 0 28px;
-}
-
-.catPrices {
-  border-top: 1px solid var(--line);
-}
-
-.catPrice {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
-  border-bottom: 1px solid var(--line);
-  padding: 17px 0;
-}
-
-.catPrice strong,
-.catPrice small {
-  display: block;
-}
-
-.catPrice strong {
-  font-size: 0.92rem;
-}
-
-.catPrice small,
-.priceNote {
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: 0.76rem;
-}
-
-.catPrice b {
-  flex-shrink: 0;
-  color: var(--teal-dark);
-  font-size: 0.88rem;
-}
-
-.priceNote {
-  display: block;
-  margin-top: 17px;
-}
-
 .packageSection {
-  background: #f2e6d8;
+  background: #dff1f8;
 }
 
 .centerHeading {
@@ -520,7 +406,7 @@
 
 .packageFeatured {
   border-color: var(--teal);
-  box-shadow: 0 28px 65px rgba(49, 39, 29, 0.14);
+  box-shadow: 0 28px 65px rgba(14, 79, 112, 0.14);
   transform: translateY(-12px);
 }
 
@@ -608,7 +494,7 @@
   inset: 0 44px 0 0;
   border-radius: 34px 34px 130px 34px;
   background: var(--surface-soft);
-  box-shadow: 0 25px 60px rgba(50, 40, 31, 0.14);
+  box-shadow: 0 25px 60px rgba(14, 79, 112, 0.14);
 }
 
 .sinceBadge {
@@ -698,7 +584,7 @@
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 30px 70px rgba(3, 25, 27, 0.3);
+  box-shadow: 0 30px 70px rgba(5, 39, 56, 0.3);
 }
 
 .bookingCopy {
@@ -706,7 +592,7 @@
 }
 
 .bookingCopy .kicker {
-  color: #f2c86e;
+  color: #a8ddf0;
 }
 
 .bookingCopy > p,
@@ -729,13 +615,14 @@
 
 .bookingCopy li::before {
   margin-right: 9px;
-  color: #f2c86e;
+  color: #a8ddf0;
   content: "✓";
   font-weight: 900;
 }
 
 .bookingCopy .primaryButton {
-  color: var(--foreground);
+  background: white;
+  color: var(--teal-dark);
 }
 
 .textLink {
@@ -759,7 +646,7 @@
 }
 
 .contactSection {
-  background: #efe3d5;
+  background: #d5edf7;
 }
 
 .contactPanel {
@@ -769,7 +656,7 @@
   border: 1px solid var(--line);
   border-radius: 30px;
   background: var(--surface);
-  box-shadow: 0 26px 65px rgba(58, 44, 32, 0.11);
+  box-shadow: 0 26px 65px rgba(14, 79, 112, 0.11);
 }
 
 .contactCopy {
@@ -811,17 +698,17 @@
 .contactList a {
   color: var(--teal-dark);
   text-decoration: underline;
-  text-decoration-color: rgba(31, 115, 117, 0.35);
+  text-decoration-color: rgba(23, 107, 145, 0.35);
   text-underline-offset: 3px;
 }
 
 .map {
   min-height: 560px;
-  background: #ddd1c2;
+  background: #c9e3ee;
 }
 
 .footer {
-  background: #27211d;
+  background: #0b3448;
   color: rgba(255, 255, 255, 0.78);
   padding: 58px 0 36px;
 }
@@ -904,8 +791,7 @@
   }
 
   .bookingCopy,
-  .contactCopy,
-  .catContent {
+  .contactCopy {
     padding: 42px;
   }
 }
@@ -916,7 +802,6 @@
   }
 
   .heroGrid,
-  .catCard,
   .aboutGrid,
   .bookingPanel,
   .contactPanel {
@@ -949,15 +834,10 @@
   }
 
   .section,
-  .catSection,
   .aboutSection,
   .bookingSection,
   .contactSection {
     padding: 78px 0;
-  }
-
-  .catPhoto {
-    min-height: 560px;
   }
 
   .packageGrid {
@@ -1054,7 +934,6 @@
 
   .sectionHeading h2,
   .centerHeading h2,
-  .catContent h2,
   .aboutCopy h2,
   .bookingCopy h2,
   .contactCopy h2 {
@@ -1069,22 +948,9 @@
     min-height: 260px;
   }
 
-  .catPhoto {
-    min-height: 440px;
-  }
-
-  .catContent,
   .bookingCopy,
   .contactCopy {
     padding: 32px 24px;
-  }
-
-  .catPrice {
-    align-items: flex-start;
-  }
-
-  .catPrice small {
-    max-width: 190px;
   }
 
   .packageCard {
@@ -1144,8 +1010,8 @@
     gap: 7px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 18px;
-    background: rgba(21, 79, 82, 0.94);
-    box-shadow: 0 18px 42px rgba(30, 24, 19, 0.25);
+    background: rgba(14, 79, 112, 0.95);
+    box-shadow: 0 18px 42px rgba(5, 39, 56, 0.25);
     padding: 8px;
     backdrop-filter: blur(14px);
   }
@@ -1163,8 +1029,8 @@
   }
 
   .mobileActions a:first-child {
-    background: var(--gold);
-    color: var(--foreground);
+    background: var(--teal);
+    color: var(--teal-dark);
   }
 }
 

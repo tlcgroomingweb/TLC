@@ -30,7 +30,7 @@ export function SiteHeader() {
             </span>
             <span>
               <strong>TLC Grooming</strong>
-              <small>Dog & cat grooming in Ottawa</small>
+              <small>Dog grooming in Ottawa</small>
             </span>
           </a>
 
