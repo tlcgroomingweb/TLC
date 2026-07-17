@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { SiteHeader } from "@/components/site-header";
 import {
   bookingUrl,
   mapEmbedUrl,
@@ -51,8 +50,6 @@ export default function Home() {
           __html: JSON.stringify(businessJsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <SiteHeader />
-
       <main id="home" className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.shell}>
@@ -127,7 +124,7 @@ export default function Home() {
               </div>
               <div>
                 <strong>Easy booking</strong>
-                <span>Online or by phone</span>
+                <span>Request a time or call us</span>
               </div>
             </div>
           </div>
@@ -265,20 +262,11 @@ export default function Home() {
                   <li>Choose the closest service; we can confirm details later</li>
                   <li>Pricing may vary by coat condition and temperament</li>
                   <li>Call if you are unsure which package to select</li>
+                  <li>
+                    Review <a href="#policies">appointment policies</a> before
+                    booking
+                  </li>
                 </ul>
-                <div className={styles.bookingActions}>
-                  <a
-                    className={styles.primaryButton}
-                    href={bookingUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Open online booking <span aria-hidden="true">↗</span>
-                  </a>
-                  <a className={styles.textLink} href={site.phoneHref}>
-                    Or call {site.phoneDisplay}
-                  </a>
-                </div>
               </div>
 
               <div className={styles.bookingFrame}>
@@ -287,6 +275,98 @@ export default function Home() {
                   src={bookingUrl}
                   loading="lazy"
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.policySection} id="policies">
+          <div className={styles.shell}>
+            <div className={styles.policyPanel}>
+              <div className={styles.policyIntro}>
+                <div>
+                  <span className={styles.policyKicker}>Before you book</span>
+                  <h2>A clearer version of TLC&apos;s appointment policies</h2>
+                  <p>
+                    Each time slot is reserved for one pet, and TLC&apos;s groomers
+                    work on commission. This keeps the policy visible without
+                    turning it into a heavy legal page.
+                  </p>
+                </div>
+                <div className={styles.policyActions}>
+                  <a href="#book">Back to booking</a>
+                  <a href={site.phoneHref}>Call if running late</a>
+                </div>
+              </div>
+
+              <div className={styles.policyList}>
+                <article className={styles.policyItem}>
+                  <span className={styles.policyTag}>Running late</span>
+                  <h3>Call before the appointment time</h3>
+                  <p>
+                    If you are late for drop-off or pick-up, call TLC. Late
+                    drop-offs may need to be cancelled or rescheduled.
+                  </p>
+                </article>
+
+                <article className={styles.policyItem}>
+                  <span className={styles.policyTag}>Late pick-up</span>
+                  <h3>30-minute pickup window</h3>
+                  <p>
+                    After the 30-minute window, a $15 fee applies for every 15
+                    minutes late.
+                  </p>
+                </article>
+
+                <article
+                  className={`${styles.policyItem} ${styles.policyItemWide}`}
+                >
+                  <span className={styles.policyTag}>New clients</span>
+                  <h3>No-show steps for first-time appointments</h3>
+                  <p>
+                    The first missed appointment requires a deposit before
+                    rebooking. Continued no-shows become stricter.
+                  </p>
+                  <div className={styles.policySteps}>
+                    <div>
+                      <span>1st no-show</span>
+                      <strong>50% deposit before the next appointment.</strong>
+                    </div>
+                    <div>
+                      <span>2nd no-show</span>
+                      <strong>50% paid upfront to book again.</strong>
+                    </div>
+                    <div>
+                      <span>3rd no-show</span>
+                      <strong>Future appointments are no longer available.</strong>
+                    </div>
+                  </div>
+                </article>
+
+                <article
+                  className={`${styles.policyItem} ${styles.policyItemWide}`}
+                >
+                  <span className={styles.policyTag}>Regular clients</span>
+                  <h3>No-show steps for returning clients</h3>
+                  <p>
+                    Regular clients get a lighter first reminder, then deposit
+                    requirements if missed appointments continue.
+                  </p>
+                  <div className={styles.policySteps}>
+                    <div>
+                      <span>1st no-show</span>
+                      <strong>$20 added to the next appointment.</strong>
+                    </div>
+                    <div>
+                      <span>2nd no-show</span>
+                      <strong>50% deposit required to book again.</strong>
+                    </div>
+                    <div>
+                      <span>3rd no-show</span>
+                      <strong>Future appointments are no longer permitted.</strong>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
@@ -337,27 +417,6 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerInner}>
-          <a className={styles.footerBrand} href="#home">
-            <span>TLC</span>
-            <strong>TLC Grooming</strong>
-          </a>
-          <p>Gentle dog grooming in Ottawa since 1986.</p>
-          <div className={styles.footerLinks}>
-            <a href="#services">Services</a>
-            <a href="#packages">Packages</a>
-            <a href="#book">Book</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <small>© 2026 {site.name}</small>
-        </div>
-      </footer>
-
-      <div className={styles.mobileActions} aria-label="Quick actions">
-        <a href="#book">Book online</a>
-        <a href={site.phoneHref}>Call TLC</a>
-      </div>
     </>
   );
 }

@@ -1,11 +1,14 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { navItems, site } from "@/lib/site";
 import styles from "./site-header.module.css";
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const closeMenu = () => setIsOpen(false);
 
@@ -24,7 +27,7 @@ export function SiteHeader() {
 
       <nav className={styles.nav} aria-label="Main navigation">
         <div className={styles.navInner}>
-          <a className={styles.brand} href="#home" onClick={closeMenu}>
+          <Link className={styles.brand} href="/" onClick={closeMenu}>
             <span className={styles.brandMark} aria-hidden="true">
               TLC
             </span>
@@ -32,25 +35,39 @@ export function SiteHeader() {
               <strong>TLC Grooming</strong>
               <small>Dog grooming in Ottawa</small>
             </span>
-          </a>
+          </Link>
 
           <div
             className={`${styles.navLinks} ${isOpen ? styles.navLinksOpen : ""}`}
             id="main-navigation"
           >
-            {navItems.map((item) => (
-              <a href={item.href} key={item.href} onClick={closeMenu}>
-                {item.label}
-              </a>
-            ))}
-            <a className={styles.mobileBook} href="#book" onClick={closeMenu}>
+            {navItems.map((item) => {
+              const isActive =
+                !item.href.includes("#") && pathname === item.href;
+
+              return (
+                <Link
+                  aria-current={isActive ? "page" : undefined}
+                  href={item.href}
+                  key={item.href}
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <Link
+              className={styles.mobileBook}
+              href="/#book"
+              onClick={closeMenu}
+            >
               Book appointment
-            </a>
+            </Link>
           </div>
 
-          <a className={styles.bookButton} href="#book">
-            Book online
-          </a>
+          <Link className={styles.bookButton} href="/#book">
+            Book appointment
+          </Link>
 
           <button
             className={styles.menuButton}

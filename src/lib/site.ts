@@ -19,10 +19,10 @@ export const site = {
 } as const;
 
 export const navItems = [
-  { label: "Services", href: "#services" },
-  { label: "Packages", href: "#packages" },
-  { label: "Why TLC", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Our Services", href: "/our-services" },
+  { label: "Our Team", href: "/our-team" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export const services = [
