@@ -63,59 +63,21 @@ const careValues = [
 export default function OurTeamPage() {
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
+      <section className={styles.pageIntro}>
         <div className={styles.shell}>
-          <div className={styles.heroGrid}>
+          <div className={styles.pageIntroGrid}>
             <div>
-              <span className={styles.eyebrow}>The people behind TLC</span>
+              <span className={styles.eyebrow}>Our grooming team</span>
               <h1>
-                Experienced hands. <em>Gentle hearts.</em>
+                People behind <em>the care.</em>
               </h1>
+            </div>
+
+            <div className={styles.pageIntroAside}>
               <p className={styles.lead}>
-                Meet the groomers who bring patience, practical skill and
-                thoughtful finishing to pets across Ottawa.
+                Yu Yu, Ling and Zandy bring patient handling, practical skill
+                and thoughtful finishing to pets across Ottawa.
               </p>
-              <div className={styles.actions}>
-                <Link className={styles.primaryButton} href="/#book">
-                  Request an appointment
-                </Link>
-                <Link className={styles.secondaryButton} href="/our-services">
-                  Explore our services
-                </Link>
-              </div>
-            </div>
-
-            <div className={styles.heroVisual}>
-              <div className={styles.heroImage}>
-                <Image
-                  alt="A freshly groomed dog from the TLC team gallery"
-                  fill
-                  priority
-                  sizes="(max-width: 860px) 92vw, 460px"
-                  src={site.imageUrls[1]}
-                />
-              </div>
-              <div className={styles.heroBadge}>
-                <div>
-                  <strong>3 groomers</strong>
-                  <span>One patient-care approach</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.factStrip}>
-            <div>
-              <strong>Local experience</strong>
-              <span>TLC has served Ottawa pets since 1986.</span>
-            </div>
-            <div>
-              <strong>Groomer preference</strong>
-              <span>Request a preferred team member when booking.</span>
-            </div>
-            <div>
-              <strong>Practical communication</strong>
-              <span>Call with coat questions or handling concerns.</span>
             </div>
           </div>
         </div>
@@ -125,7 +87,6 @@ export default function OurTeamPage() {
         <div className={styles.shell}>
           <div className={styles.sectionHeading}>
             <div>
-              <span className={styles.kicker}>Meet the groomers</span>
               <h2>Care shaped by experience.</h2>
             </div>
             <p>

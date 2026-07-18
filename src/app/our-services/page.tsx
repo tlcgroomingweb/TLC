@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { site } from "@/lib/site";
 import styles from "../inner-page.module.css";
 
 export const metadata: Metadata = {
@@ -125,60 +123,22 @@ const sizeGuide = [
 export default function OurServicesPage() {
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
+      <section className={styles.pageIntro}>
         <div className={styles.shell}>
-          <div className={styles.heroGrid}>
+          <div className={styles.pageIntroGrid}>
             <div>
               <span className={styles.eyebrow}>Dog grooming at TLC</span>
               <h1>
-                The right care for every <em>coat.</em>
+                Grooming services <em>&amp; pricing.</em>
               </h1>
+            </div>
+
+            <div className={styles.pageIntroAside}>
               <p className={styles.lead}>
                 From routine bath days to complete styling, our service menu
                 helps you choose the closest fit before your groomer confirms
                 the details.
               </p>
-              <div className={styles.actions}>
-                <Link className={styles.primaryButton} href="/#book">
-                  Book an appointment
-                </Link>
-                <a className={styles.secondaryButton} href={site.phoneHref}>
-                  Call {site.phoneDisplay}
-                </a>
-              </div>
-            </div>
-
-            <div className={styles.heroVisual}>
-              <div className={styles.heroImage}>
-                <Image
-                  alt="Freshly groomed dog at TLC Grooming"
-                  fill
-                  priority
-                  sizes="(max-width: 860px) 92vw, 460px"
-                  src={site.imageUrls[0]}
-                />
-              </div>
-              <div className={styles.heroBadge}>
-                <div>
-                  <strong>Since 1986</strong>
-                  <span>Ottawa grooming experience</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.factStrip}>
-            <div>
-              <strong>Optional crating</strong>
-              <span>Tell us what setup helps your dog feel comfortable.</span>
-            </div>
-            <div>
-              <strong>24-hour touch-ups</strong>
-              <span>Contact TLC promptly if a finishing detail needs attention.</span>
-            </div>
-            <div>
-              <strong>Starting-price guidance</strong>
-              <span>Final pricing reflects coat, condition and temperament.</span>
             </div>
           </div>
         </div>
@@ -188,7 +148,6 @@ export default function OurServicesPage() {
         <div className={styles.shell}>
           <div className={styles.sectionHeading}>
             <div>
-              <span className={styles.kicker}>Grooming packages</span>
               <h2>Compare the full service menu.</h2>
             </div>
             <p>

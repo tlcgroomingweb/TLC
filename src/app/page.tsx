@@ -75,6 +75,49 @@ const promotions = [
   },
 ] as const;
 
+const galleryImages = [
+  {
+    src: "https://images.pexels.com/photos/6816841/pexels-photo-6816841.jpeg",
+    alt: "Dog having its coat brushed during a grooming appointment",
+    format: "standard",
+  },
+  {
+    src: "https://images.pexels.com/photos/19145875/pexels-photo-19145875.jpeg",
+    alt: "Poodle standing calmly on a grooming table",
+    format: "wide",
+  },
+  {
+    src: "https://images.pexels.com/photos/19145895/pexels-photo-19145895.jpeg",
+    alt: "Dog enjoying a gentle bath at a grooming salon",
+    format: "tall",
+  },
+  {
+    src: "https://images.pexels.com/photos/19145901/pexels-photo-19145901.jpeg",
+    alt: "Freshly styled poodle at a pet grooming salon",
+    format: "standard",
+  },
+  {
+    src: "https://images.pexels.com/photos/19145860/pexels-photo-19145860.jpeg",
+    alt: "Spaniel looking toward the camera after grooming",
+    format: "wide",
+  },
+  {
+    src: "https://images.pexels.com/photos/9092956/pexels-photo-9092956.jpeg",
+    alt: "Small fluffy dog sitting for a portrait",
+    format: "tall",
+  },
+  {
+    src: "https://images.pexels.com/photos/6131544/pexels-photo-6131544.jpeg",
+    alt: "Groomer carefully working with a dog on a table",
+    format: "standard",
+  },
+  {
+    src: "https://images.pexels.com/photos/6816866/pexels-photo-6816866.jpeg",
+    alt: "Small dog receiving a careful grooming trim",
+    format: "wide",
+  },
+] as const;
+
 export default function Home() {
   return (
     <>
@@ -125,14 +168,6 @@ export default function Home() {
                     sizes="(max-width: 900px) 88vw, 520px"
                   />
                 </div>
-                <div className={styles.heroImageSmall}>
-                  <Image
-                    src={site.imageUrls[1]}
-                    alt="Small dog after grooming at TLC Grooming"
-                    fill
-                    sizes="(max-width: 640px) 32vw, 170px"
-                  />
-                </div>
                 <div className={styles.floatingNote}>
                   <span aria-hidden="true">♥</span>
                   <div>
@@ -160,6 +195,70 @@ export default function Home() {
                 <strong>Easy booking</strong>
                 <span>Request a time or call us</span>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.gallerySection} aria-labelledby="gallery-title">
+          <div className={styles.shell}>
+            <div className={styles.galleryHeading}>
+              <div>
+                <span className={styles.kicker}>A glimpse of fresh-groom energy</span>
+                <h2 id="gallery-title">Happy faces, fresh finishes.</h2>
+              </div>
+              <div className={styles.galleryIntro}>
+                <span className={styles.galleryNote}>
+                  Sample gallery · replace with TLC client photos before launch
+                </span>
+                <a
+                  className={styles.galleryLink}
+                  href="https://www.instagram.com/tlcgroomingottawa/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  See TLC on Instagram <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className={styles.galleryViewport}
+            aria-label="Scrolling sample grooming gallery. Hover or focus to pause."
+            tabIndex={0}
+          >
+            <div className={styles.galleryTrack}>
+              {[false, true].map((isDuplicate) => (
+                <div
+                  className={styles.gallerySet}
+                  aria-hidden={isDuplicate || undefined}
+                  key={isDuplicate ? "gallery-duplicate" : "gallery-primary"}
+                >
+                  {galleryImages.map((image) => {
+                    const formatClass =
+                      image.format === "wide"
+                        ? styles.galleryCardWide
+                        : image.format === "tall"
+                          ? styles.galleryCardTall
+                          : "";
+
+                    return (
+                      <figure
+                        className={`${styles.galleryCard} ${formatClass}`}
+                        key={`${isDuplicate ? "duplicate" : "primary"}-${image.src}`}
+                      >
+                        <Image
+                          src={image.src}
+                          alt={isDuplicate ? "" : image.alt}
+                          fill
+                          sizes="(max-width: 640px) 76vw, 340px"
+                        />
+                        <span aria-hidden="true">Sample photo</span>
+                      </figure>
+                    );
+                  })}
+                </div>
+              ))}
             </div>
           </div>
         </section>
