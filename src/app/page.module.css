@@ -529,21 +529,31 @@
 .packageGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
+  align-items: stretch;
   gap: 18px;
 }
 
 .packageCard {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
   border: 1px solid var(--line);
   border-radius: 26px;
   background: var(--surface);
   padding: 34px;
+  transition: border-color 180ms ease, box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
-.packageFeatured {
+.packageCard:hover,
+.packageCard:focus-within {
   border-color: var(--teal);
   box-shadow: 0 28px 65px rgba(14, 79, 112, 0.14);
-  transform: translateY(-12px);
+  transform: translateY(-6px);
+}
+
+.packageCard:active {
+  transform: translateY(-2px) scale(0.995);
 }
 
 .packageEyebrow {
@@ -558,7 +568,8 @@
   text-transform: uppercase;
 }
 
-.packageFeatured .packageEyebrow {
+.packageCard:hover .packageEyebrow,
+.packageCard:focus-within .packageEyebrow {
   background: var(--teal-dark);
   color: white;
 }
@@ -604,6 +615,7 @@
 }
 
 .packageCard > a {
+  margin-top: auto;
   color: var(--teal-dark);
   font-size: 0.84rem;
   font-weight: 850;
@@ -1519,10 +1531,6 @@
     align-items: stretch;
   }
 
-  .packageFeatured {
-    transform: none;
-  }
-
   .aboutPhotos {
     min-height: 580px;
   }
@@ -1760,6 +1768,7 @@
   .primaryButton,
   .secondaryButton,
   .serviceCard,
+  .packageCard,
   .reviewCard,
   .galleryCard img,
   .galleryLink span {

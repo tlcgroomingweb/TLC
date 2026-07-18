@@ -61,7 +61,6 @@ export const packages = [
     eyebrow: "Maintenance",
     title: "Bath & Brush",
     price: "$40–$120",
-    featured: false,
     items: [
       "Bath and blow dry",
       "Brush out",
@@ -74,7 +73,6 @@ export const packages = [
     eyebrow: "Most flexible",
     title: "Bath & Tidy",
     price: "$60–$135",
-    featured: true,
     items: [
       "Everything in Bath & Brush",
       "Sanitary trim",
@@ -87,7 +85,6 @@ export const packages = [
     eyebrow: "Full service",
     title: "Full Groom",
     price: "$75–$170",
-    featured: false,
     items: [
       "Groomer consultation",
       "Custom haircut and styling",

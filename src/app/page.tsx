@@ -303,12 +303,7 @@ export default function Home() {
 
             <div className={styles.packageGrid}>
               {packages.map((item) => (
-                <article
-                  className={`${styles.packageCard} ${
-                    item.featured ? styles.packageFeatured : ""
-                  }`}
-                  key={item.title}
-                >
+                <article className={styles.packageCard} key={item.title}>
                   <span className={styles.packageEyebrow}>{item.eyebrow}</span>
                   <h3>{item.title}</h3>
                   <p className={styles.packagePrice}>
