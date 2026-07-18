@@ -6,6 +6,7 @@ import {
   services,
   site,
 } from "@/lib/site";
+import { testimonials } from "@/lib/testimonials";
 import styles from "./page.module.css";
 
 const businessJsonLd = {
@@ -244,6 +245,74 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.testimonialsSection} id="testimonials">
+          <div className={styles.shell}>
+            <div className={styles.testimonialsHeading}>
+              <div>
+                <span className={styles.kicker}>Kind words from local families</span>
+                <h2>Loved by pets. Trusted by their people.</h2>
+              </div>
+              <div className={styles.reviewSummary}>
+                <span aria-hidden="true">★★★★★</span>
+                <p>
+                  A few customer stories selected by TLC, from families who
+                  trust us with the pets they love.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.testimonialGrid}>
+              {testimonials.map((review) => {
+                const reviewDetails = [
+                  review.petName ? `${review.petName}’s family` : undefined,
+                  review.service,
+                ]
+                  .filter(Boolean)
+                  .join(" · ");
+
+                return (
+                  <blockquote className={styles.reviewCard} key={review.id}>
+                    <div className={styles.reviewCardTop}>
+                      <span
+                        className={styles.reviewRating}
+                        aria-label={`${review.rating} out of 5 stars`}
+                      >
+                        <span aria-hidden="true">
+                          {"★★★★★".slice(0, review.rating)}
+                        </span>
+                      </span>
+                      {review.sourceUrl ? (
+                        <a
+                          className={styles.reviewSource}
+                          href={review.sourceUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {review.source}
+                        </a>
+                      ) : (
+                        <span className={styles.reviewSource}>
+                          {review.source}
+                        </span>
+                      )}
+                    </div>
+
+                    <p>“{review.quote}”</p>
+
+                    <footer className={styles.reviewAuthor}>
+                      <span aria-hidden="true">♥</span>
+                      <div>
+                        <strong>{review.customerName}</strong>
+                        {reviewDetails ? <small>{reviewDetails}</small> : null}
+                      </div>
+                    </footer>
+                  </blockquote>
+                );
+              })}
             </div>
           </div>
         </section>
