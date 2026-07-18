@@ -8,6 +8,33 @@ export const metadata: Metadata = {
   title: "Our Team",
   description:
     "Meet the TLC Grooming team in Gloucester, Ottawa and learn about the patient, practical care behind every appointment.",
+  alternates: {
+    canonical: "/our-team",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_CA",
+    url: "/our-team",
+    siteName: "TLC Grooming and Sharpening Services",
+    title: "Our Team | TLC Grooming",
+    description:
+      "Meet the TLC Grooming team in Gloucester, Ottawa and learn about the patient, practical care behind every appointment.",
+    images: [
+      {
+        url: "/brand/tlc-logo.png",
+        width: 1160,
+        height: 490,
+        alt: "TLC Grooming logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Team | TLC Grooming",
+    description:
+      "Meet the TLC Grooming team in Gloucester, Ottawa and learn about the patient care behind every appointment.",
+    images: ["/brand/tlc-logo.png"],
+  },
 };
 
 const teamMembers = [

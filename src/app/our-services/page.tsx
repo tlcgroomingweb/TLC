@@ -3,9 +3,36 @@ import Link from "next/link";
 import styles from "../inner-page.module.css";
 
 export const metadata: Metadata = {
-  title: "Our Services",
+  title: "Dog Grooming Services & Prices in Ottawa",
   description:
     "Explore TLC Grooming packages, size-based starting prices, add-ons and walk-in dog grooming services in Gloucester, Ottawa.",
+  alternates: {
+    canonical: "/our-services",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_CA",
+    url: "/our-services",
+    siteName: "TLC Grooming and Sharpening Services",
+    title: "Dog Grooming Services & Prices in Ottawa | TLC Grooming",
+    description:
+      "Explore grooming packages, size-based starting prices, add-ons and walk-in dog grooming services in Gloucester, Ottawa.",
+    images: [
+      {
+        url: "/brand/tlc-logo.png",
+        width: 1160,
+        height: 490,
+        alt: "TLC Grooming logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dog Grooming Services & Prices in Ottawa | TLC Grooming",
+    description:
+      "Explore grooming packages, prices, add-ons and walk-in dog grooming services in Gloucester, Ottawa.",
+    images: ["/brand/tlc-logo.png"],
+  },
 };
 
 const groomingPackages = [

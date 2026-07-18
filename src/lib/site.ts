@@ -7,6 +7,7 @@ export const mapEmbedUrl =
 export const site = {
   name: "TLC Grooming and Sharpening Services",
   shortName: "TLC Grooming",
+  url: "https://www.tlc4dogs.com",
   phoneDisplay: "613-745-5808",
   phoneHref: "tel:+16137455808",
   email: "tlc4petsgrooming@hotmail.com",
