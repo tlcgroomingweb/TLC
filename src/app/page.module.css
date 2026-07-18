@@ -531,7 +531,25 @@
 
 .aboutCopy > p {
   max-width: 640px;
-  margin: 23px 0 30px;
+  margin: 23px 0 14px;
+}
+
+.aboutLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 30px;
+  color: var(--teal-dark);
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.aboutLink span {
+  transition: transform 160ms ease;
+}
+
+.aboutLink:hover span {
+  transform: translateX(3px);
 }
 
 .promises {
@@ -571,6 +589,184 @@
   margin-bottom: 2px;
   color: var(--foreground);
   font-size: 0.94rem;
+}
+
+.promoSection {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(197, 224, 235, 0.72);
+  background: var(--background);
+  padding: 104px 0;
+}
+
+.promoSection::before {
+  position: absolute;
+  top: -210px;
+  left: -180px;
+  width: 430px;
+  height: 430px;
+  border-radius: 999px;
+  background: rgba(85, 173, 209, 0.13);
+  content: "";
+  pointer-events: none;
+}
+
+.promoHeading {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 42px;
+  grid-template-columns: 1fr minmax(320px, 0.58fr);
+  align-items: end;
+  gap: 60px;
+}
+
+.promoHeading h2 {
+  max-width: 720px;
+  margin: 10px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.45rem, 4.8vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.promoHeading > p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.promoGrid {
+  display: grid;
+  position: relative;
+  z-index: 1;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.promoCard {
+  display: flex;
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 45px rgba(14, 79, 112, 0.07);
+  padding: 25px;
+}
+
+.promoCard::after {
+  position: absolute;
+  right: -58px;
+  bottom: -72px;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  content: "";
+  pointer-events: none;
+}
+
+.promoCardFeatured {
+  border-color: var(--teal-dark);
+  background: var(--teal-dark);
+  box-shadow: 0 22px 48px rgba(14, 79, 112, 0.2);
+  color: white;
+}
+
+.promoCardFeatured::after {
+  background: rgba(85, 173, 209, 0.2);
+}
+
+.promoCardTop {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.promoNumber,
+.promoEyebrow {
+  font-size: 0.67rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.promoNumber {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--surface-soft);
+  color: var(--teal-dark);
+}
+
+.promoEyebrow {
+  color: var(--teal-dark);
+  text-align: right;
+}
+
+.promoCardFeatured .promoNumber {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.promoCardFeatured .promoEyebrow {
+  color: #bfe6f5;
+}
+
+.promoValue {
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  color: var(--teal-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.1rem, 4.6vw, 4.4rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.promoCardFeatured .promoValue {
+  color: white;
+}
+
+.promoCard h3 {
+  position: relative;
+  z-index: 1;
+  margin: 24px 0 8px;
+  font-size: 1.2rem;
+  letter-spacing: -0.025em;
+}
+
+.promoCard > p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.promoCardFeatured > p {
+  color: rgba(255, 255, 255, 0.73);
+}
+
+.promoFinePrint {
+  position: relative;
+  z-index: 1;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  text-align: center;
 }
 
 .testimonialsSection {
@@ -1111,6 +1307,10 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .promoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .reviewCard:first-child {
     min-height: 300px;
     grid-column: 1 / -1;
@@ -1161,6 +1361,7 @@
 
   .section,
   .aboutSection,
+  .promoSection,
   .testimonialsSection,
   .bookingSection,
   .policySection,
@@ -1190,6 +1391,11 @@
   }
 
   .testimonialsHeading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .promoHeading {
     grid-template-columns: 1fr;
     gap: 20px;
   }
@@ -1282,6 +1488,7 @@
   .sectionHeading h2,
   .centerHeading h2,
   .aboutCopy h2,
+  .promoHeading h2,
   .testimonialsHeading h2,
   .bookingCopy h2,
   .contactCopy h2 {
@@ -1294,6 +1501,14 @@
 
   .testimonialGrid {
     grid-template-columns: 1fr;
+  }
+
+  .promoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .promoCard {
+    min-height: 300px;
   }
 
   .reviewCard,

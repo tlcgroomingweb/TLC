@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TLC Grooming — Ottawa's Neighbourhood Groomer</title>
+    <meta name="description" content="A heritage neighbourhood homepage direction for TLC Grooming in Ottawa." />
+    <style>
+      :root {
+        --forest: #173f35;
+        --forest-2: #285b4d;
+        --cream: #f5edda;
+        --paper: #fffaf0;
+        --mustard: #dcae45;
+        --rust: #bd5b3f;
+        --ink: #2c2b26;
+        --muted: #6c6659;
+        --line: #c9bea7;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; color: var(--ink); background-color: var(--cream); background-image: radial-gradient(rgba(44,43,38,.05) .8px, transparent .8px); background-size: 8px 8px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; }
+      a { color: inherit; text-decoration: none; }
+      img { display: block; width: 100%; height: 100%; object-fit: cover; }
+      .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+      .announcement { border-bottom: 1px solid rgba(255,255,255,.18); color: #f9f0dc; background: var(--forest); font-size: .78rem; }
+      .announcement .wrap { display: flex; min-height: 39px; align-items: center; justify-content: space-between; gap: 20px; }
+      .announcement strong { color: #f4cb72; letter-spacing: .07em; text-transform: uppercase; }
+      nav { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid var(--line); background: rgba(245,237,218,.94); backdrop-filter: blur(15px); }
+      .nav-inner { display: flex; min-height: 88px; align-items: center; justify-content: space-between; gap: 28px; }
+      .brand { display: flex; align-items: center; gap: 12px; }
+      .seal { display: grid; width: 54px; height: 54px; place-items: center; border: 2px solid var(--forest); border-radius: 50%; color: var(--cream); background: var(--forest); box-shadow: inset 0 0 0 4px var(--cream), inset 0 0 0 6px var(--forest); font: 700 .92rem Georgia, serif; }
+      .brand strong { display: block; font: 700 1.35rem/1 Georgia, serif; letter-spacing: .02em; }
+      .brand small { display: block; margin-top: 5px; color: var(--muted); font-size: .64rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+      .nav-links { display: flex; gap: 26px; color: var(--forest); font-size: .79rem; font-weight: 850; letter-spacing: .07em; text-transform: uppercase; }
+      .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; border: 1px solid var(--forest); border-radius: 3px; font-size: .77rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; padding: 0 20px; transition: background .15s, color .15s; }
+      .button.primary { color: var(--cream); background: var(--forest); }
+      .button.secondary { background: var(--mustard); }
+      .button:hover { color: white; background: var(--rust); }
+      .menu { display: none; width: 46px; height: 42px; border: 1px solid var(--forest); background: transparent; }
+
+      .hero { border-bottom: 1px solid var(--line); padding: 52px 0 75px; }
+      .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 68px; }
+      .established { display: inline-flex; align-items: center; gap: 12px; color: var(--rust); font-size: .7rem; font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+      .established::before, .established::after { width: 28px; height: 1px; background: var(--rust); content: ""; }
+      h1 { margin: 22px 0; font: 700 clamp(3.6rem, 7vw, 6.5rem)/.9 Georgia, serif; letter-spacing: -.05em; }
+      h1 span { color: var(--forest-2); font-style: italic; font-weight: 400; }
+      .lead { max-width: 600px; color: var(--muted); font: 1.12rem/1.7 Georgia, serif; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 29px; }
+      .open-note { margin-top: 23px; color: var(--forest); font-size: .8rem; font-weight: 800; }
+      .hero-visual { position: relative; min-height: 600px; }
+      .frame { position: absolute; inset: 12px 18px 18px 12px; border: 1px solid var(--forest); background: var(--paper); padding: 13px 13px 78px; transform: rotate(1.5deg); }
+      .frame img { filter: sepia(.12) saturate(.78); }
+      .caption { display: flex; height: 64px; align-items: center; justify-content: space-between; color: var(--muted); font: italic .88rem Georgia, serif; }
+      .caption strong { color: var(--forest); font-style: normal; letter-spacing: .08em; }
+      .since-badge { display: grid; position: absolute; right: -25px; bottom: 34px; z-index: 2; width: 140px; height: 140px; place-items: center; border: 2px solid var(--cream); border-radius: 50%; color: white; background: var(--rust); box-shadow: 0 0 0 2px var(--rust); padding: 24px; text-align: center; transform: rotate(-7deg); }
+      .since-badge strong { display: block; font: 700 2rem Georgia, serif; }
+      .since-badge span { font-size: .63rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+
+      .checker { height: 18px; background: repeating-linear-gradient(90deg, var(--forest) 0 18px, var(--cream) 18px 36px); }
+      section { padding: 96px 0; }
+      .section-head { display: grid; grid-template-columns: 1.1fr .9fr; align-items: end; gap: 60px; margin-bottom: 40px; }
+      .kicker { color: var(--rust); font-size: .7rem; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+      h2 { margin: 10px 0 0; font: 700 clamp(2.7rem, 5.2vw, 4.7rem)/.94 Georgia, serif; letter-spacing: -.04em; }
+      .section-head p { margin: 0; color: var(--muted); font: 1rem/1.7 Georgia, serif; }
+      .services-list { border-top: 1px solid var(--line); }
+      .service { display: grid; grid-template-columns: 100px 1fr auto; align-items: center; gap: 24px; border-bottom: 1px solid var(--line); padding: 26px 18px; }
+      .service:hover { background: rgba(255,250,240,.7); }
+      .service-no { color: var(--rust); font: italic 1rem Georgia, serif; }
+      .service h3 { margin: 0; font: 700 1.55rem Georgia, serif; }
+      .service p { margin: 6px 0 0; color: var(--muted); font-size: .86rem; }
+      .price { border: 1px solid var(--forest); color: var(--forest); padding: 9px 12px; font-size: .72rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+
+      .story { color: var(--cream); background: var(--forest); }
+      .story-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 75px; align-items: center; }
+      .story-copy .kicker { color: #f1c46c; }
+      .story-copy h2 { color: white; }
+      .story-copy > p { color: rgba(245,237,218,.72); font: 1.05rem/1.8 Georgia, serif; }
+      .values { display: grid; margin-top: 30px; grid-template-columns: 1fr 1fr; gap: 12px; }
+      .value { border: 1px solid rgba(245,237,218,.25); padding: 18px; }
+      .value strong { display: block; color: #f1c46c; font: 700 1rem Georgia, serif; }
+      .value span { display: block; margin-top: 6px; color: rgba(245,237,218,.64); font-size: .76rem; }
+      .story-photo { position: relative; height: 570px; border: 1px solid rgba(245,237,218,.4); padding: 13px; }
+      .story-photo::after { position: absolute; right: -16px; bottom: -16px; width: 100%; height: 100%; border-right: 1px solid rgba(245,237,218,.25); border-bottom: 1px solid rgba(245,237,218,.25); content: ""; }
+
+      .reviews { background: var(--paper); }
+      .reviews .section-head { grid-template-columns: 1fr auto; }
+      .rating { text-align: right; }
+      .rating strong { display: block; color: var(--rust); font: 700 2.2rem Georgia, serif; }
+      .rating span { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+      .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .review { border: 1px solid var(--line); background: var(--cream); padding: 27px; }
+      .stars { color: var(--rust); letter-spacing: .12em; }
+      .review blockquote { margin: 20px 0; font: 1.05rem/1.6 Georgia, serif; }
+      .review cite { font-size: .7rem; font-style: normal; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; }
+
+      .visit { padding-bottom: 0; }
+      .visit-card { display: grid; grid-template-columns: 1.15fr .85fr; border: 1px solid var(--forest); background: var(--mustard); }
+      .visit-copy { padding: 54px; }
+      .visit-copy h2 { max-width: 600px; }
+      .visit-copy p { color: #4f4738; }
+      .visit-details { display: grid; align-content: center; gap: 20px; border-left: 1px solid var(--forest); background: var(--paper); padding: 48px; }
+      .visit-details small { display: block; color: var(--rust); font-size: .65rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+      .visit-details strong { display: block; margin-top: 4px; font: 700 1rem/1.45 Georgia, serif; }
+      footer { color: var(--cream); background: var(--forest); padding: 38px 0; font-size: .75rem; }
+      footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+      footer .seal { width: 45px; height: 45px; font-size: .75rem; }
+
+      @media (max-width: 920px) {
+        .nav-links, nav .button { display: none; }
+        .menu { display: block; }
+        .hero-grid, .story-grid { grid-template-columns: 1fr; }
+        .hero-visual { min-height: 540px; }
+        .visit-card { grid-template-columns: 1fr; }
+        .visit-details { border-top: 1px solid var(--forest); border-left: 0; }
+      }
+      @media (max-width: 640px) {
+        .announcement span { display: none; }
+        h1 { font-size: 4rem; }
+        .hero-visual { min-height: 440px; }
+        .since-badge { right: 0; width: 112px; height: 112px; }
+        section { padding: 72px 0; }
+        .section-head { display: block; }
+        .section-head p { margin-top: 18px; }
+        .service { grid-template-columns: 45px 1fr; padding-inline: 5px; }
+        .price { grid-column: 2; justify-self: start; }
+        .story-photo { height: 430px; }
+        .values, .review-grid { grid-template-columns: 1fr; }
+        .reviews .section-head { display: block; }
+        .rating { margin-top: 22px; text-align: left; }
+        .visit-copy, .visit-details { padding: 36px 26px; }
+        footer .wrap { align-items: flex-start; flex-direction: column; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="announcement"><div class="wrap"><strong>Ottawa's neighbourhood groomer</strong><span>Tuesday to Sunday · 9am–5pm</span><a href="tel:+16137455808">Call 613-745-5808</a></div></div>
+    <nav><div class="wrap nav-inner"><a class="brand" href="#"><span class="seal">TLC</span><span><strong>TLC Grooming</strong><small>Established 1986</small></span></a><div class="nav-links"><a href="#services">Services</a><a href="#story">Our story</a><a href="#reviews">Reviews</a><a href="#visit">Find us</a></div><a class="button primary" href="https://plugin.myonlineappointment.com/External/BookingPlugin/?guid=ddb516d4-921b-47ce-b014-7cc31adf1f0a">Book a visit</a><button class="menu" aria-label="Open menu">☰</button></div></nav>
+    <main>
+      <header class="hero"><div class="wrap hero-grid"><div><span class="established">Local since 1986</span><h1>A good groom, done with <span>care.</span></h1><p class="lead">Straightforward, experienced grooming for Ottawa pets—from regular coat care and tidy-ups to full custom grooms.</p><div class="hero-actions"><a class="button primary" href="https://plugin.myonlineappointment.com/External/BookingPlugin/?guid=ddb516d4-921b-47ce-b014-7cc31adf1f0a">Request an appointment</a><a class="button secondary" href="#services">See our services</a></div><div class="open-note">Walk-in nail trims available when groomers are free.</div></div><div class="hero-visual"><figure class="frame"><img src="https://www.tlc4dogs.com/uploads/2/8/2/4/28247963/img-3642.jpg" alt="Freshly groomed dog at TLC Grooming" /><figcaption class="caption"><span>Fresh from the grooming table</span><strong>OTTAWA, ON</strong></figcaption></figure><div class="since-badge"><div><strong>1986</strong><span>Serving local pets</span></div></div></div></div></header>
+      <div class="checker"></div>
+
+      <section id="services"><div class="wrap"><div class="section-head"><div><span class="kicker">The grooming board</span><h2>Choose what they need.</h2></div><p>Final pricing depends on breed, size, coat condition and temperament. Give us a call if you need help deciding.</p></div><div class="services-list"><article class="service"><span class="service-no">01</span><div><h3>Bath &amp; Brush</h3><p>Bath, blow dry, brush out, nail trim and ear cleaning.</p></div><span class="price">From $40</span></article><article class="service"><span class="service-no">02</span><div><h3>Bath &amp; Tidy</h3><p>Everything in Bath &amp; Brush, plus face, paw and body tidy work.</p></div><span class="price">From $60</span></article><article class="service"><span class="service-no">03</span><div><h3>Full Groom</h3><p>Custom haircut, bath, nails, ears, brush out and finishing touches.</p></div><span class="price">From $75</span></article><article class="service"><span class="service-no">04</span><div><h3>Walk-in Care</h3><p>Nail trims, ear cleaning, sanitary trims and PawDicures.</p></div><span class="price">Nails from $16</span></article></div></div></section>
+
+      <section class="story" id="story"><div class="wrap story-grid"><div class="story-copy"><span class="kicker">The TLC story</span><h2>Four decades of local trust.</h2><p>TLC has grown by treating pets and their people the way neighbours should: with patience, honesty and work we can stand behind.</p><div class="values"><div class="value"><strong>Calm handling</strong><span>Care shaped around temperament and comfort.</span></div><div class="value"><strong>Optional crating</strong><span>Ask about the best setup for your pet.</span></div><div class="value"><strong>Helpful touch-ups</strong><span>Contact us within 24 hours if needed.</span></div><div class="value"><strong>Practical value</strong><span>Referral savings and nail-trim rewards.</span></div></div></div><div class="story-photo"><img src="https://www.tlc4dogs.com/uploads/2/8/2/4/28247963/img-3507.png" alt="Small dog after grooming at TLC" /></div></div></section>
+
+      <section class="reviews" id="reviews"><div class="wrap"><div class="section-head"><div><span class="kicker">Notes from our neighbours</span><h2>Good dogs. Kind words.</h2></div><div class="rating"><strong>★★★★★</strong><span>Local Google reviews</span></div></div><div class="review-grid"><article class="review"><div class="stars">★★★★★</div><blockquote>“Reliable, gentle, well done. We go out of our way from downtown to Gloucester.”</blockquote><cite>Sharon Reynolds</cite></article><article class="review"><div class="stars">★★★★★</div><blockquote>“The groomer handles my nervous dog expertly while trimming her nails!”</blockquote><cite>Julie Eldridge</cite></article><article class="review"><div class="stars">★★★★★</div><blockquote>“Wonderful prices. All my dog friends use their services.”</blockquote><cite>Les Webb</cite></article></div></div></section>
+
+      <section class="visit" id="visit"><div class="wrap visit-card"><div class="visit-copy"><span class="kicker">Your local grooming stop</span><h2>Come see us in Gloucester.</h2><p>Book online or call the salon. We’ll help match your pet with the right service and appointment.</p><a class="button primary" href="https://plugin.myonlineappointment.com/External/BookingPlugin/?guid=ddb516d4-921b-47ce-b014-7cc31adf1f0a">Request an appointment</a></div><div class="visit-details"><div><small>Address</small><strong>5303 Canotek Rd, Unit 20A<br />Gloucester, Ontario</strong></div><div><small>Hours</small><strong>Tuesday to Sunday · 9am–5pm</strong></div><div><small>Contact</small><strong>613-745-5808<br />tlc4petsgrooming@hotmail.com</strong></div></div></div></section>
+    </main>
+    <footer><div class="wrap"><span class="seal">TLC</span><span>© 2026 TLC Grooming &amp; Sharpening Services</span><span>Ottawa pet care since 1986</span></div></footer>
+  </body>
+</html>

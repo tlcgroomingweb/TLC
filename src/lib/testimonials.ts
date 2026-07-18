@@ -15,14 +15,6 @@ export type Testimonial = {
  */
 export const testimonials: readonly Testimonial[] = [
   {
-    id: "google-amjad-moheb",
-    quote:
-      "I had a great experience with Yuyu and the team at TLC. The service was very professional, and they took amazing care of my dog. You can really see their experience and attention to detail. I felt completely comfortable and confident leaving my dog with them, and the results were always excellent. I highly recommend Yuyu and TLC to anyone looking for quality grooming services. I always refer my clients to them, and I will definitely continue coming back",
-    customerName: "Amjad Moheb",
-    rating: 5,
-    source: "Google",
-  },
-  {
     id: "google-kyle-r",
     quote:
       "We’ve been bringing our dogs to TLC Grooming for a while now, and they’ve been consistently great with them. We have a bit of a mixed crew personality-wise, and they always handle each dog with patience and care, which really stands out.",
@@ -59,6 +51,14 @@ export const testimonials: readonly Testimonial[] = [
     quote:
       "Super friendly and accommodating. The groomer handles my nervous dog expertly while trimming her nails!",
     customerName: "Julie Eldridge",
+    rating: 5,
+    source: "Google",
+  },
+  {
+    id: "google-diane",
+    quote:
+      "A very welcoming, caring, safe and trustworthy place to handle your pets. Very skilled at grooming and knowledgeable in regards to dog behaviors. Excellent service throughout!",
+    customerName: "Diane Laflamme",
     rating: 5,
     source: "Google",
   },

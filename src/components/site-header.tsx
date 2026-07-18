@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -27,14 +28,19 @@ export function SiteHeader() {
 
       <nav className={styles.nav} aria-label="Main navigation">
         <div className={styles.navInner}>
-          <Link className={styles.brand} href="/" onClick={closeMenu}>
-            <span className={styles.brandMark} aria-hidden="true">
-              TLC
-            </span>
-            <span>
-              <strong>TLC Grooming</strong>
-              <small>Dog grooming in Ottawa</small>
-            </span>
+          <Link
+            aria-label="TLC Grooming home"
+            className={styles.brand}
+            href="/"
+            onClick={closeMenu}
+          >
+            <Image
+              alt=""
+              className={styles.brandLogo}
+              height={490}
+              src="/brand/tlc-logo.png"
+              width={1160}
+            />
           </Link>
 
           <div

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   bookingUrl,
   mapEmbedUrl,
@@ -41,6 +42,38 @@ const businessJsonLd = {
     },
   ],
 };
+
+const promotions = [
+  {
+    value: "$5",
+    eyebrow: "Referral reward",
+    title: "Refer & Save",
+    description: "Refer a friend or family member and save $5.",
+    featured: false,
+  },
+  {
+    value: "10%",
+    eyebrow: "Monthly offer",
+    title: "Seniors' Day",
+    description:
+      "Seniors save 10% on grooming, nail trims and products on the last Wednesday of every month.",
+    featured: false,
+  },
+  {
+    value: "Free",
+    eyebrow: "Loyalty reward",
+    title: "Nail Trim Rewards",
+    description: "Every 10th nail trim is free.",
+    featured: false,
+  },
+  {
+    value: "$10",
+    eyebrow: "New client offer",
+    title: "Full Groom Welcome",
+    description: "New clients save $10 on a full grooming service.",
+    featured: true,
+  },
+] as const;
 
 export default function Home() {
   return (
@@ -217,10 +250,14 @@ export default function Home() {
                 <span className={styles.kicker}>Why TLC</span>
                 <h2>Experienced hands. Calm, respectful care.</h2>
                 <p>
-                  TLC has grown through decades of local trust and a simple
-                  promise: treat every pet with patience, cleanliness and
-                  respect.
+                  For nearly 40 years, TLC has cared for Ottawa pets with
+                  patient handling, skilled grooming and fair, straightforward
+                  pricing. Head groomer Yu Yu works alongside Ling and Zandy to
+                  keep every visit clean, calm and respectful.
                 </p>
+                <Link className={styles.aboutLink} href="/our-team">
+                  Meet Yu Yu, Ling and Zandy <span aria-hidden="true">→</span>
+                </Link>
                 <div className={styles.promises}>
                   <div>
                     <span>01</span>
@@ -239,13 +276,57 @@ export default function Home() {
                   <div>
                     <span>03</span>
                     <p>
-                      <strong>Practical rewards</strong>
-                      Ask about referral savings and nail-trim rewards.
+                      <strong>Fair, straightforward pricing</strong>
+                      Starting prices are published clearly, with final cost
+                      confirmed for your pet&apos;s coat and needs.
                     </p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className={styles.promoSection} id="rewards">
+          <div className={styles.shell}>
+            <div className={styles.promoHeading}>
+              <div>
+                <span className={styles.kicker}>Savings &amp; rewards</span>
+                <h2>A little extra TLC for every visit.</h2>
+              </div>
+              <p>
+                Four simple ways to save on grooming and nail care, whether it
+                is your first appointment or you have been visiting us for
+                years.
+              </p>
+            </div>
+
+            <div className={styles.promoGrid}>
+              {promotions.map((promotion, index) => (
+                <article
+                  className={`${styles.promoCard} ${
+                    promotion.featured ? styles.promoCardFeatured : ""
+                  }`}
+                  key={promotion.title}
+                >
+                  <div className={styles.promoCardTop}>
+                    <span className={styles.promoNumber}>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className={styles.promoEyebrow}>
+                      {promotion.eyebrow}
+                    </span>
+                  </div>
+                  <strong className={styles.promoValue}>{promotion.value}</strong>
+                  <h3>{promotion.title}</h3>
+                  <p>{promotion.description}</p>
+                </article>
+              ))}
+            </div>
+
+            <p className={styles.promoFinePrint}>
+              Ask our team for current program details and eligibility.
+            </p>
           </div>
         </section>
 
