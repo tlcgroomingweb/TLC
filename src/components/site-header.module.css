@@ -46,14 +46,33 @@
 }
 
 .brand {
-  display: block;
+  display: inline-flex;
   flex-shrink: 0;
+  align-items: flex-end;
+  gap: 14px;
 }
 
 .brandLogo {
   display: block;
   width: 158px;
   height: auto;
+  transform: translateY(3px);
+}
+
+.heritageText {
+  color: var(--teal);
+  font-family: "Arial Rounded MT Bold", "Trebuchet MS", Arial, sans-serif;
+  font-size: 0.98rem;
+  font-weight: 900;
+  letter-spacing: 0.035em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.heritageText strong {
+  color: var(--teal-dark);
+  font-size: 1.25em;
+  font-weight: 900;
 }
 
 .navLinks {
@@ -176,18 +195,16 @@
     font-size: 0.77rem;
   }
 
-  .announcementContact span,
+  .inner {
+    justify-content: center;
+  }
+
+  .announcementMessage {
+    display: none;
+  }
+
   .announcementContact {
-    gap: 0;
-  }
-
-  .announcementContact span,
-  .announcementContact:not(a) {
-    font-size: 0;
-  }
-
-  .announcementContact a {
-    font-size: 0.77rem;
+    gap: 8px;
   }
 
   .navInner {
@@ -201,9 +218,28 @@
 
   .brandLogo {
     width: 136px;
+    transform: translateY(2px);
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .heritageText {
+    font-size: 0.84rem;
   }
 
   .menuButton {
     margin-left: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .brandLogo {
+    width: 118px;
+  }
+
+  .heritageText {
+    font-size: 0.76rem;
   }
 }

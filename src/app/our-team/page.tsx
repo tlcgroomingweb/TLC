@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { sampleImages } from "@/lib/site";
 import styles from "../inner-page.module.css";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ const teamMembers = [
     nameDetail: "Yu Shan",
     role: "Head groomer",
     bio: "Yu Shan, also known as Yu Yu, leads TLC's grooming work with an experienced eye for styling and finishing details that help every dog look its best.",
-    image: site.imageUrls[0],
+    image: sampleImages.team[0],
     specialties: ["Custom styling", "Finishing detail"],
   },
   {
@@ -24,8 +24,7 @@ const teamMembers = [
     nameDetail: "TLC grooming team",
     role: "Groomer",
     bio: "Ling is part of TLC's grooming team. Her public work gallery reflects careful coat care and tidy finishes across dogs with different grooming needs.",
-    image:
-      "https://www.tlc4dogs.com/uploads/2/8/2/4/28247963/3807fb90-203e-4393-baab-168bd56205d9.jpg",
+    image: sampleImages.team[1],
     specialties: ["Coat care", "Tidy finishes"],
   },
   {
@@ -33,8 +32,7 @@ const teamMembers = [
     nameDetail: "TLC grooming team",
     role: "Groomer",
     bio: "Zandy trained alongside experienced groomers and brings a gentle approach focused on helping dogs feel comfortable while delivering a polished result.",
-    image:
-      "https://www.tlc4dogs.com/uploads/2/8/2/4/28247963/angela.jpg",
+    image: sampleImages.team[2],
     specialties: ["Gentle handling", "Low-stress care"],
   },
 ] as const;
@@ -101,12 +99,12 @@ export default function OurTeamPage() {
               <article className={styles.memberCard} key={member.name}>
                 <div className={styles.memberImage}>
                   <Image
-                    alt={`Example of grooming work featured on ${member.name}'s TLC profile`}
+                    alt={`Sample grooming photo for ${member.name}'s profile`}
                     fill
                     sizes="(max-width: 860px) 92vw, 370px"
                     src={member.image}
                   />
-                  <span className={styles.workLabel}>Selected grooming work</span>
+                  <span className={styles.workLabel}>Sample photo</span>
                 </div>
                 <div className={styles.memberBody}>
                   <span className={styles.memberRole}>{member.role}</span>
@@ -124,8 +122,8 @@ export default function OurTeamPage() {
           </div>
 
           <p className={styles.portfolioNote}>
-            Images are examples of grooming work from TLC&apos;s existing public
-            team galleries, not staff portraits.
+            These stock photos are temporary placeholders and do not show TLC
+            staff or client pets.
           </p>
         </div>
       </section>

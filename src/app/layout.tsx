@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | TLC Grooming",
   },
   description:
-    "Gentle dog grooming, walk-in nail trims, and pet care from an experienced Gloucester team serving Ottawa since 1986.",
+    "Gentle dog grooming, walk-in nail trims, and thoughtful pet care from an experienced Gloucester team.",
   applicationName: "TLC Grooming",
   keywords: [
     "Ottawa pet grooming",

@@ -1,0 +1,51 @@
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+}
+
+.label {
+  font-weight: 820;
+}
+
+.compact {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 0.79rem;
+}
+
+.compact.open .dot {
+  background: #77e2b1;
+  box-shadow: 0 0 0 3px rgba(119, 226, 177, 0.16);
+}
+
+.compact.closed .dot {
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.detail {
+  flex-wrap: wrap;
+  color: var(--foreground);
+}
+
+.detail.open .dot {
+  background: #159765;
+  box-shadow: 0 0 0 3px rgba(21, 151, 101, 0.12);
+}
+
+.detail.closed .dot {
+  background: #78909c;
+}
+
+.timing {
+  color: var(--muted);
+  font-weight: 650;
+}

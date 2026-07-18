@@ -30,7 +30,7 @@ export function SiteFooter() {
                 width={1160}
               />
             </Link>
-            <p>Gentle dog grooming in Ottawa since 1986.</p>
+            <p>Gentle dog grooming and thoughtful care in Ottawa.</p>
           </div>
           <nav className={styles.footerLinks} aria-label="Footer navigation">
             {footerLinks.map((item) => (

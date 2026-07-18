@@ -3,8 +3,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { MouseEvent } from "react";
 import { useState } from "react";
 import { navItems, site } from "@/lib/site";
+import { BusinessStatus } from "./business-status";
 import styles from "./site-header.module.css";
 
 export function SiteHeader() {
@@ -13,15 +15,54 @@ export function SiteHeader() {
 
   const closeMenu = () => setIsOpen(false);
 
+  const handleHeaderLinkClick = (
+    event: MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    closeMenu();
+
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    const [targetPath, targetId] = href.split("#");
+    const isRepeatedHash =
+      targetId &&
+      pathname === targetPath &&
+      window.location.hash === `#${targetId}`;
+
+    if (!isRepeatedHash) {
+      return;
+    }
+
+    const target = document.getElementById(targetId);
+
+    if (target) {
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "auto", block: "start" });
+    }
+  };
+
   return (
     <>
       <div className={styles.announcement}>
         <div className={styles.inner}>
-          <span>Serving Ottawa pets with careful grooming since 1986</span>
+          <span className={styles.announcementMessage}>
+            Skilled grooming. Patient care. Happier pets.
+          </span>
           <span className={styles.announcementContact}>
             <a href={site.phoneHref}>{site.phoneDisplay}</a>
-            <span aria-hidden="true">·</span>
-            Tue–Sun 9am–5pm
+            <span className={styles.announcementDivider} aria-hidden="true">
+              ·
+            </span>
+            <BusinessStatus />
           </span>
         </div>
       </div>
@@ -41,6 +82,9 @@ export function SiteHeader() {
               src="/brand/tlc-logo.png"
               width={1160}
             />
+            <span className={styles.heritageText} aria-hidden="true">
+              SINCE <strong>1986</strong>
+            </span>
           </Link>
 
           <div
@@ -56,7 +100,7 @@ export function SiteHeader() {
                   aria-current={isActive ? "page" : undefined}
                   href={item.href}
                   key={item.href}
-                  onClick={closeMenu}
+                  onClick={(event) => handleHeaderLinkClick(event, item.href)}
                 >
                   {item.label}
                 </Link>
@@ -65,13 +109,17 @@ export function SiteHeader() {
             <Link
               className={styles.mobileBook}
               href="/#book"
-              onClick={closeMenu}
+              onClick={(event) => handleHeaderLinkClick(event, "/#book")}
             >
               Book appointment
             </Link>
           </div>
 
-          <Link className={styles.bookButton} href="/#book">
+          <Link
+            className={styles.bookButton}
+            href="/#book"
+            onClick={(event) => handleHeaderLinkClick(event, "/#book")}
+          >
             Book appointment
           </Link>
 

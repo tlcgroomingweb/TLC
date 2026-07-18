@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BusinessStatus } from "@/components/business-status";
 import {
   bookingUrl,
   mapEmbedUrl,
   packages,
+  sampleImages,
   services,
   site,
 } from "@/lib/site";
@@ -45,6 +47,13 @@ const businessJsonLd = {
 
 const promotions = [
   {
+    value: "$10",
+    eyebrow: "New client offer",
+    title: "Full Groom Welcome",
+    description: "New clients save $10 on a full grooming service.",
+    featured: true,
+  },
+  {
     value: "$5",
     eyebrow: "Referral reward",
     title: "Refer & Save",
@@ -55,23 +64,24 @@ const promotions = [
     value: "10%",
     eyebrow: "Monthly offer",
     title: "Seniors' Day",
-    description:
-      "Seniors save 10% on grooming, nail trims and products on the last Wednesday of every month.",
+    description: (
+      <>
+        On the <strong>last Wednesday of every month</strong>, seniors save 10%
+        on grooming, nail trims and products.
+      </>
+    ),
     featured: false,
   },
   {
     value: "Free",
     eyebrow: "Loyalty reward",
     title: "Nail Trim Rewards",
-    description: "Every 10th nail trim is free.",
+    description: (
+      <>
+        Every <strong>10th</strong> nail trim is free.
+      </>
+    ),
     featured: false,
-  },
-  {
-    value: "$10",
-    eyebrow: "New client offer",
-    title: "Full Groom Welcome",
-    description: "New clients save $10 on a full grooming service.",
-    featured: true,
   },
 ] as const;
 
@@ -133,7 +143,7 @@ export default function Home() {
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
                 <div className={styles.eyebrow}>
-                  <span /> Ottawa grooming salon · Since 1986
+                  <span /> Ottawa grooming salon
                 </div>
                 <h1>
                   Gentle grooming for pets who feel like <em>family.</em>
@@ -161,8 +171,8 @@ export default function Home() {
               <div className={styles.heroVisual}>
                 <div className={styles.heroImageMain}>
                   <Image
-                    src={site.imageUrls[0]}
-                    alt="Freshly groomed dog at TLC Grooming"
+                    src={sampleImages.homeHero}
+                    alt="Sample photo of a professional groomer trimming a small dog"
                     fill
                     priority
                     sizes="(max-width: 900px) 88vw, 520px"
@@ -180,8 +190,8 @@ export default function Home() {
 
             <div className={styles.trustStrip} aria-label="TLC highlights">
               <div>
-                <strong>Since 1986</strong>
-                <span>Serving Ottawa families</span>
+                <strong>Trusted locally</strong>
+                <span>Care for Ottawa families</span>
               </div>
               <div>
                 <strong>Full-service care</strong>
@@ -216,7 +226,7 @@ export default function Home() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  See TLC on Instagram <span aria-hidden="true">↗</span>
+                  Follow TLC on Instagram <span aria-hidden="true">↗</span>
                 </a>
               </div>
             </div>
@@ -328,15 +338,11 @@ export default function Home() {
               <div className={styles.aboutPhotos}>
                 <div className={styles.aboutPhotoLarge}>
                   <Image
-                    src={site.imageUrls[1]}
-                    alt="Small dog after a TLC grooming appointment"
+                    src={sampleImages.whyTlc}
+                    alt="Sample photo of a groomer carefully trimming a small dog"
                     fill
                     sizes="(max-width: 900px) 70vw, 420px"
                   />
-                </div>
-                <div className={styles.sinceBadge}>
-                  <strong>1986</strong>
-                  <span>Ottawa roots</span>
                 </div>
               </div>
 
@@ -629,6 +635,12 @@ export default function Home() {
                   <div>
                     <dt>Location</dt>
                     <dd>{site.address}</dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>
+                      <BusinessStatus variant="detail" />
+                    </dd>
                   </div>
                   <div>
                     <dt>Hours</dt>

@@ -639,42 +639,10 @@
 
 .aboutPhotoLarge {
   position: absolute;
-  inset: 0 44px 0 0;
+  inset: 0;
   border-radius: 34px 34px 130px 34px;
   background: var(--surface-soft);
   box-shadow: 0 25px 60px rgba(14, 79, 112, 0.14);
-}
-
-.sinceBadge {
-  display: grid;
-  position: absolute;
-  right: 0;
-  bottom: 36px;
-  width: 150px;
-  height: 150px;
-  place-content: center;
-  border: 8px solid var(--surface);
-  border-radius: 999px;
-  background: var(--gold);
-  color: white;
-  text-align: center;
-}
-
-.sinceBadge strong,
-.sinceBadge span {
-  display: block;
-}
-
-.sinceBadge strong {
-  font-family: Georgia, serif;
-  font-size: 2rem;
-}
-
-.sinceBadge span {
-  font-size: 0.7rem;
-  font-weight: 750;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 .aboutCopy > p {
@@ -904,8 +872,17 @@
   line-height: 1.65;
 }
 
+.promoCard > p strong {
+  color: var(--teal-dark);
+  font-weight: 850;
+}
+
 .promoCardFeatured > p {
   color: rgba(255, 255, 255, 0.73);
+}
+
+.promoCardFeatured > p strong {
+  color: white;
 }
 
 .promoFinePrint {
@@ -1742,15 +1719,7 @@
   }
 
   .aboutPhotoLarge {
-    right: 28px;
     border-radius: 28px 28px 90px 28px;
-  }
-
-  .sinceBadge {
-    bottom: 25px;
-    width: 120px;
-    height: 120px;
-    border-width: 6px;
   }
 
   .bookingFrame {

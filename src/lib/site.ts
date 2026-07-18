@@ -18,6 +18,18 @@ export const site = {
   ],
 } as const;
 
+export const sampleImages = {
+  homeHero:
+    "https://images.pexels.com/photos/6816844/pexels-photo-6816844.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  whyTlc:
+    "https://images.pexels.com/photos/6816863/pexels-photo-6816863.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  team: [
+    "https://images.pexels.com/photos/19145898/pexels-photo-19145898.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "https://images.pexels.com/photos/19145897/pexels-photo-19145897.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    "https://images.pexels.com/photos/19145879/pexels-photo-19145879.jpeg?auto=compress&cs=tinysrgb&w=1400",
+  ],
+} as const;
+
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "Our Services", href: "/our-services" },
