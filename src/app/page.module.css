@@ -1446,6 +1446,12 @@
   }
 }
 
+@media (min-width: 861px) and (max-width: 1024px) {
+  .reviewCard:last-child {
+    display: none;
+  }
+}
+
 @media (max-width: 860px) {
   .hero {
     padding-top: 38px;
