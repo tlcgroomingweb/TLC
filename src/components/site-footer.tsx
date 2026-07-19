@@ -30,7 +30,7 @@ export function SiteFooter() {
                 width={1160}
               />
             </Link>
-            <p>Gentle dog grooming and thoughtful care in Ottawa.</p>
+            <p>Professional dog grooming with a gentle touch in Gloucester, Ottawa.</p>
           </div>
           <nav className={styles.footerLinks} aria-label="Footer navigation">
             {footerLinks.map((item) => (
@@ -67,7 +67,7 @@ export function SiteFooter() {
             <small>© 2026 {site.name}</small>
           </div>
           <p className={styles.privacyNote}>
-            Booking is provided by{" "}
+            Online booking is provided by{" "}
             <a
               href="https://www.daysmart.com/privacy-policy/"
               rel="noreferrer"
@@ -75,7 +75,7 @@ export function SiteFooter() {
             >
               DaySmart
             </a>
-            {", and maps by "}
+            {", and maps are provided by "}
             <a
               href="https://policies.google.com/privacy"
               rel="noreferrer"
@@ -83,13 +83,13 @@ export function SiteFooter() {
             >
               Google
             </a>
-            {". Their privacy policies apply when using these services."}
+            {". Their privacy policies apply when you use these services."}
           </p>
         </div>
       </footer>
 
       <div className={styles.mobileActions} aria-label="Quick actions">
-        <Link href="/#book">Appointments</Link>
+        <Link href="/#book">Book online</Link>
         <a href={site.phoneHref}>Call TLC</a>
       </div>
     </>

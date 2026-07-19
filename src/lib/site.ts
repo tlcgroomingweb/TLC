@@ -12,7 +12,7 @@ export const site = {
   phoneHref: "tel:+16137455808",
   email: "tlc4petsgrooming@hotmail.com",
   address: "5303 Canotek Rd, Unit 20A, Gloucester, ON K1J 9M1",
-  hours: "Tuesday to Sunday · 9am–5pm · Mondays closed",
+  hours: "Tuesday–Sunday · 9am–5pm · Closed Mondays",
 } as const;
 
 export const sampleImages = {
@@ -39,28 +39,28 @@ export const services = [
     number: "01",
     title: "Bath & Brush",
     description:
-      "Bath, blow dry, brush out, nail trim and ear cleaning for regular coat care.",
+      "A bath, blow dry, brush out, nail trim and ear cleaning for routine coat maintenance.",
     price: "From $40",
   },
   {
     number: "02",
     title: "Bath & Tidy",
     description:
-      "Everything in Bath & Brush, plus sanitary, face, paw and body tidy work.",
+      "Everything in Bath & Brush, plus trimming around the face, paws, sanitary areas and body.",
     price: "From $60",
   },
   {
     number: "03",
     title: "Full Groom",
     description:
-      "A consultation, custom haircut, bath, nails, ears, brush out and finishing touches.",
+      "A consultation-led groom with a custom haircut, bath, brush out, nail care and finishing details.",
     price: "From $75",
   },
   {
     number: "04",
     title: "Walk-in Care",
     description:
-      "Nail trims, ear cleaning, sanitary trims and PawDicures when groomers are available.",
+      "Nail trims, ear care, sanitary trims and PawDicures, offered when a groomer is available.",
     price: "Nails from $16",
   },
 ] as const;
@@ -75,7 +75,7 @@ export const packages = [
       "Brush out",
       "Nail trim",
       "Ear cleaning",
-      "Regular coat care",
+      "Routine coat maintenance",
     ],
   },
   {
@@ -86,7 +86,7 @@ export const packages = [
       "Everything in Bath & Brush",
       "Sanitary trim",
       "Face and paw trim",
-      "Full body tidy",
+      "Full-body tidy",
       "Ideal between full grooms",
     ],
   },

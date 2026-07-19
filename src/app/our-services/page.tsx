@@ -5,7 +5,7 @@ import styles from "../inner-page.module.css";
 export const metadata: Metadata = {
   title: "Dog Grooming Services & Prices in Ottawa",
   description:
-    "Explore TLC Grooming packages, size-based starting prices, add-ons and walk-in dog grooming services in Gloucester, Ottawa.",
+    "Compare TLC Grooming packages, size-based starting prices, add-ons and walk-in services in Gloucester, Ottawa.",
   alternates: {
     canonical: "/our-services",
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "TLC Grooming and Sharpening Services",
     title: "Dog Grooming Services & Prices in Ottawa | TLC Grooming",
     description:
-      "Explore grooming packages, size-based starting prices, add-ons and walk-in dog grooming services in Gloucester, Ottawa.",
+      "Compare grooming packages, size-based starting prices, add-ons and walk-in services in Gloucester, Ottawa.",
     images: [
       {
         url: "/brand/tlc-logo.png",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dog Grooming Services & Prices in Ottawa | TLC Grooming",
     description:
-      "Explore grooming packages, prices, add-ons and walk-in dog grooming services in Gloucester, Ottawa.",
+      "Compare dog grooming packages, starting prices, add-ons and walk-in services in Gloucester, Ottawa.",
     images: ["/brand/tlc-logo.png"],
   },
 };
@@ -40,14 +40,14 @@ const groomingPackages = [
     eyebrow: "Regular coat care",
     title: "Bath & Brush",
     description:
-      "A complete refresh for dogs who need regular bathing, drying and coat maintenance without haircutting.",
+      "Routine coat care with a thorough bath, blow dry and brush out—without a haircut.",
     featured: false,
     included: [
       "Bath and blow dry",
       "Brush out",
       "Nail trim",
       "Ear cleaning",
-      "Plenty of patient care",
+      "Gentle, attentive handling",
     ],
     prices: [
       ["X-small", "Up to 12 lb", "$40"],
@@ -61,7 +61,7 @@ const groomingPackages = [
     eyebrow: "Between full grooms",
     title: "Bath & Tidy",
     description:
-      "Maintenance for the face, paws and body when your dog needs more than a bath but not a full haircut.",
+      "A practical in-between service for dogs who need a bath plus light trimming, but not a full haircut.",
     featured: true,
     included: [
       "Bath and blow dry",
@@ -82,13 +82,13 @@ const groomingPackages = [
     eyebrow: "Complete styling",
     title: "Full Groom",
     description:
-      "A consultation-led appointment with a customized haircut and finishing details based on your preferences.",
+      "A complete, consultation-led groom with a custom haircut shaped around your preferences and your dog’s coat.",
     featured: false,
     included: [
       "Groomer consultation",
       "Custom haircut and styling",
-      "Bath, dry and brush out",
-      "Eyes, ears and nails",
+      "Bath, blow dry and brush out",
+      "Eye-area, ear and nail care",
       "Finishing accessory by request",
     ],
     prices: [
@@ -162,9 +162,9 @@ export default function OurServicesPage() {
 
             <div className={styles.pageIntroAside}>
               <p className={styles.lead}>
-                From routine bath days to complete styling, our service menu
-                helps you choose the closest fit before your groomer confirms
-                the details.
+                From routine coat maintenance to complete styling, compare our
+                services and starting prices before your groomer confirms the
+                best fit for your dog.
               </p>
             </div>
           </div>
@@ -175,11 +175,12 @@ export default function OurServicesPage() {
         <div className={styles.shell}>
           <div className={styles.sectionHeading}>
             <div>
-              <h2>Compare the full service menu.</h2>
+              <h2>Choose the right level of grooming.</h2>
             </div>
             <p>
-              Pick the package that feels closest. Your groomer can confirm the
-              right service after reviewing your dog&apos;s coat and desired finish.
+              Start with the package that seems closest. Your groomer will
+              confirm the right service after reviewing your dog&apos;s coat,
+              handling needs and desired finish.
             </p>
           </div>
 
@@ -215,8 +216,8 @@ export default function OurServicesPage() {
           </div>
 
           <p className={styles.pricingNote}>
-            These are starting prices. Additional charges may apply based on
-            coat type, coat condition, matting, behaviour or the time needed to
+            All prices are starting points. Final pricing reflects coat type
+            and condition, matting, handling needs, and the time required to
             complete the groom safely.
           </p>
         </div>
@@ -230,8 +231,8 @@ export default function OurServicesPage() {
               <h2>Add-ons and walk-in care.</h2>
             </div>
             <p>
-              Walk-in services do not require an appointment, but calling ahead
-              is recommended so TLC can confirm a groomer is available.
+              Walk-in services do not require an appointment. We recommend
+              calling ahead so we can confirm that a groomer is available.
             </p>
           </div>
 
@@ -239,7 +240,7 @@ export default function OurServicesPage() {
             <article className={styles.listPanel}>
               <div className={styles.listPanelHeader}>
                 <h3>Package add-ons</h3>
-                <p>Small upgrades that can be added to a grooming appointment.</p>
+                <p>Optional services available with a grooming appointment.</p>
               </div>
               <dl className={styles.priceList}>
                 {addOns.map(([name, price]) => (
@@ -254,7 +255,7 @@ export default function OurServicesPage() {
             <article className={styles.listPanel}>
               <div className={styles.listPanelHeader}>
                 <h3>Walk-in services</h3>
-                <p>Quick care when a groomer is available in the salon.</p>
+                <p>Focused care available without a full grooming appointment.</p>
               </div>
               <dl className={styles.priceList}>
                 {walkIns.map(([name, price]) => (
@@ -273,12 +274,13 @@ export default function OurServicesPage() {
         <div className={styles.shell}>
           <div className={styles.sectionHeading}>
             <div>
-              <span className={styles.kicker}>Breed size guide</span>
-              <h2>Find the closest weight range.</h2>
+              <span className={styles.kicker}>Size and weight guide</span>
+              <h2>Find your dog&apos;s starting size.</h2>
             </div>
             <p>
-              Breed examples are only a guide. Weight, coat type and the chosen
-              style all affect the final appointment recommendation.
+              Breed examples are a general guide only. Weight, coat type,
+              condition and chosen style all influence the final service and
+              price.
             </p>
           </div>
 
@@ -300,12 +302,12 @@ export default function OurServicesPage() {
             <div>
               <h2>Not sure which package to choose?</h2>
               <p>
-                Select the closest service in DaySmart or call TLC. The team can
-                confirm the right package before the appointment.
+                Select the closest service online or call TLC. We’ll confirm the
+                best fit based on your dog&apos;s coat and grooming goals.
               </p>
             </div>
             <Link className={styles.primaryButton} href="/#book">
-              Go to booking
+              Book an appointment
             </Link>
           </div>
         </div>

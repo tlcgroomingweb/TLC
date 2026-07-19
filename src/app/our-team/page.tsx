@@ -5,9 +5,9 @@ import { sampleImages } from "@/lib/site";
 import styles from "../inner-page.module.css";
 
 export const metadata: Metadata = {
-  title: "Our Team",
+  title: "Meet Our Dog Groomers in Ottawa",
   description:
-    "Meet the TLC Grooming team in Gloucester, Ottawa and learn about the patient, practical care behind every appointment.",
+    "Meet the TLC Grooming team in Gloucester, Ottawa and discover the skill, gentle handling and attention behind every appointment.",
   alternates: {
     canonical: "/our-team",
   },
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "/our-team",
     siteName: "TLC Grooming and Sharpening Services",
-    title: "Our Team | TLC Grooming",
+    title: "Meet Our Dog Groomers in Ottawa | TLC Grooming",
     description:
-      "Meet the TLC Grooming team in Gloucester, Ottawa and learn about the patient, practical care behind every appointment.",
+      "Meet the TLC Grooming team in Gloucester, Ottawa and discover the skill, gentle handling and attention behind every appointment.",
     images: [
       {
         url: "/brand/tlc-logo.png",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Team | TLC Grooming",
+    title: "Meet Our Dog Groomers in Ottawa | TLC Grooming",
     description:
-      "Meet the TLC Grooming team in Gloucester, Ottawa and learn about the patient care behind every appointment.",
+      "Meet the TLC Grooming team in Gloucester, Ottawa and discover the skill and gentle handling behind every appointment.",
     images: ["/brand/tlc-logo.png"],
   },
 };
@@ -42,46 +42,46 @@ const teamMembers = [
     name: "Yu Yu",
     nameDetail: "Yu Shan",
     role: "Head groomer",
-    bio: "Yu Shan, also known as Yu Yu, leads TLC's grooming work with an experienced eye for styling and finishing details that help every dog look its best.",
+    bio: "Yu Shan, known to clients as Yu Yu, leads TLC’s grooming team. She brings an experienced eye to custom styling and the finishing details that make each groom feel polished and personal.",
     image: sampleImages.team[0],
-    specialties: ["Custom styling", "Finishing detail"],
+    specialties: ["Custom styling", "Detailed finishing"],
   },
   {
     name: "Ling",
     nameDetail: "TLC grooming team",
     role: "Groomer",
-    bio: "Ling is part of TLC's grooming team. Her public work gallery reflects careful coat care and tidy finishes across dogs with different grooming needs.",
+    bio: "Ling brings careful coat work and a steady eye for neat, balanced finishes. She adapts her approach to dogs with a range of grooming needs.",
     image: sampleImages.team[1],
-    specialties: ["Coat care", "Tidy finishes"],
+    specialties: ["Detailed coat care", "Balanced finishes"],
   },
   {
     name: "Zandy",
     nameDetail: "TLC grooming team",
     role: "Groomer",
-    bio: "Zandy trained alongside experienced groomers and brings a gentle approach focused on helping dogs feel comfortable while delivering a polished result.",
+    bio: "Zandy pairs her grooming training with gentle, patient handling. She focuses on helping dogs settle into the process while working toward a clean, polished finish.",
     image: sampleImages.team[2],
-    specialties: ["Gentle handling", "Low-stress care"],
+    specialties: ["Gentle handling", "Comfort-focused care"],
   },
 ] as const;
 
 const careValues = [
   {
     number: "01",
-    title: "Listen before we begin",
+    title: "Start by listening",
     description:
-      "Share the haircut, coat concerns and handling preferences that matter to you and your dog.",
+      "Tell us about the haircut, coat concerns and handling preferences that matter to you and your dog.",
   },
   {
     number: "02",
-    title: "Comfort over hurry",
+    title: "Work at your dog’s pace",
     description:
-      "TLC aims for a clean, calm experience, with optional crating based on what works best for each pet.",
+      "We use patient handling and offer optional crating based on the setup that works best for your dog.",
   },
   {
     number: "03",
-    title: "Finish with care",
+    title: "Check every detail",
     description:
-      "The team checks the details before pickup and asks clients to contact TLC promptly if a touch-up is needed.",
+      "We review the finished groom before pickup. If a detail needs adjusting, contact TLC within 24 hours.",
   },
 ] as const;
 
@@ -94,14 +94,14 @@ export default function OurTeamPage() {
             <div>
               <span className={styles.eyebrow}>Our grooming team</span>
               <h1>
-                People behind <em>the care.</em>
+                Meet the people <em>behind every groom.</em>
               </h1>
             </div>
 
             <div className={styles.pageIntroAside}>
               <p className={styles.lead}>
-                Yu Yu, Ling and Zandy bring patient handling, practical skill
-                and thoughtful finishing to pets across Ottawa.
+                Yu Yu, Ling and Zandy bring skilled grooming, patient handling
+                and a careful eye for detail to dogs across Ottawa.
               </p>
             </div>
           </div>
@@ -112,12 +112,12 @@ export default function OurTeamPage() {
         <div className={styles.shell}>
           <div className={styles.sectionHeading}>
             <div>
-              <h2>Care shaped by experience.</h2>
+              <h2>Experience in every detail.</h2>
             </div>
             <p>
-              Every appointment starts with the pet in front of us. Groomer
-              availability can vary, so share your preference in DaySmart or
-              call the salon before booking.
+              Every appointment is shaped around the dog in front of us. If you
+              have a groomer preference, select it when booking online or call
+              the salon so we can confirm availability.
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export default function OurTeamPage() {
               <article className={styles.memberCard} key={member.name}>
                 <div className={styles.memberImage}>
                   <Image
-                    alt={`Sample grooming photo for ${member.name}'s profile`}
+                    alt={`Sample grooming photo for ${member.name}’s profile`}
                     fill
                     sizes="(max-width: 860px) 92vw, 370px"
                     src={member.image}
@@ -149,8 +149,8 @@ export default function OurTeamPage() {
           </div>
 
           <p className={styles.portfolioNote}>
-            These stock photos are temporary placeholders and do not show TLC
-            staff or client pets.
+            These temporary stock photos do not show TLC staff or client dogs.
+            Client-provided team photos will replace them before launch.
           </p>
         </div>
       </section>
@@ -159,12 +159,12 @@ export default function OurTeamPage() {
         <div className={styles.shell}>
           <div className={styles.sectionHeading}>
             <div>
-              <span className={styles.kicker}>How the team works</span>
-              <h2>A calmer path from drop-off to pickup.</h2>
+              <span className={styles.kicker}>Our approach</span>
+              <h2>Clear, considerate care from drop-off to pickup.</h2>
             </div>
             <p>
-              Clear expectations and a thoughtful pace help the team make each
-              visit more comfortable for pets and easier for their people.
+              Clear expectations and a patient pace help make each visit more
+              comfortable for dogs and easier for their people.
             </p>
           </div>
 
@@ -183,8 +183,8 @@ export default function OurTeamPage() {
             <div>
               <strong>Have a groomer preference?</strong>
               <p>
-                Choose an employee in DaySmart when available, or call TLC so
-                the salon can help match your dog with the right appointment.
+                Choose a groomer when booking online, or call TLC so we can help
+                match your dog with the right appointment.
               </p>
             </div>
           </div>
@@ -195,14 +195,14 @@ export default function OurTeamPage() {
         <div className={styles.shell}>
           <div className={styles.cta}>
             <div>
-              <h2>Ready to meet your groomer?</h2>
+              <h2>Ready to book with our team?</h2>
               <p>
-                Request a date and service through TLC&apos;s existing booking
-                system, then add your groomer preference when available.
+                Request your preferred date and service online, then select a
+                groomer when availability allows.
               </p>
             </div>
             <Link className={styles.primaryButton} href="/#book">
-              Go to booking
+              Book an appointment
             </Link>
           </div>
         </div>

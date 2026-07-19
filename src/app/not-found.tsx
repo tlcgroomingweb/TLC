@@ -7,10 +7,10 @@ export default function NotFound() {
       <section className={styles.panel}>
         <div className={styles.copy}>
           <span className={styles.eyebrow}>Page not found</span>
-          <h1>We couldn&apos;t find this page.</h1>
+          <h1>We couldn&apos;t find that page.</h1>
           <p>
-            The address may be outdated, or the page may have moved. Choose a
-            link below to get back to TLC Grooming.
+            The address may be outdated, or the page may have moved. Use one of
+            the links below to find what you need.
           </p>
           <div className={styles.actions}>
             <Link className={styles.primaryAction} href="/">

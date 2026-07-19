@@ -18,7 +18,7 @@ const businessJsonLd = {
   "@id": `${site.url}/#business`,
   name: site.name,
   description:
-    "Dog grooming, walk-in nail trims, and pet care in Gloucester, Ontario.",
+    "Professional dog grooming and walk-in nail care in Gloucester, Ottawa.",
   url: site.url,
   telephone: "+1-613-745-5808",
   email: site.email,
@@ -57,8 +57,8 @@ const promotions = [
   {
     value: "$10",
     eyebrow: "New client offer",
-    title: "Full Groom Welcome",
-    description: "New clients save $10 on a full grooming service.",
+    title: "New Client Welcome",
+    description: "New clients save $10 on their first Full Groom.",
     featured: true,
   },
   {
@@ -154,11 +154,11 @@ export default function Home() {
                   <span /> Ottawa grooming salon
                 </div>
                 <h1>
-                  Gentle grooming for pets who feel like <em>family.</em>
+                  Gentle grooming for dogs who feel like <em>family.</em>
                 </h1>
                 <p className={styles.lead}>
-                  Dog grooming, walk-in nail trims, and thoughtful care from an
-                  experienced local team in Gloucester.
+                  Full-service dog grooming and walk-in nail care, delivered
+                  with skill and patience by our experienced Gloucester team.
                 </p>
                 <div className={styles.heroActions}>
                   <a className={styles.primaryButton} href="#book">
@@ -189,8 +189,8 @@ export default function Home() {
                 <div className={styles.floatingNote}>
                   <span aria-hidden="true">♥</span>
                   <div>
-                    <strong>Patient, practical care</strong>
-                    <small>For pets of all shapes and sizes</small>
+                    <strong>Gentle, attentive handling</strong>
+                    <small>Care shaped around each dog</small>
                   </div>
                 </div>
               </div>
@@ -199,19 +199,19 @@ export default function Home() {
             <div className={styles.trustStrip} aria-label="TLC highlights">
               <div>
                 <strong>Trusted locally</strong>
-                <span>Care for Ottawa families</span>
+                <span>Grooming for Ottawa dogs</span>
               </div>
               <div>
-                <strong>Full-service care</strong>
+                <strong>Complete grooming</strong>
                 <span>Baths, tidy-ups and full grooms</span>
               </div>
               <div>
                 <strong>Walk-ins</strong>
-                <span>Nails, ears and tidy-ups</span>
+                <span>Nails, ears and quick tidy-ups</span>
               </div>
               <div>
                 <strong>Easy booking</strong>
-                <span>Request a time or call us</span>
+                <span>Book online or call the salon</span>
               </div>
             </div>
           </div>
@@ -225,12 +225,12 @@ export default function Home() {
           <div className={styles.shell}>
             <div className={styles.galleryHeading}>
               <div>
-                <span className={styles.kicker}>A glimpse of fresh-groom energy</span>
-                <h2 id="gallery-title">Happy faces, fresh finishes.</h2>
+                <span className={styles.kicker}>Fresh from the grooming table</span>
+                <h2 id="gallery-title">Fresh coats. Happy dogs.</h2>
               </div>
               <div className={styles.galleryIntro}>
                 <span className={styles.galleryNote}>
-                  Sample gallery · replace with TLC client photos before launch
+                  Sample gallery · TLC client photos coming soon
                 </span>
                 <a
                   className={styles.galleryLink}
@@ -290,11 +290,12 @@ export default function Home() {
             <div className={styles.sectionHeading}>
               <div>
                 <span className={styles.kicker}>Dog grooming</span>
-                <h2>Choose the care your pet needs.</h2>
+                <h2>Find the right care for your dog.</h2>
               </div>
               <p>
-                Start with the service that feels closest. Final pricing depends
-                on breed, size, coat condition and temperament.
+                Choose the service that seems closest. Your groomer will confirm
+                the recommendation and price based on size, coat condition and
+                handling needs.
               </p>
             </div>
 
@@ -316,10 +317,11 @@ export default function Home() {
         <section className={`${styles.section} ${styles.packageSection}`} id="packages">
           <div className={styles.shell}>
             <div className={styles.centerHeading}>
-              <span className={styles.kicker}>Simple package guide</span>
-              <h2>Compare before you book.</h2>
+              <span className={styles.kicker}>Grooming package guide</span>
+              <h2>Compare your options before booking.</h2>
               <p>
-                Not sure which service fits? Call us and we’ll help you choose.
+                Not sure where to start? Call us and we’ll help you choose the
+                closest fit.
               </p>
             </div>
 
@@ -329,7 +331,7 @@ export default function Home() {
                   <span className={styles.packageEyebrow}>{item.eyebrow}</span>
                   <h3>{item.title}</h3>
                   <p className={styles.packagePrice}>
-                    <small>Starting at</small>
+                    <small>Starting prices</small>
                     {item.price}
                   </p>
                   <ul>
@@ -360,12 +362,12 @@ export default function Home() {
 
               <div className={styles.aboutCopy}>
                 <span className={styles.kicker}>Why TLC</span>
-                <h2>Experienced hands. Calm, respectful care.</h2>
+                <h2>Skilled grooming, centred on your dog.</h2>
                 <p>
-                  For nearly 40 years, TLC has cared for Ottawa pets with
-                  patient handling, skilled grooming and fair, straightforward
-                  pricing. Head groomer Yu Yu works alongside Ling and Zandy to
-                  keep every visit clean, calm and respectful.
+                  TLC combines decades of grooming experience with patient
+                  handling and clear communication. Yu Yu, Ling and Zandy take
+                  time to understand each dog&apos;s coat, preferred finish and
+                  individual handling needs.
                 </p>
                 <Link className={styles.aboutLink} href="/our-team">
                   Meet Yu Yu, Ling and Zandy <span aria-hidden="true">→</span>
@@ -375,22 +377,23 @@ export default function Home() {
                     <span>01</span>
                     <p>
                       <strong>Optional crating</strong>
-                      Ask us about the setup that works best for your pet.
+                      Tell us what setup helps your dog feel most comfortable.
                     </p>
                   </div>
                   <div>
                     <span>02</span>
                     <p>
-                      <strong>Thoughtful touch-ups</strong>
-                      Let us know within 24 hours if something needs adjusting.
+                      <strong>Careful touch-ups</strong>
+                      If a detail needs adjusting, contact us within 24 hours so
+                      we can make it right.
                     </p>
                   </div>
                   <div>
                     <span>03</span>
                     <p>
-                      <strong>Fair, straightforward pricing</strong>
-                      Starting prices are published clearly, with final cost
-                      confirmed for your pet&apos;s coat and needs.
+                      <strong>Clear, straightforward pricing</strong>
+                      We publish starting prices and confirm adjustments based
+                      on coat condition, handling needs and time required.
                     </p>
                   </div>
                 </div>
@@ -404,12 +407,11 @@ export default function Home() {
             <div className={styles.promoHeading}>
               <div>
                 <span className={styles.kicker}>Savings &amp; rewards</span>
-                <h2>A little extra TLC for every visit.</h2>
+                <h2>More value for new and returning clients.</h2>
               </div>
               <p>
-                Four simple ways to save on grooming and nail care, whether it
-                is your first appointment or you have been visiting us for
-                years.
+                Offers for first visits, referrals, seniors and regular
+                nail-trim clients make it easier to keep up with routine care.
               </p>
             </div>
 
@@ -437,7 +439,7 @@ export default function Home() {
             </div>
 
             <p className={styles.promoFinePrint}>
-              Ask our team for current program details and eligibility.
+              Ask our team to confirm current offer details and eligibility.
             </p>
           </div>
         </section>
@@ -447,13 +449,13 @@ export default function Home() {
             <div className={styles.testimonialsHeading}>
               <div>
                 <span className={styles.kicker}>Kind words from local families</span>
-                <h2>Loved by pets. Trusted by their people.</h2>
+                <h2>Trusted by dogs and the people who love them.</h2>
               </div>
               <div className={styles.reviewSummary}>
                 <span aria-hidden="true">★★★★★</span>
                 <p>
-                  A few customer stories selected by TLC, from families who
-                  trust us with the pets they love.
+                  Real experiences shared on Google by local dog owners who
+                  trust TLC to groom their dogs.
                 </p>
               </div>
             </div>
@@ -514,16 +516,16 @@ export default function Home() {
           <div className={styles.shell}>
             <div className={styles.bookingPanel}>
               <div className={styles.bookingCopy}>
-                <span className={styles.kicker}>Ready when you are</span>
-                <h2>Book your pet’s next visit.</h2>
+                <span className={styles.kicker}>Plan your visit</span>
+                <h2>Request your dog’s next appointment.</h2>
                 <p>
-                  Use our existing appointment system to request a date, time,
-                  service and groomer preference.
+                  Use our online booking system to request your preferred date,
+                  time, service and groomer.
                 </p>
                 <ul>
-                  <li>Choose the closest service; we can confirm details later</li>
-                  <li>Pricing may vary by coat condition and temperament</li>
-                  <li>Call if you are unsure which package to select</li>
+                  <li>Choose the closest service; we can confirm the details with you</li>
+                  <li>Final pricing reflects coat condition, handling needs and time required</li>
+                  <li>Call us if you are unsure which package to select</li>
                   <li>
                     Review <a href="#policies">appointment policies</a> before
                     booking
@@ -547,17 +549,17 @@ export default function Home() {
             <div className={styles.policyPanel}>
               <div className={styles.policyIntro}>
                 <div>
-                  <span className={styles.policyKicker}>Before you book</span>
-                  <h2>A clearer version of TLC&apos;s appointment policies</h2>
+                  <span className={styles.policyKicker}>Appointment policies</span>
+                  <h2>Help us keep every appointment on time.</h2>
                   <p>
-                    Each time slot is reserved for one pet, and TLC&apos;s groomers
-                    work on commission. This keeps the policy visible without
-                    turning it into a heavy legal page.
+                    Each appointment reserves dedicated time for one dog.
+                    Please review these policies before booking so drop-off,
+                    pickup and missed appointments are clear for everyone.
                   </p>
                 </div>
                 <div className={styles.policyActions}>
-                  <a href="#book">Back to booking</a>
-                  <a href={site.phoneHref}>Call if running late</a>
+                  <a href="#book">Return to booking</a>
+                  <a href={site.phoneHref}>Call the salon</a>
                 </div>
               </div>
 
@@ -566,8 +568,9 @@ export default function Home() {
                   <span className={styles.policyTag}>Running late</span>
                   <h3>Call before the appointment time</h3>
                   <p>
-                    If you are late for drop-off or pick-up, call TLC. Late
-                    drop-offs may need to be cancelled or rescheduled.
+                    If you are running late for drop-off or pickup, call TLC as
+                    soon as possible. Late drop-offs may need to be cancelled or
+                    rescheduled so later appointments stay on time.
                   </p>
                 </article>
 
@@ -575,8 +578,8 @@ export default function Home() {
                   <span className={styles.policyTag}>Late pick-up</span>
                   <h3>30-minute pickup window</h3>
                   <p>
-                    After the 30-minute window, a $15 fee applies for every 15
-                    minutes late.
+                    A $15 fee is charged for each additional 15 minutes after
+                    the 30-minute pickup window.
                   </p>
                 </article>
 
@@ -584,23 +587,23 @@ export default function Home() {
                   className={`${styles.policyItem} ${styles.policyItemWide}`}
                 >
                   <span className={styles.policyTag}>New clients</span>
-                  <h3>No-show steps for first-time appointments</h3>
+                  <h3>Missed appointments for new clients</h3>
                   <p>
-                    The first missed appointment requires a deposit before
-                    rebooking. Continued no-shows become stricter.
+                    Deposit requirements and booking limits apply after missed
+                    appointments.
                   </p>
                   <div className={styles.policySteps}>
                     <div>
                       <span>1st no-show</span>
-                      <strong>50% deposit before the next appointment.</strong>
+                      <strong>A 50% deposit is required before rebooking.</strong>
                     </div>
                     <div>
                       <span>2nd no-show</span>
-                      <strong>50% paid upfront to book again.</strong>
+                      <strong>50% must be paid upfront to book again.</strong>
                     </div>
                     <div>
                       <span>3rd no-show</span>
-                      <strong>Future appointments are no longer available.</strong>
+                      <strong>TLC will be unable to accept future bookings.</strong>
                     </div>
                   </div>
                 </article>
@@ -609,15 +612,15 @@ export default function Home() {
                   className={`${styles.policyItem} ${styles.policyItemWide}`}
                 >
                   <span className={styles.policyTag}>Regular clients</span>
-                  <h3>No-show steps for returning clients</h3>
+                  <h3>Missed appointments for returning clients</h3>
                   <p>
-                    Regular clients get a lighter first reminder, then deposit
-                    requirements if missed appointments continue.
+                    A first missed appointment carries a fee. Repeat no-shows
+                    require a deposit and may affect future booking.
                   </p>
                   <div className={styles.policySteps}>
                     <div>
                       <span>1st no-show</span>
-                      <strong>$20 added to the next appointment.</strong>
+                      <strong>A $20 fee is added to the next appointment.</strong>
                     </div>
                     <div>
                       <span>2nd no-show</span>
@@ -625,7 +628,7 @@ export default function Home() {
                     </div>
                     <div>
                       <span>3rd no-show</span>
-                      <strong>Future appointments are no longer permitted.</strong>
+                      <strong>TLC will be unable to accept future bookings.</strong>
                     </div>
                   </div>
                 </article>
@@ -638,10 +641,11 @@ export default function Home() {
           <div className={styles.shell}>
             <div className={styles.contactPanel}>
               <div className={styles.contactCopy}>
-                <span className={styles.kicker}>Come say hello</span>
-                <h2>Visit TLC in Gloucester.</h2>
+                <span className={styles.kicker}>Visit the salon</span>
+                <h2>Find us in Gloucester.</h2>
                 <p>
-                  We’re located on Canotek Road and open six days a week.
+                  We’re located on Canotek Road and welcome clients Tuesday
+                  through Sunday.
                 </p>
                 <dl className={styles.contactList}>
                   <div>
@@ -660,7 +664,7 @@ export default function Home() {
                   </div>
                   <div>
                     <dt>Holidays</dt>
-                    <dd>Closed on Ontario statutory holidays.</dd>
+                    <dd>Closed on applicable federal and Ontario statutory holidays.</dd>
                   </div>
                   <div>
                     <dt>Phone</dt>

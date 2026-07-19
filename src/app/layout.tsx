@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | TLC Grooming",
   },
   description:
-    "Gentle dog grooming, walk-in nail trims, and thoughtful pet care from an experienced Gloucester team.",
+    "Professional dog grooming, walk-in nail trims and gentle handling from an experienced team in Gloucester, Ottawa.",
   applicationName: "TLC Grooming",
   alternates: {
     canonical: "/",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: "TLC Grooming | Dog Grooming in Ottawa",
     description:
-      "Gentle grooming and practical pet care from an experienced local team in Gloucester.",
+      "Professional dog grooming, walk-in nail trims and gentle handling from an experienced team in Gloucester, Ottawa.",
     images: [
       {
         url: "/brand/tlc-logo.png",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "TLC Grooming | Dog Grooming in Ottawa",
     description:
-      "Gentle grooming and practical pet care from an experienced local team in Gloucester.",
+      "Professional dog grooming, walk-in nail trims and gentle handling from an experienced team in Gloucester, Ottawa.",
     images: ["/brand/tlc-logo.png"],
   },
   ...(process.env.GOOGLE_SITE_VERIFICATION

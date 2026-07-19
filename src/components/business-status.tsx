@@ -51,7 +51,7 @@ export function BusinessStatus({ variant = "compact" }: BusinessStatusProps) {
       ? status.compactLabel
       : status.label
     : "Regular hours";
-  const timing = status?.timing ?? "Tue–Sun 9am–5pm";
+  const timing = status?.timing ?? "Tue–Sun · 9am–5pm";
   const statusDescription = status?.holidayName
     ? `${status.label}. ${status.timing}.`
     : "Based on regular business hours in Ottawa";

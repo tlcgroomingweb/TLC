@@ -55,7 +55,7 @@ export function SiteHeader() {
       <div className={styles.announcement}>
         <div className={styles.inner}>
           <span className={styles.announcementMessage}>
-            Skilled grooming. Patient care. Happier pets.
+            Skilled grooming. Gentle handling. Happy dogs.
           </span>
           <span className={styles.announcementContact}>
             <a href={site.phoneHref}>{site.phoneDisplay}</a>
