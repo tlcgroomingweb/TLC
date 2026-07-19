@@ -14,18 +14,26 @@ import styles from "./page.module.css";
 
 const businessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "PetStore",
+  "@type": "LocalBusiness",
+  "@id": `${site.url}/#business`,
   name: site.name,
   description:
     "Dog grooming, walk-in nail trims, and pet care in Gloucester, Ontario.",
+  url: site.url,
   telephone: "+1-613-745-5808",
   email: site.email,
-  image: site.imageUrls,
+  image: `${site.url}/brand/tlc-logo.png`,
+  logo: `${site.url}/brand/tlc-logo.png`,
+  sameAs: [
+    "https://www.facebook.com/Tlcgroomingottawa/",
+    "https://www.instagram.com/tlcgroomingottawa/",
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "5303 Canotek Rd, Unit 20A",
     addressLocality: "Gloucester",
     addressRegion: "ON",
+    postalCode: "K1J 9M1",
     addressCountry: "CA",
   },
   openingHoursSpecification: [
@@ -209,7 +217,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.gallerySection} aria-labelledby="gallery-title">
+        <section
+          className={styles.gallerySection}
+          id="gallery"
+          aria-labelledby="gallery-title"
+        >
           <div className={styles.shell}>
             <div className={styles.galleryHeading}>
               <div>
@@ -645,6 +657,10 @@ export default function Home() {
                   <div>
                     <dt>Hours</dt>
                     <dd>{site.hours}</dd>
+                  </div>
+                  <div>
+                    <dt>Holidays</dt>
+                    <dd>Closed on Ontario statutory holidays.</dd>
                   </div>
                   <div>
                     <dt>Phone</dt>

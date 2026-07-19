@@ -31,6 +31,11 @@
   background: rgba(255, 255, 255, 0.62);
 }
 
+.compact.holiday .dot {
+  background: #ffd166;
+  box-shadow: 0 0 0 3px rgba(255, 209, 102, 0.18);
+}
+
 .detail {
   flex-wrap: wrap;
   color: var(--foreground);
@@ -43,6 +48,15 @@
 
 .detail.closed .dot {
   background: #78909c;
+}
+
+.detail.holiday {
+  color: var(--brand-dark);
+}
+
+.detail.holiday .dot {
+  background: #e5a928;
+  box-shadow: 0 0 0 3px rgba(229, 169, 40, 0.14);
 }
 
 .timing {

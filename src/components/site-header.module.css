@@ -176,6 +176,7 @@
 
   .navLinks a {
     padding: 12px 14px;
+    text-align: center;
   }
 
   .navLinks .mobileBook {

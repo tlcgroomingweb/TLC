@@ -11,12 +11,8 @@ export const site = {
   phoneDisplay: "613-745-5808",
   phoneHref: "tel:+16137455808",
   email: "tlc4petsgrooming@hotmail.com",
-  address: "5303 Canotek Rd, Unit 20A, Gloucester, ON",
-  hours: "Tuesday to Sunday · 9am–5pm",
-  imageUrls: [
-    "https://www.tlc4dogs.com/uploads/2/8/2/4/28247963/img-3642.jpg",
-    "https://www.tlc4dogs.com/uploads/2/8/2/4/28247963/img-3507.png",
-  ],
+  address: "5303 Canotek Rd, Unit 20A, Gloucester, ON K1J 9M1",
+  hours: "Tuesday to Sunday · 9am–5pm · Mondays closed",
 } as const;
 
 export const sampleImages = {

@@ -9,10 +9,6 @@ export type Testimonial = {
   sourceUrl?: string;
 };
 
-/**
- * Replace these sample entries with the customer reviews selected for the site.
- * The first review receives the featured card treatment on larger screens.
- */
 export const testimonials: readonly Testimonial[] = [
   {
     id: "google-kyle-r",
@@ -23,10 +19,10 @@ export const testimonials: readonly Testimonial[] = [
     source: "Google",
   },
   {
-    id: "google-sharon-reynolds",
+    id: "google-cheryl-harris",
     quote:
-      "Reliable, gentle, well done. We go out of our way from downtown to Gloucester because these wonderful groomers tick all the boxes and Purdy Paws isn’t worth the price.",
-    customerName: "Sharon Reynolds",
+      "I take both my dogs for nail trims. My younger dog is large and very nervous around new people. The groomer was amazing, remaining very calm and patient and going slowly to minimize the stress. Have never had a bad experience with either of my dogs. Highly recommend!",
+    customerName: "Cheryl Harris",
     rating: 5,
     source: "Google",
   },

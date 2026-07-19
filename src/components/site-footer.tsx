@@ -66,6 +66,25 @@ export function SiteFooter() {
             </div>
             <small>© 2026 {site.name}</small>
           </div>
+          <p className={styles.privacyNote}>
+            Booking is provided by{" "}
+            <a
+              href="https://www.daysmart.com/privacy-policy/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              DaySmart
+            </a>
+            {", and maps by "}
+            <a
+              href="https://policies.google.com/privacy"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Google
+            </a>
+            {". Their privacy policies apply when using these services."}
+          </p>
         </div>
       </footer>
 

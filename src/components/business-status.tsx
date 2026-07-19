@@ -1,91 +1,12 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { getBusinessStatus } from "@/lib/business-hours";
 import styles from "./business-status.module.css";
-
-const OTTAWA_TIME_ZONE = "America/Toronto";
-const OPEN_HOUR = 9;
-const CLOSE_HOUR = 17;
-
-const weekdayNumbers: Record<string, number> = {
-  Sun: 0,
-  Mon: 1,
-  Tue: 2,
-  Wed: 3,
-  Thu: 4,
-  Fri: 5,
-  Sat: 6,
-};
 
 type BusinessStatusProps = {
   variant?: "compact" | "detail";
 };
-
-type BusinessStatusDetails = {
-  isOpen: boolean;
-  label: string;
-  timing: string;
-};
-
-function getOttawaTime(date: Date) {
-  const parts = new Intl.DateTimeFormat("en-CA", {
-    timeZone: OTTAWA_TIME_ZONE,
-    weekday: "short",
-    hour: "2-digit",
-    minute: "2-digit",
-    hourCycle: "h23",
-  }).formatToParts(date);
-
-  const values = Object.fromEntries(parts.map(({ type, value }) => [type, value]));
-
-  return {
-    weekday: weekdayNumbers[values.weekday],
-    hour: Number(values.hour),
-    minute: Number(values.minute),
-  };
-}
-
-export function getBusinessStatus(date: Date): BusinessStatusDetails {
-  const { weekday, hour, minute } = getOttawaTime(date);
-  const minutesSinceMidnight = hour * 60 + minute;
-  const opensAt = OPEN_HOUR * 60;
-  const closesAt = CLOSE_HOUR * 60;
-  const isMonday = weekday === 1;
-  const isOpen =
-    !isMonday &&
-    minutesSinceMidnight >= opensAt &&
-    minutesSinceMidnight < closesAt;
-
-  if (isOpen) {
-    return {
-      isOpen: true,
-      label: "Open now",
-      timing: "Until 5pm",
-    };
-  }
-
-  if (isMonday || (weekday === 0 && minutesSinceMidnight >= closesAt)) {
-    return {
-      isOpen: false,
-      label: "Closed now",
-      timing: "Opens Tuesday at 9am",
-    };
-  }
-
-  if (minutesSinceMidnight < opensAt) {
-    return {
-      isOpen: false,
-      label: "Closed now",
-      timing: "Opens today at 9am",
-    };
-  }
-
-  return {
-    isOpen: false,
-    label: "Closed now",
-    timing: "Opens tomorrow at 9am",
-  };
-}
 
 function getClockSnapshot() {
   const date = new Date();
@@ -124,15 +45,24 @@ export function BusinessStatus({ variant = "compact" }: BusinessStatusProps) {
     ? getBusinessStatus(new Date(clockSnapshot))
     : null;
   const isOpen = status?.isOpen ?? false;
-  const label = status?.label ?? "Regular hours";
+  const isHoliday = status?.isHoliday ?? false;
+  const label = status
+    ? variant === "compact"
+      ? status.compactLabel
+      : status.label
+    : "Regular hours";
   const timing = status?.timing ?? "Tue–Sun 9am–5pm";
+  const statusDescription = status?.holidayName
+    ? `${status.label}. ${status.timing}.`
+    : "Based on regular business hours in Ottawa";
 
   return (
     <span
-      className={`${styles.status} ${styles[variant]} ${isOpen ? styles.open : styles.closed}`}
+      aria-label={statusDescription}
+      className={`${styles.status} ${styles[variant]} ${isOpen ? styles.open : styles.closed} ${isHoliday ? styles.holiday : ""}`}
       role="status"
       aria-live="polite"
-      title="Based on regular business hours in Ottawa"
+      title={statusDescription}
     >
       <span className={styles.dot} aria-hidden="true" />
       <span className={styles.label}>{label}</span>
