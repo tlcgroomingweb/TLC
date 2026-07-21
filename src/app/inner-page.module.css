@@ -125,10 +125,6 @@
   transform: translateY(-2px);
 }
 
-.memberImage img {
-  object-fit: cover;
-}
-
 .section,
 .sectionAlt {
   padding: 96px 0;
@@ -136,6 +132,11 @@
 
 .sectionAlt {
   background: #e5f3f9;
+}
+
+.teamSection {
+  background: #e5f3f9;
+  padding: 76px 0 92px;
 }
 
 .sectionHeading {
@@ -187,8 +188,7 @@
 }
 
 .packageEyebrow,
-.memberRole,
-.workLabel {
+.memberRole {
   width: fit-content;
   border-radius: 999px;
   font-size: 0.72rem;
@@ -395,31 +395,54 @@
 }
 
 .memberCard {
-  overflow: hidden;
+  display: flex;
+  min-width: 0;
   border: 1px solid var(--line);
   border-radius: 28px;
-  background: white;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(244, 249, 252, 0.92));
   box-shadow: 0 20px 50px rgba(14, 79, 112, 0.1);
 }
 
-.memberImage {
-  position: relative;
-  min-height: 360px;
-  background: var(--surface-soft);
+.memberCardFeatured {
+  border-color: transparent;
+  background: linear-gradient(155deg, var(--brand-dark), var(--brand));
+  box-shadow: 0 24px 58px rgba(14, 79, 112, 0.22);
+  color: white;
 }
 
-.workLabel {
-  position: absolute;
-  z-index: 1;
-  right: 16px;
-  bottom: 16px;
-  background: rgba(14, 79, 112, 0.9);
+.memberCardFeatured .memberRole {
+  background: rgba(255, 255, 255, 0.14);
   color: white;
-  backdrop-filter: blur(10px);
+}
+
+.memberCardFeatured .memberNumber {
+  color: #b9e7f8;
+}
+
+.memberCardFeatured .memberBio {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.memberCardFeatured .specialties li {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
 }
 
 .memberBody {
-  padding: 26px;
+  display: flex;
+  min-height: 100%;
+  flex: 1;
+  flex-direction: column;
+  padding: 30px 28px 28px;
+}
+
+.memberMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .memberRole {
@@ -427,16 +450,16 @@
   color: var(--teal-dark);
 }
 
-.memberBody h2 {
-  margin-top: 14px;
-  font-size: 2.25rem;
+.memberNumber {
+  color: rgba(14, 79, 112, 0.24);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-style: italic;
 }
 
-.memberNameDetail {
-  margin: 4px 0 0;
-  color: var(--teal);
-  font-size: 0.78rem;
-  font-weight: 800;
+.memberBody h2 {
+  margin-top: 28px;
+  font-size: 2.25rem;
 }
 
 .memberBio {
@@ -446,11 +469,28 @@
   line-height: 1.68;
 }
 
+.memberBio p {
+  margin: 0;
+}
+
+.memberBio p + p {
+  margin-top: 12px;
+}
+
+.memberFooter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin-top: auto;
+  padding-top: 28px;
+}
+
 .specialties {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  margin: 20px 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
@@ -464,13 +504,123 @@
   padding: 7px 10px;
 }
 
-.portfolioNote {
+.portfolioSection {
+  background: #f8fbfd;
+  padding: 96px 0;
+}
+
+.portfolioIntro {
+  margin-bottom: 46px;
+}
+
+.portfolioIntro h2 {
   max-width: 760px;
-  margin: 24px auto 0;
+  margin: 10px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.7rem, 5vw, 4.4rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.portfolioList {
+  display: grid;
+  gap: 72px;
+}
+
+.portfolioBlock {
+  min-width: 0;
+}
+
+.portfolioBlock + .portfolioBlock {
+  border-top: 1px solid var(--line);
+  padding-top: 72px;
+}
+
+.portfolioHeader {
+  display: grid;
+  margin-bottom: 26px;
+  grid-template-columns: minmax(160px, 0.45fr) minmax(0, 1fr);
+  align-items: end;
+  gap: 36px;
+}
+
+.portfolioHeader h3 {
+  margin: 0;
+  color: var(--foreground);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.portfolioHeader > div:first-child p {
+  margin: 5px 0 0;
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.portfolioSummary {
+  padding-top: 2px;
+}
+
+.portfolioSummary ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 0;
+  margin: 0;
+  padding: 0;
   color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.6;
-  text-align: center;
+  font-size: 0.71rem;
+  font-weight: 760;
+  letter-spacing: 0.035em;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.portfolioSummary li + li::before {
+  margin: 0 9px;
+  color: rgba(1, 121, 181, 0.48);
+  content: "·";
+}
+
+.portfolioSummary p {
+  margin: 8px 0 0;
+  color: #27434f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.portfolioGallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.portfolioImage {
+  position: relative;
+  min-width: 0;
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--surface-soft);
+  box-shadow: 0 14px 34px rgba(14, 79, 112, 0.1);
+}
+
+.portfolioImage img {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 420ms ease;
+}
+
+.portfolioImage:hover img {
+  transform: scale(1.025);
 }
 
 .valuesGrid {
@@ -593,6 +743,10 @@
   .sizeGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .portfolioGallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 860px) {
@@ -601,13 +755,16 @@
     padding: 74px 0;
   }
 
+  .teamSection {
+    padding: 64px 0 74px;
+  }
+
   .pageIntro {
     padding: 56px 0;
   }
 
   .pageIntroGrid,
   .sectionHeading,
-  .teamGrid,
   .cta {
     grid-template-columns: 1fr;
   }
@@ -630,12 +787,15 @@
   }
 
   .teamGrid {
-    max-width: 650px;
-    margin-inline: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .memberImage {
-    min-height: 460px;
+  .memberCard:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .portfolioSection {
+    padding: 74px 0;
   }
 
   .cta {
@@ -656,6 +816,10 @@
     padding: 42px 0 44px;
   }
 
+  .teamSection {
+    padding: 52px 0 64px;
+  }
+
   .pageIntro h1 {
     font-size: clamp(2.75rem, 12vw, 3.7rem);
   }
@@ -666,8 +830,13 @@
 
   .quickGrid,
   .sizeGrid,
-  .valuesGrid {
+  .valuesGrid,
+  .teamGrid {
     grid-template-columns: 1fr;
+  }
+
+  .memberCard:last-child {
+    grid-column: auto;
   }
 
   .sectionHeading h2 {
@@ -681,8 +850,36 @@
     padding: 23px;
   }
 
-  .memberImage {
-    min-height: 360px;
+  .portfolioSection {
+    padding: 64px 0;
+  }
+
+  .portfolioIntro {
+    margin-bottom: 36px;
+  }
+
+  .portfolioList {
+    gap: 52px;
+  }
+
+  .portfolioBlock + .portfolioBlock {
+    padding-top: 52px;
+  }
+
+  .portfolioGallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .portfolioHeader {
+    margin-bottom: 16px;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 14px 20px;
+  }
+
+  .portfolioSummary {
+    padding-top: 0;
   }
 
   .teamNote {
@@ -704,7 +901,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .primaryButton {
+  .primaryButton,
+  .portfolioImage img {
     transition: none;
   }
 }
