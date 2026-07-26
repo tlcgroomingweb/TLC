@@ -5,11 +5,22 @@ import {
   bookingUrl,
   mapEmbedUrl,
   packages,
-  sampleImages,
   services,
   site,
 } from "@/lib/site";
 import { testimonials } from "@/lib/testimonials";
+import yuLargeDog from "./references/yu/IMG_7049.jpeg";
+import yuMaltese from "./references/yu/IMG_4872.jpeg";
+import yuPomeranian from "./references/yu/IMG_2909.jpeg";
+import yuPoodle from "./references/yu/IMG_2104.jpeg";
+import yuSmallDog from "./references/yu/IMG_8466.jpeg";
+import yuWhiteDoodle from "./references/yu/IMG_3224.jpeg";
+import zandyBrownDog from "./references/zandy/6515.jpeg";
+import zandyCreamDog from "./references/zandy/6517.jpeg";
+import zandyDarkDog from "./references/zandy/6516.jpeg";
+import zandyFluffyWhiteDog from "./references/zandy/IMG_9183.jpeg";
+import zandyPomeranian from "./references/zandy/IMG_6903.jpeg";
+import zandyWhiteDog from "./references/zandy/6518.jpeg";
 import styles from "./page.module.css";
 
 const businessJsonLd = {
@@ -95,46 +106,80 @@ const promotions = [
 
 const galleryImages = [
   {
-    src: "https://images.pexels.com/photos/6816841/pexels-photo-6816841.jpeg",
-    alt: "Dog having its coat brushed during a grooming appointment",
+    src: yuPoodle,
+    alt: "A grey poodle with a rounded topknot and neatly shaped legs after grooming by Yu Yu",
     format: "standard",
+    groomer: "Yu Yu",
   },
   {
-    src: "https://images.pexels.com/photos/19145875/pexels-photo-19145875.jpeg",
-    alt: "Poodle standing calmly on a grooming table",
+    src: zandyPomeranian,
+    alt: "A smiling white dog with a softly rounded coat after grooming by Zandy",
     format: "wide",
+    groomer: "Zandy",
   },
   {
-    src: "https://images.pexels.com/photos/19145895/pexels-photo-19145895.jpeg",
-    alt: "Dog enjoying a gentle bath at a grooming salon",
+    src: yuMaltese,
+    alt: "A small white dog with a silky, symmetrical finish and blue bow after grooming by Yu Yu",
     format: "tall",
+    groomer: "Yu Yu",
   },
   {
-    src: "https://images.pexels.com/photos/19145901/pexels-photo-19145901.jpeg",
-    alt: "Freshly styled poodle at a pet grooming salon",
+    src: zandyBrownDog,
+    alt: "A brown dog with a rounded face and even coat after grooming by Zandy",
     format: "standard",
+    groomer: "Zandy",
   },
   {
-    src: "https://images.pexels.com/photos/19145860/pexels-photo-19145860.jpeg",
-    alt: "Spaniel looking toward the camera after grooming",
+    src: yuWhiteDoodle,
+    alt: "A cream-coloured dog with an even trim and softly shaped face after grooming by Yu Yu",
     format: "wide",
+    groomer: "Yu Yu",
   },
   {
-    src: "https://images.pexels.com/photos/9092956/pexels-photo-9092956.jpeg",
-    alt: "Small fluffy dog sitting for a portrait",
+    src: zandyDarkDog,
+    alt: "A small dark dog with a neat face and white chin after grooming by Zandy",
     format: "tall",
+    groomer: "Zandy",
   },
   {
-    src: "https://images.pexels.com/photos/6131544/pexels-photo-6131544.jpeg",
-    alt: "Groomer carefully working with a dog on a table",
+    src: yuLargeDog,
+    alt: "A large black, white and brown dog wearing a blue bandana after grooming by Yu Yu",
     format: "standard",
+    groomer: "Yu Yu",
   },
   {
-    src: "https://images.pexels.com/photos/6816866/pexels-photo-6816866.jpeg",
-    alt: "Small dog receiving a careful grooming trim",
+    src: zandyCreamDog,
+    alt: "A cream-coloured dog with a rounded head and tidy body trim after grooming by Zandy",
     format: "wide",
+    groomer: "Zandy",
+  },
+  {
+    src: yuSmallDog,
+    alt: "A small tan dog with a neat short trim and green bandana after grooming by Yu Yu",
+    format: "tall",
+    groomer: "Yu Yu",
+  },
+  {
+    src: zandyWhiteDog,
+    alt: "A fluffy white dog with a rounded finish after grooming by Zandy",
+    format: "standard",
+    groomer: "Zandy",
+  },
+  {
+    src: yuPomeranian,
+    alt: "A smiling brown dog with a rounded, sculpted coat after grooming by Yu Yu",
+    format: "wide",
+    groomer: "Yu Yu",
+  },
+  {
+    src: zandyFluffyWhiteDog,
+    alt: "A large fluffy white dog with a smooth, carefully finished coat after grooming by Zandy",
+    format: "standard",
+    groomer: "Zandy",
   },
 ] as const;
+
+const showHomepageGallery = false;
 
 export default function Home() {
   return (
@@ -146,12 +191,74 @@ export default function Home() {
         }}
       />
       <main id="home" className={styles.page}>
+        <div className={styles.ambientDecor} aria-hidden="true">
+          <div
+            className={`${styles.bubbleCluster} ${styles.bubbleClusterOne}`}
+          >
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <div
+            className={`${styles.bubbleCluster} ${styles.bubbleClusterTwo}`}
+          >
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <div
+            className={`${styles.bubbleCluster} ${styles.bubbleClusterThree}`}
+          >
+            <span />
+            <span />
+            <span />
+            <span />
+            <span />
+          </div>
+          <span className={`${styles.wagTrail} ${styles.wagTrailOne}`} />
+          <span className={`${styles.wagTrail} ${styles.wagTrailTwo}`} />
+          <span className={`${styles.wagTrail} ${styles.wagTrailThree}`} />
+          <span className={`${styles.bowAccent} ${styles.bowAccentOne}`}>
+            <i />
+          </span>
+          <span className={`${styles.bowAccent} ${styles.bowAccentTwo}`}>
+            <i />
+          </span>
+          <span className={`${styles.bowAccent} ${styles.bowAccentThree}`}>
+            <i />
+          </span>
+          <span
+            className={`${styles.sparkleAccent} ${styles.sparkleAccentOne}`}
+          >
+            ✦
+          </span>
+          <span
+            className={`${styles.sparkleAccent} ${styles.sparkleAccentTwo}`}
+          >
+            ✦
+          </span>
+          <span
+            className={`${styles.sparkleAccent} ${styles.sparkleAccentThree}`}
+          >
+            ✦
+          </span>
+          <span
+            className={`${styles.sparkleAccent} ${styles.sparkleAccentFour}`}
+          >
+            ✦
+          </span>
+        </div>
+
         <section className={styles.hero}>
           <div className={styles.shell}>
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
                 <div className={styles.eyebrow}>
-                  <span /> Ottawa grooming salon
+                  <span /> Caring for Ottawa dogs since 1986
                 </div>
                 <h1>
                   Gentle grooming for dogs who feel like <em>family.</em>
@@ -179,13 +286,34 @@ export default function Home() {
               <div className={styles.heroVisual}>
                 <div className={styles.heroImageMain}>
                   <Image
-                    src={sampleImages.homeHero}
-                    alt="Sample photo of a professional groomer trimming a small dog"
+                    src={yuPomeranian}
+                    alt="A smiling brown Pomeranian after grooming by Yu Yu at TLC"
                     fill
+                    placeholder="blur"
                     priority
                     sizes="(max-width: 900px) 88vw, 520px"
                   />
                 </div>
+                <span
+                  className={`${styles.petMotif} ${styles.petMotifPawTop}`}
+                  aria-hidden="true"
+                >
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                  <b />
+                </span>
+                <span
+                  className={`${styles.petMotif} ${styles.petMotifPawBottom}`}
+                  aria-hidden="true"
+                >
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                  <b />
+                </span>
                 <div className={styles.floatingNote}>
                   <span aria-hidden="true">♥</span>
                   <div>
@@ -217,73 +345,78 @@ export default function Home() {
           </div>
         </section>
 
-        <section
-          className={styles.gallerySection}
-          id="gallery"
-          aria-labelledby="gallery-title"
-        >
-          <div className={styles.shell}>
-            <div className={styles.galleryHeading}>
-              <div>
-                <span className={styles.kicker}>Fresh from the grooming table</span>
-                <h2 id="gallery-title">Fresh coats. Happy dogs.</h2>
-              </div>
-              <div className={styles.galleryIntro}>
-                <span className={styles.galleryNote}>
-                  Sample gallery · TLC client photos coming soon
-                </span>
-                <a
-                  className={styles.galleryLink}
-                  href="https://www.instagram.com/tlcgroomingottawa/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Follow TLC on Instagram <span aria-hidden="true">↗</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className={styles.galleryViewport}
-            aria-label="Scrolling sample grooming gallery. Hover or focus to pause."
-            tabIndex={0}
+        {showHomepageGallery ? (
+          <section
+            className={styles.gallerySection}
+            id="gallery"
+            aria-labelledby="gallery-title"
           >
-            <div className={styles.galleryTrack}>
-              {[false, true].map((isDuplicate) => (
-                <div
-                  className={styles.gallerySet}
-                  aria-hidden={isDuplicate || undefined}
-                  key={isDuplicate ? "gallery-duplicate" : "gallery-primary"}
-                >
-                  {galleryImages.map((image) => {
-                    const formatClass =
-                      image.format === "wide"
-                        ? styles.galleryCardWide
-                        : image.format === "tall"
-                          ? styles.galleryCardTall
-                          : "";
-
-                    return (
-                      <figure
-                        className={`${styles.galleryCard} ${formatClass}`}
-                        key={`${isDuplicate ? "duplicate" : "primary"}-${image.src}`}
-                      >
-                        <Image
-                          src={image.src}
-                          alt={isDuplicate ? "" : image.alt}
-                          fill
-                          sizes="(max-width: 640px) 76vw, 340px"
-                        />
-                        <span aria-hidden="true">Sample photo</span>
-                      </figure>
-                    );
-                  })}
+            <div className={styles.shell}>
+              <div className={styles.galleryHeading}>
+                <div>
+                  <span className={styles.kicker}>
+                    Fresh from the grooming table
+                  </span>
+                  <h2 id="gallery-title">Fresh coats. Happy dogs.</h2>
                 </div>
-              ))}
+                <div className={styles.galleryIntro}>
+                  <span className={styles.galleryNote}>
+                    Selected TLC grooms · Finished by Yu Yu and Zandy
+                  </span>
+                  <a
+                    className={styles.galleryLink}
+                    href="https://www.instagram.com/tlcgroomingottawa/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Follow TLC on Instagram <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </section>
+
+            <div
+              className={styles.galleryViewport}
+              aria-label="Scrolling gallery of grooming work by Yu Yu and Zandy. Hover or focus to pause."
+              tabIndex={0}
+            >
+              <div className={styles.galleryTrack}>
+                {[false, true].map((isDuplicate) => (
+                  <div
+                    className={styles.gallerySet}
+                    aria-hidden={isDuplicate || undefined}
+                    key={isDuplicate ? "gallery-duplicate" : "gallery-primary"}
+                  >
+                    {galleryImages.map((image) => {
+                      const formatClass =
+                        image.format === "wide"
+                          ? styles.galleryCardWide
+                          : image.format === "tall"
+                            ? styles.galleryCardTall
+                            : "";
+
+                      return (
+                        <figure
+                          className={`${styles.galleryCard} ${formatClass}`}
+                          key={`${isDuplicate ? "duplicate" : "primary"}-${image.src.src}`}
+                        >
+                          <Image
+                            src={image.src}
+                            alt={isDuplicate ? "" : image.alt}
+                            fill
+                            placeholder="blur"
+                            sizes="(max-width: 640px) 76vw, 340px"
+                          />
+                          <span aria-hidden="true">{image.groomer}</span>
+                        </figure>
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
 
         <section className={styles.section} id="services">
           <div className={styles.shell}>
@@ -302,7 +435,9 @@ export default function Home() {
             <div className={styles.serviceGrid}>
               {services.map((service) => (
                 <article className={styles.serviceCard} key={service.title}>
-                  <span className={styles.serviceNumber}>{service.number}</span>
+                  <span className={styles.serviceIcon} aria-hidden="true">
+                    {service.icon}
+                  </span>
                   <div>
                     <h3>{service.title}</h3>
                     <p>{service.description}</p>
@@ -349,15 +484,45 @@ export default function Home() {
         <section className={styles.aboutSection} id="about">
           <div className={styles.shell}>
             <div className={styles.aboutGrid}>
-              <div className={styles.aboutPhotos}>
-                <div className={styles.aboutPhotoLarge}>
+              <div
+                className={styles.aboutPhotos}
+                aria-label="Selected grooming work by the TLC team"
+                role="group"
+              >
+                <figure
+                  className={`${styles.aboutPhoto} ${styles.aboutPhotoPrimary}`}
+                >
                   <Image
-                    src={sampleImages.whyTlc}
-                    alt="Sample photo of a groomer carefully trimming a small dog"
+                    src={zandyCreamDog}
+                    alt="A cream-coloured dog with a softly rounded face and tidy finish after grooming by Zandy"
                     fill
-                    sizes="(max-width: 900px) 70vw, 420px"
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 64vw, (max-width: 900px) 52vw, 330px"
                   />
-                </div>
+                </figure>
+                <figure
+                  className={`${styles.aboutPhoto} ${styles.aboutPhotoTop}`}
+                >
+                  <Image
+                    src={yuPoodle}
+                    alt="A grey poodle with a softly rounded topknot after grooming by Yu Yu"
+                    fill
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 40vw, (max-width: 900px) 34vw, 230px"
+                  />
+                </figure>
+                <figure
+                  className={`${styles.aboutPhoto} ${styles.aboutPhotoBottom}`}
+                >
+                  <Image
+                    src={zandyPomeranian}
+                    alt="A smiling white dog with a plush rounded finish after grooming by Zandy"
+                    fill
+                    placeholder="blur"
+                    sizes="(max-width: 640px) 40vw, (max-width: 900px) 34vw, 230px"
+                  />
+                </figure>
+                <span className={styles.aboutPhotoNote}>Real TLC grooms</span>
               </div>
 
               <div className={styles.aboutCopy}>
@@ -374,14 +539,14 @@ export default function Home() {
                 </Link>
                 <div className={styles.promises}>
                   <div>
-                    <span>01</span>
+                    <span aria-hidden="true">♡</span>
                     <p>
                       <strong>Optional crating</strong>
                       Tell us what setup helps your dog feel most comfortable.
                     </p>
                   </div>
                   <div>
-                    <span>02</span>
+                    <span aria-hidden="true">✦</span>
                     <p>
                       <strong>Careful touch-ups</strong>
                       If a detail needs adjusting, contact us within 24 hours so
@@ -389,7 +554,7 @@ export default function Home() {
                     </p>
                   </div>
                   <div>
-                    <span>03</span>
+                    <span aria-hidden="true">✓</span>
                     <p>
                       <strong>Clear, straightforward pricing</strong>
                       We publish starting prices and confirm adjustments based
@@ -581,31 +746,6 @@ export default function Home() {
                     A $15 fee is charged for each additional 15 minutes after
                     the 30-minute pickup window.
                   </p>
-                </article>
-
-                <article
-                  className={`${styles.policyItem} ${styles.policyItemWide}`}
-                >
-                  <span className={styles.policyTag}>New clients</span>
-                  <h3>Missed appointments for new clients</h3>
-                  <p>
-                    Deposit requirements and booking limits apply after missed
-                    appointments.
-                  </p>
-                  <div className={styles.policySteps}>
-                    <div>
-                      <span>1st no-show</span>
-                      <strong>A 50% deposit is required before rebooking.</strong>
-                    </div>
-                    <div>
-                      <span>2nd no-show</span>
-                      <strong>50% must be paid upfront to book again.</strong>
-                    </div>
-                    <div>
-                      <span>3rd no-show</span>
-                      <strong>TLC will be unable to accept future bookings.</strong>
-                    </div>
-                  </div>
                 </article>
 
                 <article

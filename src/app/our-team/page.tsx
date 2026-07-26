@@ -66,10 +66,10 @@ const teamMembers = [
     role: "Groomer",
     featured: false,
     bio: [
-      "Hi, I’m Ling. I bring careful coat work and a steady eye for neat, balanced finishes.",
-      "I adapt my approach to dogs with a range of grooming needs.",
+      "Hi, I’m Ling Zheng. I’ve been part of the TLC Grooming team for the past three years, and during that time I’ve grown into a confident, trusted groomer under the guidance of our Head Groomer, Yu Shan. Her mentorship has helped me refine my technique, strengthen my eye for detail and bring consistency and care to every groom.",
+      "I’m comfortable working with dogs of all breeds and coat types, whether they need precision styling, de-shedding, senior care, a creative trim or a simple tidy. I’m calm, patient and attentive to each dog’s individual needs, and my goal is always to make every visit feel positive and as stress-free as possible—while delivering a finish that both dogs and their people can feel good about.",
     ],
-    specialties: ["Detailed coat care", "Balanced finishes"],
+    specialties: ["Precision styling", "All coat types"],
   },
   {
     number: "03",
@@ -159,19 +159,19 @@ const portfolios = [
 
 const careValues = [
   {
-    number: "01",
+    icon: "♡",
     title: "Listen first",
     description:
       "Tell us what your dog needs and how they prefer to be handled.",
   },
   {
-    number: "02",
+    icon: "≈",
     title: "Go at their pace",
     description:
       "Patient handling and flexible crating help dogs feel at ease.",
   },
   {
-    number: "03",
+    icon: "✦",
     title: "Finish with care",
     description:
       "We check every detail before pickup; touch-ups are welcome within 24 hours.",
@@ -304,8 +304,10 @@ export default function OurTeamPage() {
 
           <div className={styles.valuesGrid}>
             {careValues.map((item) => (
-              <article className={styles.valueCard} key={item.number}>
-                <span className={styles.valueNumber}>{item.number}</span>
+              <article className={styles.valueCard} key={item.title}>
+                <span className={styles.valueIcon} aria-hidden="true">
+                  {item.icon}
+                </span>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </article>

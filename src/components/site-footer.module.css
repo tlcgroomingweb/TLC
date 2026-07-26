@@ -151,6 +151,46 @@
   display: none;
 }
 
+@keyframes mobilePrimaryGlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes mobileSecondaryGlow {
+  0%,
+  100% {
+    background-position: 100% 50%;
+  }
+
+  50% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes mobileButtonSheen {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translateX(-180%) skewX(-22deg);
+  }
+
+  30% {
+    opacity: 0.82;
+  }
+
+  52%,
+  100% {
+    opacity: 0;
+    transform: translateX(650%) skewX(-22deg);
+  }
+}
+
 @media (max-width: 960px) {
   .footerInner {
     gap: 18px 24px;
@@ -212,32 +252,123 @@
     display: flex;
     position: fixed;
     z-index: 60;
+    isolation: isolate;
     right: 12px;
-    bottom: 12px;
+    bottom: max(12px, env(safe-area-inset-bottom));
     left: 12px;
-    gap: 7px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 18px;
-    background: rgba(0, 85, 127, 0.96);
-    box-shadow: 0 18px 42px rgba(0, 43, 64, 0.25);
-    padding: 8px;
-    backdrop-filter: blur(14px);
+    gap: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    border-radius: 22px;
+    background: linear-gradient(
+      135deg,
+      rgba(242, 251, 255, 0.94),
+      rgba(222, 244, 250, 0.9) 52%,
+      rgba(255, 238, 225, 0.91)
+    );
+    box-shadow:
+      0 20px 48px rgba(2, 54, 79, 0.22),
+      0 5px 14px rgba(2, 54, 79, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.96);
+    padding: 7px;
+    backdrop-filter: blur(22px) saturate(145%);
   }
 
   .mobileActions a {
     display: inline-flex;
-    min-height: 46px;
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
+    min-height: 50px;
+    overflow: hidden;
     flex: 1;
     align-items: center;
     justify-content: center;
-    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.46);
+    border-radius: 15px;
     color: white;
-    font-size: 0.84rem;
-    font-weight: 820;
+    font-size: 0.86rem;
+    font-weight: 850;
+    letter-spacing: 0.01em;
+    transition: box-shadow 160ms ease, transform 160ms ease;
   }
 
   .mobileActions a:first-child {
-    background: var(--teal);
+    background: linear-gradient(
+      115deg,
+      #005c89 0%,
+      #008fc3 27%,
+      #4bbcb9 47%,
+      #dca145 65%,
+      #087cac 82%,
+      #005c89 100%
+    );
+    background-size: 260% 100%;
+    box-shadow:
+      0 10px 22px rgba(0, 105, 153, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.48),
+      inset 0 -1px 0 rgba(0, 53, 78, 0.22);
     color: white;
+    text-shadow: 0 1px 2px rgba(0, 47, 69, 0.38);
+    animation: mobilePrimaryGlow 7s ease-in-out infinite;
+  }
+
+  .mobileActions a:last-child {
+    border-color: rgba(1, 121, 181, 0.2);
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(211, 240, 249, 0.97) 35%,
+      rgba(255, 226, 217, 0.96) 63%,
+      rgba(255, 248, 229, 0.98) 82%,
+      rgba(255, 255, 255, 0.98) 100%
+    );
+    background-size: 240% 100%;
+    box-shadow:
+      0 8px 18px rgba(14, 79, 112, 0.13),
+      inset 0 1px 0 white,
+      inset 0 -1px 0 rgba(1, 121, 181, 0.08);
+    color: #07587d;
+    animation: mobileSecondaryGlow 8s ease-in-out infinite;
+  }
+
+  .mobileActions a::before {
+    position: absolute;
+    z-index: -1;
+    top: -60%;
+    bottom: -60%;
+    left: -42%;
+    width: 26%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.88),
+      transparent
+    );
+    content: "";
+    pointer-events: none;
+    transform: skewX(-22deg);
+    animation: mobileButtonSheen 5.2s ease-in-out infinite;
+  }
+
+  .mobileActions a:last-child::before {
+    animation-delay: -2.4s;
+  }
+
+  .mobileActions a:active {
+    box-shadow: 0 5px 12px rgba(2, 54, 79, 0.16);
+    transform: translateY(1px) scale(0.985);
+  }
+
+  .mobileActions a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: -4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobileActions a,
+  .mobileActions a::before {
+    animation: none;
   }
 }

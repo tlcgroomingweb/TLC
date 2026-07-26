@@ -41,7 +41,6 @@ const groomingPackages = [
     title: "Bath & Brush",
     description:
       "Routine coat care with a thorough bath, blow dry and brush out—without a haircut.",
-    featured: false,
     included: [
       "Bath and blow dry",
       "Brush out",
@@ -62,7 +61,6 @@ const groomingPackages = [
     title: "Bath & Tidy",
     description:
       "A practical in-between service for dogs who need a bath plus light trimming, but not a full haircut.",
-    featured: true,
     included: [
       "Bath and blow dry",
       "Nail trim or grind",
@@ -83,7 +81,6 @@ const groomingPackages = [
     title: "Full Groom",
     description:
       "A complete, consultation-led groom with a custom haircut shaped around your preferences and your dog’s coat.",
-    featured: false,
     included: [
       "Groomer consultation",
       "Custom haircut and styling",
@@ -186,12 +183,7 @@ export default function OurServicesPage() {
 
           <div className={styles.packageGrid}>
             {groomingPackages.map((item) => (
-              <article
-                className={`${styles.packageCard} ${
-                  item.featured ? styles.packageFeatured : ""
-                }`}
-                key={item.title}
-              >
+              <article className={styles.packageCard} key={item.title}>
                 <span className={styles.packageEyebrow}>{item.eyebrow}</span>
                 <h3>{item.title}</h3>
                 <p className={styles.packageDescription}>{item.description}</p>

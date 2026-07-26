@@ -36,28 +36,28 @@ export const navItems = [
 
 export const services = [
   {
-    number: "01",
+    icon: "◌",
     title: "Bath & Brush",
     description:
       "A bath, blow dry, brush out, nail trim and ear cleaning for routine coat maintenance.",
     price: "From $40",
   },
   {
-    number: "02",
+    icon: "✦",
     title: "Bath & Tidy",
     description:
       "Everything in Bath & Brush, plus trimming around the face, paws, sanitary areas and body.",
     price: "From $60",
   },
   {
-    number: "03",
+    icon: "✂",
     title: "Full Groom",
     description:
       "A consultation-led groom with a custom haircut, bath, brush out, nail care and finishing details.",
     price: "From $75",
   },
   {
-    number: "04",
+    icon: "♡",
     title: "Walk-in Care",
     description:
       "Nail trims, ear care, sanitary trims and PawDicures, offered when a groomer is available.",
