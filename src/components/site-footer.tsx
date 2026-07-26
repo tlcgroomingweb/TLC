@@ -5,8 +5,8 @@ import styles from "./site-footer.module.css";
 
 const footerLinks = [
   { label: "Home", href: "/" },
-  { label: "Our Services", href: "/our-services" },
-  { label: "Our Team", href: "/our-team" },
+  { label: "Our Services", href: "/#services" },
+  { label: "Our Team", href: "/#about" },
   { label: "Book", href: "/#book" },
   { label: "Contact", href: "/#contact" },
 ] as const;

@@ -29,8 +29,8 @@ export const sampleImages = {
 
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "Our Services", href: "/our-services" },
-  { label: "Our Team", href: "/our-team" },
+  { label: "Our Services", href: "/#services" },
+  { label: "Our Team", href: "/#about" },
   { label: "Contact", href: "/#contact" },
 ] as const;
 

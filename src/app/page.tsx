@@ -534,8 +534,8 @@ export default function Home() {
                   time to understand each dog&apos;s coat, preferred finish and
                   individual handling needs.
                 </p>
-                <Link className={styles.aboutLink} href="/our-team">
-                  Meet Yu Yu, Ling and Zandy <span aria-hidden="true">→</span>
+                <Link className={styles.aboutLink} href="/#contact">
+                  Contact the TLC team <span aria-hidden="true">→</span>
                 </Link>
                 <div className={styles.promises}>
                   <div>
