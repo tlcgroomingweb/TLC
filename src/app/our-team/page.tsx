@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import yuLargeDog from "../references/yu/IMG_7049.jpeg";
+import lingApricotPoodle from "../references/ling/20260726174748_624_639.jpg";
+import lingYorkie from "../references/ling/20260726174749_625_639.jpg";
+import lingCavalier from "../references/ling/20260726174752_627_639.jpg";
+import lingDarkDog from "../references/ling/20260726181832_644_639.jpg";
+import lingBernese from "../references/ling/20260726181840_645_639.jpg";
+import lingWhitePoodle from "../references/ling/20260726181845_646_639.jpg";
+import yuLargeDog from "../references/yu/20260726190534_721_639.jpg";
 import yuMaltese from "../references/yu/IMG_4872.jpeg";
 import yuPomeranian from "../references/yu/IMG_2909.jpeg";
 import yuPoodle from "../references/yu/IMG_2104.jpeg";
-import yuSmallDog from "../references/yu/IMG_8466.jpeg";
-import yuWhiteDoodle from "../references/yu/IMG_3224.jpeg";
+import yuSmallDog from "../references/yu/20260726190619_725_639.jpg";
+import yuWhiteDoodle from "../references/yu/20260726190615_724_639.jpg";
 import zandyBrownDog from "../references/zandy/6515.jpeg";
 import zandyCreamDog from "../references/zandy/6517.jpeg";
 import zandyDarkDog from "../references/zandy/6516.jpeg";
@@ -112,11 +118,43 @@ const portfolios = [
       },
       {
         src: yuLargeDog,
-        alt: "A large black, white and brown dog wearing a blue bandana after grooming by Yu Yu",
+        alt: "A large tan hound with a long, carefully brushed coat after grooming by Yu Yu",
       },
       {
         src: yuSmallDog,
-        alt: "A small tan dog with a neat short trim and green bandana after grooming by Yu Yu",
+        alt: "A small white dog with a neatly rounded face and clean short trim after grooming by Yu Yu",
+      },
+    ],
+  },
+  {
+    name: "Ling",
+    role: "Groomer",
+    credentials: ["3 years with TLC", "All breeds and coat types"],
+    philosophy: "Calm, patient care with a thoughtful eye for every finish.",
+    images: [
+      {
+        src: lingApricotPoodle,
+        alt: "An apricot poodle with a softly rounded face and neat body trim after grooming by Ling",
+      },
+      {
+        src: lingDarkDog,
+        alt: "A small dark dog with a softly rounded face and neat short coat after grooming by Ling",
+      },
+      {
+        src: lingWhitePoodle,
+        alt: "A white poodle with a rounded head and evenly finished coat after grooming by Ling",
+      },
+      {
+        src: lingCavalier,
+        alt: "A brown and white Cavalier with neatly finished ears, paws and coat after grooming by Ling",
+      },
+      {
+        src: lingYorkie,
+        alt: "A small Yorkshire terrier with a tidy short coat after grooming by Ling",
+      },
+      {
+        src: lingBernese,
+        alt: "A large black, white and brown Bernese mountain dog with a clean, brushed coat after grooming by Ling",
       },
     ],
   },
@@ -314,7 +352,7 @@ export default function OurTeamPage() {
             ))}
           </div>
 
-          <div className={styles.teamNote}>
+          {/* <div className={styles.teamNote}>
             <span aria-hidden="true">♥</span>
             <div>
               <strong>Prefer a groomer?</strong>
@@ -322,11 +360,11 @@ export default function OurTeamPage() {
                 Select one when booking, or call us for help.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
-      <section className={styles.ctaSection}>
+      {/* <section className={styles.ctaSection}>
         <div className={styles.shell}>
           <div className={styles.cta}>
             <div>
@@ -341,7 +379,7 @@ export default function OurTeamPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

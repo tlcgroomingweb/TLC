@@ -288,7 +288,7 @@ export default function OurServicesPage() {
         </div>
       </section>
 
-      <section className={styles.ctaSection}>
+      {/* <section className={styles.ctaSection}>
         <div className={styles.shell}>
           <div className={styles.cta}>
             <div>
@@ -303,7 +303,7 @@ export default function OurServicesPage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
