@@ -1,8 +1,8 @@
 export const bookingUrl =
   "https://plugin.myonlineappointment.com/External/BookingPlugin/?guid=ddb516d4-921b-47ce-b014-7cc31adf1f0a";
 
-export const mapEmbedUrl =
-  "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2798.8376790569823!2d-75.588548!3d45.452926999999995!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce102f37a4cc37%3A0x50f3ec09776f8cff!2sTLC+Grooming+%26+Sharpening+Services!5e0!3m2!1sen!2sca!4v1416080799640";
+export const mapDirectionsUrl =
+  "https://www.google.com/maps/search/?api=1&query=TLC+Grooming+%26+Sharpening+Services%2C+5303+Canotek+Rd%2C+Gloucester%2C+ON";
 
 export const site = {
   name: "TLC Grooming and Sharpening Services",
@@ -29,9 +29,8 @@ export const sampleImages = {
 
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "Our Services", href: "/#services" },
-  { label: "Our Team", href: "/#about" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Our Services", href: "/our-services" },
+  { label: "Our Team", href: "/our-team" },
 ] as const;
 
 export const services = [

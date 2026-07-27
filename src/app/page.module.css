@@ -425,8 +425,7 @@
 .centerHeading h2,
 .aboutCopy h2,
 .testimonialsHeading h2,
-.bookingCopy h2,
-.contactCopy h2 {
+.bookingCopy h2 {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 600;
   letter-spacing: -0.045em;
@@ -523,43 +522,42 @@
 
 .heroImageMain img {
   object-fit: cover;
-  transform: rotate(-1.5deg) scale(1.06);
-  transform-origin: 52% 48%;
+  transform: scale(1.04);
+  transform-origin: center;
   animation: heroImageBreathe 12s ease-in-out infinite;
 }
 
 .heroImageMain {
   position: absolute;
   z-index: 1;
-  inset: 14px 8px 6px 34px;
-  border: 8px solid rgba(255, 255, 255, 0.9);
-  border-radius: 48% 52% 43% 57% / 37% 42% 58% 63%;
+  inset: 4px 0;
+  border: 1px solid rgba(1, 121, 181, 0.16);
+  border-radius: 30px;
   background: #d0eaf5;
-  box-shadow: 0 28px 64px rgba(14, 79, 112, 0.18);
-  transform: rotate(1.5deg);
-  transform-origin: 55% 52%;
+  box-shadow: 0 26px 62px rgba(14, 79, 112, 0.16);
+  transform-origin: center;
   animation: heroImageFloat 10s ease-in-out infinite;
 }
 
 @keyframes heroImageFloat {
   0%,
   100% {
-    transform: translate3d(0, 0, 0) rotate(1.5deg) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
   }
 
   50% {
-    transform: translate3d(5px, -7px, 0) rotate(0.7deg) scale(1.006);
+    transform: translate3d(0, -6px, 0) scale(1.004);
   }
 }
 
 @keyframes heroImageBreathe {
   0%,
   100% {
-    transform: translate3d(0, 0, 0) rotate(-1.5deg) scale(1.06);
+    transform: translate3d(0, 0, 0) scale(1.04);
   }
 
   50% {
-    transform: translate3d(-4px, 3px, 0) rotate(-0.8deg) scale(1.085);
+    transform: translate3d(-3px, 2px, 0) scale(1.065);
   }
 }
 
@@ -918,8 +916,7 @@
 
 .section,
 .aboutSection,
-.bookingSection,
-.contactSection {
+.bookingSection {
   padding: 104px 0;
 }
 
@@ -935,8 +932,7 @@
 .centerHeading h2,
 .aboutCopy h2,
 .testimonialsHeading h2,
-.bookingCopy h2,
-.contactCopy h2 {
+.bookingCopy h2 {
   margin: 10px 0 0;
   font-size: clamp(2.45rem, 4.8vw, 4rem);
   line-height: 1;
@@ -945,8 +941,7 @@
 .sectionHeading p,
 .centerHeading p,
 .aboutCopy > p,
-.bookingCopy > p,
-.contactCopy > p {
+.bookingCopy > p {
   color: var(--muted);
   line-height: 1.75;
 }
@@ -1886,270 +1881,11 @@
   background: white;
 }
 
-.bookingFrame iframe,
-.map iframe {
+.bookingFrame iframe {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-.policySection {
-  background: var(--surface-cream-soft);
-  padding: 96px 0;
-}
-
-.policyPanel {
-  display: grid;
-  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.22fr);
-  gap: 18px;
-  border: 1px solid var(--line);
-  border-radius: 36px 36px 72px 36px;
-  background: rgba(255, 253, 249, 0.82);
-  box-shadow: 0 28px 70px rgba(14, 79, 112, 0.09);
-  padding: 22px;
-}
-
-.policyIntro {
-  display: flex;
-  position: relative;
-  overflow: hidden;
-  min-height: 100%;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 26px 26px 52px 26px;
-  background: linear-gradient(155deg, var(--brand-dark), var(--brand));
-  color: white;
-  padding: 30px;
-}
-
-.policyIntro::after {
-  position: absolute;
-  right: -72px;
-  bottom: -82px;
-  width: 190px;
-  height: 190px;
-  border-radius: 999px;
-  background: rgba(1, 121, 181, 0.32);
-  content: "";
-  pointer-events: none;
-}
-
-.policyKicker {
-  display: inline-flex;
-  position: relative;
-  z-index: 1;
-  width: fit-content;
-  margin-bottom: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.75rem;
-  font-weight: 850;
-  letter-spacing: 0.07em;
-  padding: 8px 12px;
-  text-transform: uppercase;
-}
-
-.policyIntro h2 {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.3rem, 4.2vw, 3.55rem);
-  font-weight: 600;
-  letter-spacing: -0.045em;
-  line-height: 0.98;
-}
-
-.policyIntro p {
-  position: relative;
-  z-index: 1;
-  margin: 19px 0 0;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.65;
-}
-
-.policyActions {
-  display: flex;
-  position: relative;
-  z-index: 1;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 28px;
-}
-
-.policyActions a {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.13);
-  color: white;
-  font-size: 0.85rem;
-  font-weight: 820;
-  padding: 0 16px;
-}
-
-.policyActions a:first-child {
-  background: white;
-  color: var(--teal-dark);
-}
-
-.policyList {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.policyItem {
-  border: 1px solid var(--line);
-  border-radius: 24px 24px 42px 24px;
-  background: var(--surface);
-  padding: 20px;
-}
-
-.policyItem:nth-child(even) {
-  border-radius: 24px 42px 24px 24px;
-}
-
-.policyItem:nth-child(1) {
-  background: var(--surface-cream);
-}
-
-.policyItem:nth-child(2) {
-  background: var(--surface-blush);
-}
-
-.policyItem:nth-child(3) {
-  background: var(--surface-sage);
-}
-
-.policyItemWide {
-  grid-column: 1 / -1;
-}
-
-.policyTag {
-  display: inline-flex;
-  margin-bottom: 11px;
-  border-radius: 999px;
-  background: var(--surface-soft);
-  color: var(--teal-dark);
-  font-size: 0.75rem;
-  font-weight: 850;
-  padding: 7px 11px;
-  transform: rotate(-1deg);
-}
-
-.policyItem h3 {
-  margin: 0 0 7px;
-  color: var(--teal-dark);
-  font-size: 1.02rem;
-  line-height: 1.35;
-}
-
-.policyItem > p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.55;
-}
-
-.policySteps {
-  display: grid;
-  margin-top: 16px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.policySteps > div {
-  border-radius: 16px;
-  background: rgba(255, 253, 249, 0.8);
-  padding: 14px;
-}
-
-.policySteps span,
-.policySteps strong {
-  display: block;
-}
-
-.policySteps span {
-  margin-bottom: 6px;
-  color: var(--teal-dark);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.policySteps strong {
-  color: var(--muted);
-  font-size: 0.84rem;
-  line-height: 1.48;
-}
-
-.contactSection {
-  background: var(--surface-sage);
-}
-
-.contactPanel {
-  display: grid;
-  overflow: hidden;
-  grid-template-columns: 0.88fr 1.12fr;
-  border: 1px solid var(--line);
-  border-radius: 34px 34px 80px 34px;
-  background: var(--surface);
-  box-shadow: 0 26px 65px rgba(14, 79, 112, 0.11);
-}
-
-.contactCopy {
-  padding: 54px;
-}
-
-.contactCopy > p {
-  margin: 19px 0 28px;
-}
-
-.contactList {
-  display: grid;
-  margin: 0;
-  border-top: 1px solid var(--line);
-}
-
-.contactList > div {
-  display: grid;
-  grid-template-columns: 90px 1fr;
-  gap: 15px;
-  border-bottom: 1px solid var(--line);
-  padding: 15px 0;
-}
-
-.contactList dt {
-  color: var(--muted);
-  font-size: 0.73rem;
-  font-weight: 750;
-  text-transform: uppercase;
-}
-
-.contactList dd {
-  margin: 0;
-  font-size: 0.84rem;
-  font-weight: 700;
-  overflow-wrap: anywhere;
-}
-
-.contactList a {
-  color: var(--teal-dark);
-  text-decoration: underline;
-  text-decoration-color: rgba(1, 121, 181, 0.35);
-  text-underline-offset: 3px;
-}
-
-.map {
-  min-height: 560px;
-  background: #cfe8f3;
 }
 
 @media (max-width: 1024px) {
@@ -2186,8 +1922,7 @@
     grid-column: 1 / -1;
   }
 
-  .bookingCopy,
-  .contactCopy {
+  .bookingCopy {
     padding: 42px;
   }
 }
@@ -2205,8 +1940,7 @@
 
   .heroGrid,
   .aboutGrid,
-  .bookingPanel,
-  .contactPanel {
+  .bookingPanel {
     grid-template-columns: 1fr;
   }
 
@@ -2231,18 +1965,8 @@
   .aboutSection,
   .promoSection,
   .testimonialsSection,
-  .bookingSection,
-  .policySection,
-  .contactSection {
+  .bookingSection {
     padding: 78px 0;
-  }
-
-  .policyPanel {
-    grid-template-columns: 1fr;
-  }
-
-  .policyIntro {
-    min-height: 460px;
   }
 
   .packageGrid {
@@ -2276,9 +2000,6 @@
     grid-template-columns: 1fr;
   }
 
-  .map {
-    min-height: 430px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -2347,9 +2068,8 @@
   }
 
   .heroImageMain {
-    inset: 8px 5px 4px 22px;
-    border-width: 6px;
-    border-radius: 48% 52% 43% 57% / 37% 42% 58% 63%;
+    inset: 0;
+    border-radius: 22px;
   }
 
   .floatingNote {
@@ -2419,8 +2139,7 @@
   .aboutCopy h2,
   .promoHeading h2,
   .testimonialsHeading h2,
-  .bookingCopy h2,
-  .contactCopy h2 {
+  .bookingCopy h2 {
     font-size: clamp(2.35rem, 11vw, 3.4rem);
   }
 
@@ -2451,39 +2170,8 @@
     min-height: 260px;
   }
 
-  .bookingCopy,
-  .contactCopy {
+  .bookingCopy {
     padding: 32px 24px;
-  }
-
-  .policyPanel {
-    gap: 10px;
-    border-radius: 26px;
-    padding: 10px;
-  }
-
-  .policyIntro {
-    min-height: auto;
-    border-radius: 20px;
-    padding: 28px 22px;
-  }
-
-  .policyIntro h2 {
-    font-size: clamp(2.25rem, 11vw, 3.25rem);
-  }
-
-  .policyList,
-  .policySteps {
-    grid-template-columns: 1fr;
-  }
-
-  .policyItemWide {
-    grid-column: auto;
-  }
-
-  .policyActions {
-    align-items: stretch;
-    flex-direction: column;
   }
 
   .packageCard {
@@ -2511,10 +2199,6 @@
   .bookingFrame {
     display: block;
     min-height: 680px;
-  }
-
-  .contactList > div {
-    grid-template-columns: 72px 1fr;
   }
 
 }

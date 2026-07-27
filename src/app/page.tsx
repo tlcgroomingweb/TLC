@@ -1,20 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BusinessStatus } from "@/components/business-status";
+import { AppointmentPolicyDialog } from "@/components/appointment-policy-dialog";
 import {
   bookingUrl,
-  mapEmbedUrl,
   packages,
   services,
   site,
 } from "@/lib/site";
 import { testimonials } from "@/lib/testimonials";
-import yuLargeDog from "./references/yu/IMG_7049.jpeg";
+import yuLargeDog from "./references/yu/20260726190534_721_639.jpg";
 import yuMaltese from "./references/yu/IMG_4872.jpeg";
 import yuPomeranian from "./references/yu/IMG_2909.jpeg";
 import yuPoodle from "./references/yu/IMG_2104.jpeg";
-import yuSmallDog from "./references/yu/IMG_8466.jpeg";
-import yuWhiteDoodle from "./references/yu/IMG_3224.jpeg";
+import yuSmallDog from "./references/yu/20260726190619_725_639.jpg";
+import yuWhiteDoodle from "./references/yu/20260726190615_724_639.jpg";
 import zandyBrownDog from "./references/zandy/6515.jpeg";
 import zandyCreamDog from "./references/zandy/6517.jpeg";
 import zandyDarkDog from "./references/zandy/6516.jpeg";
@@ -143,7 +142,7 @@ const galleryImages = [
   },
   {
     src: yuLargeDog,
-    alt: "A large black, white and brown dog wearing a blue bandana after grooming by Yu Yu",
+    alt: "A large tan hound with a long, carefully brushed coat after grooming by Yu Yu",
     format: "standard",
     groomer: "Yu Yu",
   },
@@ -155,7 +154,7 @@ const galleryImages = [
   },
   {
     src: yuSmallDog,
-    alt: "A small tan dog with a neat short trim and green bandana after grooming by Yu Yu",
+    alt: "A small white dog with a neatly rounded face and clean short trim after grooming by Yu Yu",
     format: "tall",
     groomer: "Yu Yu",
   },
@@ -331,11 +330,11 @@ export default function Home() {
               </div>
               <div>
                 <strong>Complete grooming</strong>
-                <span>Baths, tidy-ups and full grooms</span>
+                <span>Bath brush, Bath tidy and Full groom</span>
               </div>
               <div>
                 <strong>Walk-ins</strong>
-                <span>Nails, ears and quick tidy-ups</span>
+                <span>Nail, face, paw trim, Teeth brush, Ear cleaning and Anal glands expression </span>
               </div>
               <div>
                 <strong>Easy booking</strong>
@@ -534,8 +533,8 @@ export default function Home() {
                   time to understand each dog&apos;s coat, preferred finish and
                   individual handling needs.
                 </p>
-                <Link className={styles.aboutLink} href="/#contact">
-                  Contact the TLC team <span aria-hidden="true">→</span>
+                <Link className={styles.aboutLink} href="/our-team">
+                  Meet Yu Yu, Ling and Zandy <span aria-hidden="true">→</span>
                 </Link>
                 <div className={styles.promises}>
                   <div>
@@ -692,8 +691,7 @@ export default function Home() {
                   <li>Final pricing reflects coat condition, handling needs and time required</li>
                   <li>Call us if you are unsure which package to select</li>
                   <li>
-                    Review <a href="#policies">appointment policies</a> before
-                    booking
+                    Review <AppointmentPolicyDialog /> before booking
                   </li>
                 </ul>
               </div>
@@ -709,128 +707,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.policySection} id="policies">
-          <div className={styles.shell}>
-            <div className={styles.policyPanel}>
-              <div className={styles.policyIntro}>
-                <div>
-                  <span className={styles.policyKicker}>Appointment policies</span>
-                  <h2>Help us keep every appointment on time.</h2>
-                  <p>
-                    Each appointment reserves dedicated time for one dog.
-                    Please review these policies before booking so drop-off,
-                    pickup and missed appointments are clear for everyone.
-                  </p>
-                </div>
-                <div className={styles.policyActions}>
-                  <a href="#book">Return to booking</a>
-                  <a href={site.phoneHref}>Call the salon</a>
-                </div>
-              </div>
-
-              <div className={styles.policyList}>
-                <article className={styles.policyItem}>
-                  <span className={styles.policyTag}>Running late</span>
-                  <h3>Call before the appointment time</h3>
-                  <p>
-                    If you are running late for drop-off or pickup, call TLC as
-                    soon as possible. Late drop-offs may need to be cancelled or
-                    rescheduled so later appointments stay on time.
-                  </p>
-                </article>
-
-                <article className={styles.policyItem}>
-                  <span className={styles.policyTag}>Late pick-up</span>
-                  <h3>30-minute pickup window</h3>
-                  <p>
-                    A $15 fee is charged for each additional 15 minutes after
-                    the 30-minute pickup window.
-                  </p>
-                </article>
-
-                <article
-                  className={`${styles.policyItem} ${styles.policyItemWide}`}
-                >
-                  <span className={styles.policyTag}>Regular clients</span>
-                  <h3>Missed appointments for returning clients</h3>
-                  <p>
-                    A first missed appointment carries a fee. Repeat no-shows
-                    require a deposit and may affect future booking.
-                  </p>
-                  <div className={styles.policySteps}>
-                    <div>
-                      <span>1st no-show</span>
-                      <strong>A $20 fee is added to the next appointment.</strong>
-                    </div>
-                    <div>
-                      <span>2nd no-show</span>
-                      <strong>50% deposit required to book again.</strong>
-                    </div>
-                    <div>
-                      <span>3rd no-show</span>
-                      <strong>TLC will be unable to accept future bookings.</strong>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className={styles.contactSection} id="contact">
-          <div className={styles.shell}>
-            <div className={styles.contactPanel}>
-              <div className={styles.contactCopy}>
-                <span className={styles.kicker}>Visit the salon</span>
-                <h2>Find us in Gloucester.</h2>
-                <p>
-                  We’re located on Canotek Road and welcome clients Tuesday
-                  through Sunday.
-                </p>
-                <dl className={styles.contactList}>
-                  <div>
-                    <dt>Location</dt>
-                    <dd>{site.address}</dd>
-                  </div>
-                  <div>
-                    <dt>Status</dt>
-                    <dd>
-                      <BusinessStatus variant="detail" />
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>Hours</dt>
-                    <dd>{site.hours}</dd>
-                  </div>
-                  <div>
-                    <dt>Holidays</dt>
-                    <dd>Closed on applicable federal and Ontario statutory holidays.</dd>
-                  </div>
-                  <div>
-                    <dt>Phone</dt>
-                    <dd>
-                      <a href={site.phoneHref}>{site.phoneDisplay}</a>
-                    </dd>
-                  </div>
-                  <div>
-                    <dt>Email</dt>
-                    <dd>
-                      <a href={`mailto:${site.email}`}>{site.email}</a>
-                    </dd>
-                  </div>
-                </dl>
-              </div>
-              <div className={styles.map}>
-                <iframe
-                  title="Map to TLC Grooming"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src={mapEmbedUrl}
-                />
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
     </>
