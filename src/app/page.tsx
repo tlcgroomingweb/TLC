@@ -286,6 +286,11 @@ export default function Home() {
                     Call {site.phoneDisplay}
                   </a>
                 </div>
+                <ul className={styles.heroNotes} aria-label="Service highlights">
+                  <li>Optional crating</li>
+                  <li>Full-service grooming</li>
+                  <li>Walk-in care</li>
+                </ul>
               </div>
             </div>
 
