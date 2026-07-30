@@ -339,7 +339,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
   .footer {
     padding: 46px 0 94px;
   }
@@ -501,6 +501,16 @@
   .mobileActions a:focus-visible {
     outline: 2px solid white;
     outline-offset: -4px;
+  }
+}
+
+@media (min-width: 541px) and (max-width: 700px) {
+  .footer {
+    padding-bottom: 46px;
+  }
+
+  .mobileActions {
+    display: none;
   }
 }
 

@@ -45,6 +45,10 @@
   gap: 30px;
 }
 
+.navInnerShowcase .bookButton {
+  margin-left: auto;
+}
+
 .brand {
   display: inline-flex;
   flex-shrink: 0;
@@ -123,6 +127,10 @@
   transform: translateY(-2px);
 }
 
+.bookLabelShort {
+  display: none;
+}
+
 .mobileBook,
 .menuButton {
   display: none;
@@ -186,7 +194,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
   .inner,
   .navInner {
     width: min(100% - 28px, 1160px);
@@ -214,7 +222,18 @@
   }
 
   .bookButton {
+    min-height: 42px;
+    box-shadow: 0 9px 22px rgba(1, 121, 181, 0.22);
+    font-size: 0.82rem;
+    padding: 0 15px;
+  }
+
+  .bookLabelLong {
     display: none;
+  }
+
+  .bookLabelShort {
+    display: inline;
   }
 
   .brandLogo {
@@ -228,6 +247,18 @@
 
   .heritageText {
     font-size: 0.84rem;
+  }
+
+  .menuButton {
+    width: 44px;
+    height: 44px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .bookButton {
+    display: none;
   }
 
   .menuButton {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { showcaseHomepageOnly } from "@/lib/site";
 import styles from "./not-found.module.css";
 
 export default function NotFound() {
@@ -16,9 +17,11 @@ export default function NotFound() {
             <Link className={styles.primaryAction} href="/">
               Back to home
             </Link>
-            <Link className={styles.secondaryAction} href="/our-services">
-              View services
-            </Link>
+            {showcaseHomepageOnly ? null : (
+              <Link className={styles.secondaryAction} href="/our-services">
+                View services
+              </Link>
+            )}
           </div>
         </div>
 

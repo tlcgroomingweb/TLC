@@ -91,7 +91,7 @@
 .cta h2,
 .memberBody h2 {
   margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-geist-sans), sans-serif;
   font-weight: 600;
   letter-spacing: -0.045em;
 }
@@ -490,19 +490,8 @@
   color: white;
 }
 
-.memberCardFeatured .memberNumber {
-  color: #b9e7f8;
-}
-
 .memberCardFeatured .memberBio {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0;
   color: rgba(255, 255, 255, 0.8);
-}
-
-.memberCardFeatured .memberBio p + p {
-  margin-top: 12px;
 }
 
 .memberCardFeatured .specialties li {
@@ -532,23 +521,16 @@
   transform: rotate(-1deg);
 }
 
-.memberNumber {
-  color: rgba(14, 79, 112, 0.24);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.35rem;
-  font-style: italic;
-}
-
 .memberBody h2 {
-  margin-top: 28px;
+  margin-top: 20px;
   font-size: 2.25rem;
 }
 
 .memberBio {
   margin: 17px 0 0;
   color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.68;
+  font-size: 0.94rem;
+  line-height: 1.65;
 }
 
 .memberBio p {
@@ -565,7 +547,7 @@
   flex-wrap: wrap;
   gap: 10px 14px;
   margin-top: auto;
-  padding-top: 28px;
+  padding-top: 24px;
 }
 
 .specialties {
@@ -598,7 +580,7 @@
 .portfolioIntro h2 {
   max-width: 760px;
   margin: 10px 0 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-geist-sans), sans-serif;
   font-size: clamp(2.7rem, 5vw, 4.4rem);
   font-weight: 600;
   letter-spacing: -0.045em;
@@ -630,7 +612,7 @@
 .portfolioHeader h3 {
   margin: 0;
   color: var(--foreground);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-geist-sans), sans-serif;
   font-size: clamp(2rem, 3vw, 2.8rem);
   font-weight: 600;
   letter-spacing: -0.035em;
@@ -673,7 +655,7 @@
 .portfolioSummary p {
   margin: 8px 0 0;
   color: #27434f;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-geist-sans), sans-serif;
   font-size: 1rem;
   line-height: 1.45;
 }
@@ -921,12 +903,7 @@
   }
 
   .memberCardFeatured .memberBio {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
-  }
-
-  .memberCardFeatured .memberBio p + p {
-    margin-top: 0;
+    max-width: 760px;
   }
 }
 
@@ -1033,15 +1010,6 @@
   .valuesGrid,
   .teamGrid {
     grid-template-columns: 1fr;
-  }
-
-  .memberCardFeatured .memberBio {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .memberCardFeatured .memberBio p + p {
-    margin-top: 12px;
   }
 
   .sectionHeading h2 {

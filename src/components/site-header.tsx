@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { MouseEvent } from "react";
 import { useState } from "react";
-import { navItems, site } from "@/lib/site";
+import { navItems, showcaseHomepageOnly, site } from "@/lib/site";
 import { BusinessStatus } from "./business-status";
 import styles from "./site-header.module.css";
 
@@ -68,7 +68,11 @@ export function SiteHeader() {
       </div>
 
       <nav className={styles.nav} aria-label="Main navigation">
-        <div className={styles.navInner}>
+        <div
+          className={`${styles.navInner} ${
+            showcaseHomepageOnly ? styles.navInnerShowcase : ""
+          }`}
+        >
           <Link
             aria-label="TLC Grooming home"
             className={styles.brand}
@@ -87,54 +91,64 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <div
-            className={`${styles.navLinks} ${isOpen ? styles.navLinksOpen : ""}`}
-            id="main-navigation"
-          >
-            {navItems.map((item) => {
-              const isActive =
-                !item.href.includes("#") && pathname === item.href;
-
-              return (
-                <Link
-                  aria-current={isActive ? "page" : undefined}
-                  href={item.href}
-                  key={item.href}
-                  onClick={(event) => handleHeaderLinkClick(event, item.href)}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-            <Link
-              className={styles.mobileBook}
-              href="/#book"
-              onClick={(event) => handleHeaderLinkClick(event, "/#book")}
+          {showcaseHomepageOnly ? null : (
+            <div
+              className={`${styles.navLinks} ${
+                isOpen ? styles.navLinksOpen : ""
+              }`}
+              id="main-navigation"
             >
-              Book appointment
-            </Link>
-          </div>
+              {navItems.map((item) => {
+                const isActive =
+                  !item.href.includes("#") && pathname === item.href;
+
+                return (
+                  <Link
+                    aria-current={isActive ? "page" : undefined}
+                    href={item.href}
+                    key={item.href}
+                    onClick={(event) => handleHeaderLinkClick(event, item.href)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+              <Link
+                className={styles.mobileBook}
+                href="/#book"
+                onClick={(event) => handleHeaderLinkClick(event, "/#book")}
+              >
+                Book appointment
+              </Link>
+            </div>
+          )}
 
           <Link
+            aria-label="Book an appointment"
             className={styles.bookButton}
             href="/#book"
             onClick={(event) => handleHeaderLinkClick(event, "/#book")}
           >
-            Book appointment
+            <span className={styles.bookLabelLong}>Book appointment</span>
+            <span className={styles.bookLabelShort} aria-hidden="true">
+              Book now
+            </span>
           </Link>
 
-          <button
-            className={styles.menuButton}
-            type="button"
-            aria-controls="main-navigation"
-            aria-expanded={isOpen}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            onClick={() => setIsOpen((current) => !current)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+          {showcaseHomepageOnly ? null : (
+            <button
+              className={styles.menuButton}
+              type="button"
+              aria-controls="main-navigation"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? "Close menu" : "Open menu"}
+              onClick={() => setIsOpen((current) => !current)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          )}
         </div>
       </nav>
     </>

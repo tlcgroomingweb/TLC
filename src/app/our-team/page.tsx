@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { showcaseHomepageOnly } from "@/lib/site";
 import lingApricotPoodle from "../references/ling/20260726174748_624_639.jpg";
 import lingYorkie from "../references/ling/20260726174749_625_639.jpg";
 import lingCavalier from "../references/ling/20260726174752_627_639.jpg";
@@ -56,36 +58,24 @@ export const metadata: Metadata = {
 
 const teamMembers = [
   {
-    number: "01",
     name: "Yu Yu",
     role: "Head Groomer",
     featured: true,
-    bio: [
-      "Hi, I’m Yu Shan, though most clients know me as Yu Yu. I have more than 13 years of hands-on grooming experience and graduated from Algonquin College’s Groomer Assistant program in 2013. For the past nine years, I’ve served as Head Groomer at TLC, where I also help train newer groomers and uphold our standards.",
-      "I’m known for a calm, gentle approach, whether I’m welcoming a wiggly puppy, an anxious senior or a nervous first-timer. I always put comfort first and believe grooming is about more than style—it’s about trust, kindness and treating every dog like family.",
-    ],
+    bio: "Yu Yu brings more than 13 years of grooming experience and has led TLC’s grooming team for nine years. Known for calm, gentle handling, she helps puppies, seniors and nervous dogs feel safe while delivering thoughtful, precise finishes.",
     specialties: ["Custom styling", "Precision finishing"],
   },
   {
-    number: "02",
     name: "Ling",
     role: "Groomer",
     featured: false,
-    bio: [
-      "Hi, I’m Ling Zheng. I’ve been part of the TLC Grooming team for the past three years, and during that time I’ve grown into a confident, trusted groomer under the guidance of our Head Groomer, Yu Shan. Her mentorship has helped me refine my technique, strengthen my eye for detail and bring consistency and care to every groom.",
-      "I’m comfortable working with dogs of all breeds and coat types, whether they need precision styling, de-shedding, senior care, a creative trim or a simple tidy. I’m calm, patient and attentive to each dog’s individual needs, and my goal is always to make every visit feel positive and as stress-free as possible—while delivering a finish that both dogs and their people can feel good about.",
-    ],
+    bio: "Ling has spent 3 years developing her craft at TLC under Yu Yu’s mentorship. She works confidently with all breeds and coat types, combining a patient approach with a careful eye for precision styling and consistent results.",
     specialties: ["Precision styling", "All coat types"],
   },
   {
-    number: "03",
     name: "Zandy",
     role: "Groomer",
     featured: false,
-    bio: [
-      "Hi, I’m Zandy. I have more than four years of professional grooming experience, with hands-on knowledge of grooming techniques and animal care. I genuinely love working with dogs of every breed, size and personality.",
-      "Every dog is unique, so I take time to understand what they need and work at their pace—especially when they’re energetic, shy or nervous. From baths and haircuts to nails and ear care, I focus on every detail while keeping comfort, safety and happiness first.",
-    ],
+    bio: "Zandy brings more than 4 years of professional grooming experience and a genuine love for dogs of every size and personality. She works at each dog’s pace, keeping comfort, safety and careful finishing at the centre of every visit.",
     specialties: ["Gentle handling", "Low-stress care"],
   },
 ] as const;
@@ -217,6 +207,10 @@ const careValues = [
 ] as const;
 
 export default function OurTeamPage() {
+  if (showcaseHomepageOnly) {
+    redirect("/");
+  }
+
   return (
     <main className={styles.page}>
       <section className={styles.pageIntro}>
@@ -252,15 +246,10 @@ export default function OurTeamPage() {
                 <div className={styles.memberBody}>
                   <div className={styles.memberMeta}>
                     <span className={styles.memberRole}>{member.role}</span>
-                    <span className={styles.memberNumber} aria-hidden="true">
-                      {member.number}
-                    </span>
                   </div>
                   <h2>{member.name}</h2>
                   <div className={styles.memberBio}>
-                    {member.bio.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
+                    <p>{member.bio}</p>
                   </div>
                   <div className={styles.memberFooter}>
                     <ul

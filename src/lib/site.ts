@@ -4,6 +4,8 @@ export const bookingUrl =
 export const mapDirectionsUrl =
   "https://www.google.com/maps/search/?api=1&query=TLC+Grooming+%26+Sharpening+Services%2C+5303+Canotek+Rd%2C+Gloucester%2C+ON";
 
+export const showcaseHomepageOnly = true;
+
 export const site = {
   name: "TLC Grooming and Sharpening Services",
   shortName: "TLC Grooming",
@@ -37,29 +39,25 @@ export const services = [
   {
     icon: "◌",
     title: "Bath & Brush",
-    description:
-      "A bath, blow dry, brush out, nail trim and ear cleaning for routine coat maintenance.",
+    description: "Bath, blow dry, brush out, nails and ears.",
     price: "From $40",
   },
   {
     icon: "✦",
     title: "Bath & Tidy",
-    description:
-      "Everything in Bath & Brush, plus trimming around the face, paws, sanitary areas and body.",
+    description: "Bath & Brush plus a tidy around the face, paws and body.",
     price: "From $60",
   },
   {
     icon: "✂",
     title: "Full Groom",
-    description:
-      "A consultation-led groom with a custom haircut, bath, brush out, nail care and finishing details.",
+    description: "A custom haircut with bath, nail care and finishing.",
     price: "From $75",
   },
   {
     icon: "♡",
     title: "Walk-in Care",
-    description:
-      "Nail trims, ear care, sanitary trims and PawDicures, offered when a groomer is available.",
+    description: "Nails and quick care when a groomer is available.",
     price: "Nails from $16",
   },
 ] as const;

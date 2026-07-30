@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { showcaseHomepageOnly } from "@/lib/site";
 import styles from "../inner-page.module.css";
 
 export const metadata: Metadata = {
@@ -145,6 +147,10 @@ const sizeGuide = [
 ] as const;
 
 export default function OurServicesPage() {
+  if (showcaseHomepageOnly) {
+    redirect("/");
+  }
+
   return (
     <main className={styles.page}>
       <section className={styles.pageIntro}>
