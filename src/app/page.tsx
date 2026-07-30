@@ -4,6 +4,7 @@ import { AppointmentPolicyDialog } from "@/components/appointment-policy-dialog"
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import {
   bookingUrl,
+  packages,
   services,
   showcaseHomepageOnly,
   site,
@@ -69,14 +70,14 @@ const promotions = [
     value: "$10",
     eyebrow: "New client offer",
     title: "New Client Welcome",
-    description: "$10 off a first Full Groom.",
+    description: "New clients save $10 on their first Full Groom.",
     featured: true,
   },
   {
     value: "$5",
     eyebrow: "Referral reward",
     title: "Refer & Save",
-    description: "Refer a friend and save $5.",
+    description: "Refer a friend or family member and save $5.",
     featured: false,
   },
   {
@@ -85,7 +86,8 @@ const promotions = [
     title: "Seniors' Day",
     description: (
       <>
-        10% off on the <strong>last Wednesday</strong> of each month.
+        On the <strong>last Wednesday of every month</strong>, seniors save 10%
+        on grooming, nail trims and products.
       </>
     ),
     featured: false,
@@ -96,7 +98,7 @@ const promotions = [
     title: "Nail Trim Rewards",
     description: (
       <>
-        Every <strong>10th nail trim</strong> is free.
+        Every <strong>10th</strong> nail trim is free.
       </>
     ),
     featured: false,
@@ -269,12 +271,11 @@ export default function Home() {
                   <span /> Caring for Ottawa dogs since 1986
                 </div>
                 <h1>
-                  Calm care.
-                  <em>Beautiful grooms.</em>
+                  Gentle grooming for dogs who feel like <em>family.</em>
                 </h1>
                 <p className={styles.lead}>
-                  Patient dog grooming and walk-in nail care for Ottawa dogs who
-                  feel like family.
+                  Full-service dog grooming and walk-in nail care, delivered
+                  with skill and patience by our experienced Gloucester team.
                 </p>
                 <div className={styles.heroActions}>
                   <a className={styles.primaryButton} href="#book">
@@ -291,19 +292,22 @@ export default function Home() {
             <div className={styles.trustStrip} aria-label="TLC highlights">
               <div>
                 <strong>Trusted locally</strong>
-                <span>Since 1986</span>
+                <span>Grooming for Ottawa dogs</span>
               </div>
               <div>
                 <strong>Complete grooming</strong>
-                <span>Bath, tidy &amp; full grooms</span>
+                <span>Bath brush, Bath tidy and Full groom</span>
               </div>
               <div>
                 <strong>Walk-ins</strong>
-                <span>Nails &amp; quick care</span>
+                <span>
+                  Nail, face, paw trim, Teeth brush, Ear cleaning and Anal
+                  glands expression
+                </span>
               </div>
               <div>
                 <strong>Easy booking</strong>
-                <span>Online or by phone</span>
+                <span>Book online or call the salon</span>
               </div>
             </div>
           </div>
@@ -390,8 +394,9 @@ export default function Home() {
                 <h2>Find the right care for your dog.</h2>
               </div>
               <p>
-                Starting prices are shown below. We&apos;ll confirm the right
-                service for your dog.
+                Choose the service that seems closest. Your groomer will confirm
+                the recommendation and price based on size, coat condition and
+                handling needs.
               </p>
             </div>
 
@@ -415,6 +420,41 @@ export default function Home() {
                 <span aria-hidden="true">→</span>
               </Link>
             )}
+          </div>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.packageSection}`}
+          id="packages"
+        >
+          <div className={styles.shell}>
+            <div className={styles.centerHeading}>
+              <span className={styles.kicker}>Grooming package guide</span>
+              <h2>Compare your options before booking.</h2>
+              <p>
+                Not sure where to start? Call us and we’ll help you choose the
+                closest fit.
+              </p>
+            </div>
+
+            <div className={styles.packageGrid}>
+              {packages.map((item) => (
+                <article className={styles.packageCard} key={item.title}>
+                  <span className={styles.packageEyebrow}>{item.eyebrow}</span>
+                  <h3>{item.title}</h3>
+                  <p className={styles.packagePrice}>
+                    <small>Starting prices</small>
+                    {item.price}
+                  </p>
+                  <ul>
+                    {item.items.map((detail) => (
+                      <li key={detail}>{detail}</li>
+                    ))}
+                  </ul>
+                  <a href="#book">Choose this package →</a>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -466,8 +506,10 @@ export default function Home() {
                 <span className={styles.kicker}>Why TLC</span>
                 <h2>Skilled grooming, centred on your dog.</h2>
                 <p>
-                  Experienced groomers, patient handling and care shaped around
-                  each dog.
+                  TLC combines decades of grooming experience with patient
+                  handling and clear communication. Yu Yu, Ling and Zandy take
+                  time to understand each dog&apos;s coat, preferred finish and
+                  individual handling needs.
                 </p>
                 {showcaseHomepageOnly ? null : (
                   <Link className={styles.aboutLink} href="/our-team">
@@ -484,21 +526,23 @@ export default function Home() {
                     <span aria-hidden="true">♡</span>
                     <p>
                       <strong>Optional crating</strong>
-                      A setup that suits your dog.
+                      Tell us what setup helps your dog feel most comfortable.
                     </p>
                   </div>
                   <div>
                     <span aria-hidden="true">✦</span>
                     <p>
                       <strong>Careful touch-ups</strong>
-                      Contact us within 24 hours.
+                      If a detail needs adjusting, contact us within 24 hours so
+                      we can make it right.
                     </p>
                   </div>
                   <div>
                     <span aria-hidden="true">✓</span>
                     <p>
-                      <strong>Clear pricing</strong>
-                      Confirmed for coat, handling and time.
+                      <strong>Clear, straightforward pricing</strong>
+                      We publish starting prices and confirm adjustments based
+                      on coat condition, handling needs and time required.
                     </p>
                   </div>
                 </div>
@@ -514,6 +558,10 @@ export default function Home() {
                 <span className={styles.kicker}>Savings &amp; rewards</span>
                 <h2>More value for new and returning clients.</h2>
               </div>
+              <p>
+                Offers for first visits, referrals, seniors and regular
+                nail-trim clients make it easier to keep up with routine care.
+              </p>
             </div>
 
             <div className={styles.promoGrid}>
@@ -538,6 +586,10 @@ export default function Home() {
                 </article>
               ))}
             </div>
+
+            <p className={styles.promoFinePrint}>
+              Ask our team to confirm current offer details and eligibility.
+            </p>
           </div>
         </section>
 
@@ -550,6 +602,10 @@ export default function Home() {
               </div>
               <div className={styles.reviewSummary}>
                 <span aria-hidden="true">★★★★★</span>
+                <p>
+                  Real experiences shared on Google by local dog owners who
+                  trust TLC to groom their dogs.
+                </p>
               </div>
             </div>
 
@@ -564,10 +620,21 @@ export default function Home() {
                 <span className={styles.kicker}>Plan your visit</span>
                 <h2>Request your dog’s next appointment.</h2>
                 <p>
-                  Choose a service and preferred time online.
+                  Use our online booking system to request your preferred date,
+                  time, service and groomer.
                 </p>
                 <ul>
-                  <li>We&apos;ll confirm final service and pricing with you</li>
+                  <li>
+                    Choose the closest service; we can confirm the details with
+                    you
+                  </li>
+                  <li>
+                    Final pricing reflects coat condition, handling needs and
+                    time required
+                  </li>
+                  <li>
+                    Call us if you are unsure which package to select
+                  </li>
                   <li>
                     Review <AppointmentPolicyDialog /> before booking
                   </li>
