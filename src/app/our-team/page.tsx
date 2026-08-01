@@ -3,24 +3,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { showcaseHomepageOnly } from "@/lib/site";
-import lingApricotPoodle from "../references/ling/20260726174748_624_639.jpg";
-import lingYorkie from "../references/ling/20260726174749_625_639.jpg";
-import lingCavalier from "../references/ling/20260726174752_627_639.jpg";
-import lingDarkDog from "../references/ling/20260726181832_644_639.jpg";
-import lingBernese from "../references/ling/20260726181840_645_639.jpg";
-import lingWhitePoodle from "../references/ling/20260726181845_646_639.jpg";
-import yuLargeDog from "../references/yu/20260726190534_721_639.jpg";
-import yuMaltese from "../references/yu/IMG_4872.jpeg";
-import yuPomeranian from "../references/yu/IMG_2909.jpeg";
-import yuPoodle from "../references/yu/IMG_2104.jpeg";
-import yuSmallDog from "../references/yu/20260726190619_725_639.jpg";
-import yuWhiteDoodle from "../references/yu/20260726190615_724_639.jpg";
-import zandyBrownDog from "../references/zandy/6515.jpeg";
-import zandyCreamDog from "../references/zandy/6517.jpeg";
-import zandyDarkDog from "../references/zandy/6516.jpeg";
-import zandyFluffyWhiteDog from "../references/zandy/IMG_9183.jpeg";
-import zandyPomeranian from "../references/zandy/IMG_6903.jpeg";
-import zandyWhiteDog from "../references/zandy/6518.jpeg";
+import lingApricotPoodle from "../references/ling/1.jpg";
+import lingDarkDog from "../references/ling/2.jpg";
+import lingWhitePoodle from "../references/ling/3.jpg";
+import lingCavalier from "../references/ling/4.jpg";
+import lingBernese from "../references/ling/5.jpg";
+import lingYorkie from "../references/ling/6.jpg";
+import yuPoodle from "../references/yu/1.jpeg";
+import yuPomeranian from "../references/yu/2.jpeg";
+import yuWhiteDoodle from "../references/yu/3.jpg";
+import yuMaltese from "../references/yu/4.jpeg";
+import yuLargeDog from "../references/yu/5.jpg";
+import yuSmallDog from "../references/yu/6.jpg";
+import zandyBrownDog from "../references/zandy/1.jpeg";
+import zandyPomeranian from "../references/zandy/2.jpeg";
+import zandyDarkDog from "../references/zandy/3.jpeg";
+import zandyWhiteDog from "../references/zandy/4.jpeg";
+import zandyCreamDog from "../references/zandy/5.jpeg";
+import zandyFluffyWhiteDog from "../references/zandy/6.jpeg";
 import styles from "../inner-page.module.css";
 
 export const metadata: Metadata = {
@@ -91,12 +91,12 @@ const portfolios = [
     philosophy: "Trust, kindness and treating every dog like family.",
     images: [
       {
-        src: yuPomeranian,
-        alt: "A smiling brown dog with a rounded, sculpted coat after grooming by Yu Yu",
-      },
-      {
         src: yuPoodle,
         alt: "A grey poodle with a rounded topknot and neatly shaped legs after grooming by Yu Yu",
+      },
+      {
+        src: yuPomeranian,
+        alt: "A smiling brown dog with a rounded, sculpted coat after grooming by Yu Yu",
       },
       {
         src: yuWhiteDoodle,
@@ -139,12 +139,12 @@ const portfolios = [
         alt: "A brown and white Cavalier with neatly finished ears, paws and coat after grooming by Ling",
       },
       {
-        src: lingYorkie,
-        alt: "A small Yorkshire terrier with a tidy short coat after grooming by Ling",
-      },
-      {
         src: lingBernese,
         alt: "A large black, white and brown Bernese mountain dog with a clean, brushed coat after grooming by Ling",
+      },
+      {
+        src: lingYorkie,
+        alt: "A small Yorkshire terrier with a tidy short coat after grooming by Ling",
       },
     ],
   },
@@ -158,24 +158,24 @@ const portfolios = [
     philosophy: "Patient, gentle care at every dog’s own pace.",
     images: [
       {
-        src: zandyPomeranian,
-        alt: "A smiling white dog with a softly rounded coat after grooming by Zandy",
-      },
-      {
         src: zandyBrownDog,
         alt: "A brown dog with a rounded face and even coat after grooming by Zandy",
+      },
+      {
+        src: zandyPomeranian,
+        alt: "A smiling white dog with a softly rounded coat after grooming by Zandy",
       },
       {
         src: zandyDarkDog,
         alt: "A small dark dog with a neat face and white chin after grooming by Zandy",
       },
       {
-        src: zandyCreamDog,
-        alt: "A cream-coloured dog with a rounded head and tidy body trim after grooming by Zandy",
-      },
-      {
         src: zandyWhiteDog,
         alt: "A fluffy white dog with a rounded finish after grooming by Zandy",
+      },
+      {
+        src: zandyCreamDog,
+        alt: "A cream-coloured dog with a rounded head and tidy body trim after grooming by Zandy",
       },
       {
         src: zandyFluffyWhiteDog,

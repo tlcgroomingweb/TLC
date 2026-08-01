@@ -10,18 +10,18 @@ import {
   site,
 } from "@/lib/site";
 import { testimonials } from "@/lib/testimonials";
-import yuLargeDog from "./references/yu/20260726190534_721_639.jpg";
-import yuMaltese from "./references/yu/IMG_4872.jpeg";
-import yuPomeranian from "./references/yu/IMG_2909.jpeg";
-import yuPoodle from "./references/yu/IMG_2104.jpeg";
-import yuSmallDog from "./references/yu/20260726190619_725_639.jpg";
-import yuWhiteDoodle from "./references/yu/20260726190615_724_639.jpg";
-import zandyBrownDog from "./references/zandy/6515.jpeg";
-import zandyCreamDog from "./references/zandy/6517.jpeg";
-import zandyDarkDog from "./references/zandy/6516.jpeg";
-import zandyFluffyWhiteDog from "./references/zandy/IMG_9183.jpeg";
-import zandyPomeranian from "./references/zandy/IMG_6903.jpeg";
-import zandyWhiteDog from "./references/zandy/6518.jpeg";
+import yuPoodle from "./references/yu/1.jpeg";
+import yuPomeranian from "./references/yu/2.jpeg";
+import yuWhiteDoodle from "./references/yu/3.jpg";
+import yuMaltese from "./references/yu/4.jpeg";
+import yuLargeDog from "./references/yu/5.jpg";
+import yuSmallDog from "./references/yu/6.jpg";
+import zandyBrownDog from "./references/zandy/1.jpeg";
+import zandyPomeranian from "./references/zandy/2.jpeg";
+import zandyDarkDog from "./references/zandy/3.jpeg";
+import zandyWhiteDog from "./references/zandy/4.jpeg";
+import zandyCreamDog from "./references/zandy/5.jpeg";
+import zandyFluffyWhiteDog from "./references/zandy/6.jpeg";
 import styles from "./page.module.css";
 
 const businessJsonLd = {
