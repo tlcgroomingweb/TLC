@@ -135,17 +135,6 @@ export function SiteFooter() {
                     f
                   </span>
                 </a>
-                <a
-                  aria-label="TLC Grooming on Instagram"
-                  href="https://www.instagram.com/tlcgroomingottawa/"
-                  rel="noreferrer"
-                  target="_blank"
-                  title="Instagram"
-                >
-                  <span className={styles.instagramIcon} aria-hidden="true">
-                    <span />
-                  </span>
-                </a>
               </div>
               <small>© 2026 {site.name}</small>
             </div>

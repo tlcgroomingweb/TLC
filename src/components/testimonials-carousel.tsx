@@ -130,13 +130,13 @@ export function TestimonialsCarousel({
 
               <p>“{review.quote}”</p>
 
-              <footer className={styles.author}>
+              <div className={styles.author}>
                 <span aria-hidden="true">♥</span>
                 <div>
                   <strong>{review.customerName}</strong>
                   {reviewDetails ? <small>{reviewDetails}</small> : null}
                 </div>
-              </footer>
+              </div>
             </blockquote>
           );
         })}

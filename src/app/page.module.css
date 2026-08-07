@@ -535,7 +535,7 @@
   color: #102f3c;
   font-family: var(--font-geist-sans), sans-serif;
   font-size: clamp(3.55rem, 4.65vw, 4.85rem);
-  font-weight: 620;
+  font-weight: 680;
   letter-spacing: -0.055em;
   line-height: 0.9;
   text-wrap: balance;
@@ -546,8 +546,9 @@
   display: inline;
   margin: 0;
   color: var(--teal);
-  font-style: italic;
-  font-weight: 400;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: inherit;
 }
 
 .lead {
@@ -1788,24 +1789,70 @@
 }
 
 .reviewSummary {
+  display: grid;
   justify-self: end;
+  min-width: 290px;
   border: 1px solid rgba(201, 145, 45, 0.3);
-  border-radius: 999px;
+  border-radius: 24px;
   background: rgba(255, 243, 216, 0.88);
-  padding: 12px 16px;
+  gap: 8px;
+  padding: 16px 18px;
 }
 
-.reviewSummary > span {
-  color: var(--gold);
+.reviewScore {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.googleStars {
+  display: inline-block;
+  position: relative;
+  color: rgba(201, 145, 45, 0.3);
   font-size: 1rem;
   letter-spacing: 0.14em;
+  line-height: 1;
 }
 
-.reviewSummary p {
-  margin: 8px 0 0;
+.googleStars::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--google-rating-width);
+  overflow: hidden;
+  color: var(--gold);
+  content: "★★★★★";
+  white-space: nowrap;
+}
+
+.reviewScore strong {
+  color: var(--teal-dark);
+  font-size: 1.05rem;
+}
+
+.reviewCount {
   color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.6;
+  font-size: 0.78rem;
+}
+
+.googleReviewsLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(201, 145, 45, 0.25);
+  color: var(--teal-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding-top: 10px;
+}
+
+.googleReviewsLink span {
+  transition: transform 160ms ease;
+}
+
+.googleReviewsLink:hover span {
+  transform: translate(2px, -2px);
 }
 
 .testimonialGrid {
@@ -2558,7 +2605,9 @@
   }
 
   .reviewSummary {
-    display: none;
+    width: 100%;
+    min-width: 0;
+    justify-self: stretch;
   }
 
   .reviewCard,

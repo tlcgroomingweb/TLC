@@ -239,34 +239,6 @@
   line-height: 1;
 }
 
-.instagramIcon {
-  display: grid;
-  position: relative;
-  width: 16px;
-  height: 16px;
-  place-items: center;
-  border: 2px solid currentColor;
-  border-radius: 5px;
-}
-
-.instagramIcon > span {
-  width: 6px;
-  height: 6px;
-  border: 1.7px solid currentColor;
-  border-radius: 999px;
-}
-
-.instagramIcon::after {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 2.5px;
-  height: 2.5px;
-  border-radius: 999px;
-  background: currentColor;
-  content: "";
-}
-
 .mobileActions {
   display: none;
 }

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import { showcaseHomepageOnly } from "@/lib/site";
 import styles from "../inner-page.module.css";
@@ -39,7 +38,6 @@ export const metadata: Metadata = {
 
 const groomingPackages = [
   {
-    eyebrow: "Regular coat care",
     title: "Bath & Brush",
     description:
       "Routine coat care with a thorough bath, blow dry and brush out—without a haircut.",
@@ -59,7 +57,6 @@ const groomingPackages = [
     ],
   },
   {
-    eyebrow: "Between full grooms",
     title: "Bath & Tidy",
     description:
       "A practical in-between service for dogs who need a bath plus light trimming, but not a full haircut.",
@@ -79,7 +76,6 @@ const groomingPackages = [
     ],
   },
   {
-    eyebrow: "Complete styling",
     title: "Full Groom",
     description:
       "A complete, consultation-led groom with a custom haircut shaped around your preferences and your dog’s coat.",
@@ -105,7 +101,7 @@ const addOns = [
   ["Teeth brushing", "$7"],
   ["Paw moisturizer", "$7"],
   ["Blueberry facial", "$7"],
-  ["Anal gland expression", "$10"],
+  ["Anal-gland expression", "$10"],
 ] as const;
 
 const walkIns = [
@@ -113,7 +109,7 @@ const walkIns = [
   ["Nail trim", "$16"],
   ["Nail trim and grind", "$21"],
   ["Ear cleaning or plucking", "$15"],
-  ["Anal gland expression", "$15"],
+  ["Anal-gland expression", "$15"],
   ["Sanitary trim", "$25"],
   ["PawDicure", "$30"],
 ] as const;
@@ -122,17 +118,17 @@ const sizeGuide = [
   {
     size: "X-small",
     weight: "Up to 12 lb",
-    examples: "Pug, Chihuahua, Papillon, Chinese Crested, Westie",
+    examples: "Pug, Chihuahua, Mini Pinscher, Jack Russell",
   },
   {
     size: "Small",
     weight: "13–20 lb",
-    examples: "Shih Tzu, Maltese, Pekingese, Toy Poodle, Bichon Frise",
+    examples: "Shih Tzu, Maltese, Pekingese, Toy Poodle, Chinese Crested",
   },
   {
     size: "Medium",
     weight: "21–40 lb",
-    examples: "Cocker Spaniel, Sheltie, Standard Schnauzer, Mini Doodle",
+    examples: "Cocker Spaniel, Sheltie, Bulldog, Mini Doodle",
   },
   {
     size: "Large",
@@ -152,7 +148,7 @@ export default function OurServicesPage() {
   }
 
   return (
-    <main className={styles.page}>
+    <main className={`${styles.page} ${styles.servicesPage}`}>
       <section className={styles.pageIntro}>
         <div className={styles.shell}>
           <div className={styles.pageIntroGrid}>
@@ -165,9 +161,8 @@ export default function OurServicesPage() {
 
             <div className={styles.pageIntroAside}>
               <p className={styles.lead}>
-                From routine coat maintenance to complete styling, compare our
-                services and starting prices before your groomer confirms the
-                best fit for your dog.
+                Explore our grooming options and starting prices, then choose
+                the package closest to your dog&apos;s needs.
               </p>
             </div>
           </div>
@@ -176,21 +171,10 @@ export default function OurServicesPage() {
 
       <section className={styles.sectionAlt}>
         <div className={styles.shell}>
-          <div className={styles.sectionHeading}>
-            <div>
-              <h2>Choose the right level of grooming.</h2>
-            </div>
-            <p>
-              Start with the package that seems closest. Your groomer will
-              confirm the right service after reviewing your dog&apos;s coat,
-              handling needs and desired finish.
-            </p>
-          </div>
 
           <div className={styles.packageGrid}>
             {groomingPackages.map((item) => (
               <article className={styles.packageCard} key={item.title}>
-                <span className={styles.packageEyebrow}>{item.eyebrow}</span>
                 <h3>{item.title}</h3>
                 <p className={styles.packageDescription}>{item.description}</p>
                 <ul className={styles.included}>
@@ -205,7 +189,10 @@ export default function OurServicesPage() {
                         <b>{size}</b>
                         {weight}
                       </span>
-                      <strong>From {price}</strong>
+                      <strong>
+                        <span className={styles.startingFrom}>From</span>
+                        <span className={styles.priceAmount}>{price}</span>
+                      </strong>
                     </div>
                   ))}
                 </div>
@@ -213,11 +200,27 @@ export default function OurServicesPage() {
             ))}
           </div>
 
-          <p className={styles.pricingNote}>
-            All prices are starting points. Final pricing reflects coat type
-            and condition, matting, handling needs, and the time required to
-            complete the groom safely.
-          </p>
+          <div className={styles.sizeGuideHeader}>
+            <h3>Size reference</h3>
+            <p>
+              <strong>Weight is only a guide.</strong> Coat type, condition,
+              handling needs and chosen style determine the final service and
+              price.
+            </p>
+          </div>
+
+          <div
+            className={`${styles.sizeGrid} ${styles.packageSizeGrid}`}
+            aria-label="Dog size and weight guide"
+          >
+            {sizeGuide.map((item) => (
+              <article className={styles.sizeCard} key={item.size}>
+                <strong>{item.size}</strong>
+                <span>{item.weight}</span>
+                <p>{item.examples}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -264,32 +267,6 @@ export default function OurServicesPage() {
                 ))}
               </dl>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.sectionAlt}>
-        <div className={styles.shell}>
-          <div className={styles.sectionHeading}>
-            <div>
-              <span className={styles.kicker}>Size and weight guide</span>
-              <h2>Find your dog&apos;s starting size.</h2>
-            </div>
-            <p>
-              Breed examples are a general guide only. Weight, coat type,
-              condition and chosen style all influence the final service and
-              price.
-            </p>
-          </div>
-
-          <div className={styles.sizeGrid}>
-            {sizeGuide.map((item) => (
-              <article className={styles.sizeCard} key={item.size}>
-                <strong>{item.size}</strong>
-                <span>{item.weight}</span>
-                <p>{item.examples}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>

@@ -1,0 +1,140 @@
+.embed {
+  min-height: 600px;
+  background: #f7fbfd;
+}
+.retryButton {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0 17px;
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.retryButton:hover {
+  box-shadow: 0 13px 28px rgba(1, 121, 181, 0.22);
+  transform: translateY(-2px);
+}
+
+.frame {
+  position: relative;
+  min-height: 600px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(169, 229, 248, 0.24), transparent 34%),
+    #f7fbfd;
+}
+
+.frame iframe {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: white;
+}
+
+.status {
+  display: grid;
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  place-items: center;
+  background:
+    radial-gradient(circle at 80% 22%, rgba(240, 212, 162, 0.3), transparent 30%),
+    linear-gradient(145deg, rgba(247, 251, 253, 0.98), rgba(238, 248, 251, 0.98));
+  padding: 32px;
+}
+
+.statusCard {
+  display: grid;
+  width: min(460px, 100%);
+  justify-items: center;
+  border: 1px solid rgba(1, 121, 181, 0.14);
+  border-radius: 26px 26px 44px 26px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 22px 54px rgba(14, 79, 112, 0.1);
+  padding: 34px;
+  text-align: center;
+}
+
+.statusCard strong {
+  margin-top: 18px;
+  color: var(--teal-dark);
+  font-size: 1.05rem;
+}
+
+.statusCard p {
+  max-width: 380px;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
+.spinner {
+  width: 38px;
+  height: 38px;
+  border: 4px solid rgba(1, 121, 181, 0.14);
+  border-top-color: var(--brand);
+  border-radius: 50%;
+  animation: bookingSpin 800ms linear infinite;
+}
+
+.slowIcon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--surface-blush);
+  color: var(--coral);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.retryButton {
+  margin-top: 20px;
+  border: 1px solid rgba(1, 121, 181, 0.25);
+  background: white;
+  color: var(--teal-dark);
+  cursor: pointer;
+}
+
+@keyframes bookingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .embed {
+    min-height: 560px;
+  }
+
+  .frame {
+    min-height: 560px;
+  }
+
+  .status {
+    padding: 18px;
+  }
+
+  .statusCard {
+    border-radius: 22px 22px 36px 22px;
+    padding: 28px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+
+  .retryButton {
+    transition: none;
+  }
+}

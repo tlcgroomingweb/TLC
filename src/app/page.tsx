@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { AppointmentPolicyDialog } from "@/components/appointment-policy-dialog";
+import { BookingEmbed } from "@/components/booking-embed";
 import { TestimonialsCarousel } from "@/components/testimonials-carousel";
 import {
   bookingUrl,
-  packages,
+  googleRating,
+  googleReviewsUrl,
   services,
   showcaseHomepageOnly,
   site,
@@ -182,6 +185,10 @@ const galleryImages = [
 
 const showHomepageGallery = false;
 
+const googleTestimonials = testimonials.filter(
+  (testimonial) => testimonial.source === "Google",
+);
+
 export default function Home() {
   return (
     <>
@@ -301,13 +308,13 @@ export default function Home() {
               </div>
               <div>
                 <strong>Complete grooming</strong>
-                <span>Bath brush, Bath tidy and Full groom</span>
+                <span>Bath &amp; Brush, Bath &amp; Tidy and Full Groom</span>
               </div>
               <div>
                 <strong>Walk-ins</strong>
                 <span>
-                  Nail, face, paw trim, Teeth brush, Ear cleaning and Anal
-                  glands expression
+                  Nail, face &amp; paw trims, teeth brushing, ear cleaning and
+                  anal-gland expression
                 </span>
               </div>
               <div>
@@ -425,41 +432,6 @@ export default function Home() {
                 <span aria-hidden="true">→</span>
               </Link>
             )}
-          </div>
-        </section>
-
-        <section
-          className={`${styles.section} ${styles.packageSection}`}
-          id="packages"
-        >
-          <div className={styles.shell}>
-            <div className={styles.centerHeading}>
-              <span className={styles.kicker}>Grooming package guide</span>
-              <h2>Compare your options before booking.</h2>
-              <p>
-                Not sure where to start? Call us and we’ll help you choose the
-                closest fit.
-              </p>
-            </div>
-
-            <div className={styles.packageGrid}>
-              {packages.map((item) => (
-                <article className={styles.packageCard} key={item.title}>
-                  <span className={styles.packageEyebrow}>{item.eyebrow}</span>
-                  <h3>{item.title}</h3>
-                  <p className={styles.packagePrice}>
-                    <small>Starting prices</small>
-                    {item.price}
-                  </p>
-                  <ul>
-                    {item.items.map((detail) => (
-                      <li key={detail}>{detail}</li>
-                    ))}
-                  </ul>
-                  <a href="#book">Choose this package →</a>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -606,11 +578,32 @@ export default function Home() {
                 <h2>Trusted by dogs and the people who love them.</h2>
               </div>
               <div className={styles.reviewSummary}>
-                <span aria-hidden="true">★★★★★</span>
-                <p>
-                  Real experiences shared on Google by local dog owners who
-                  trust TLC to groom their dogs.
-                </p>
+                <div className={styles.reviewScore}>
+                  <span
+                    aria-label={`${googleRating} out of 5 stars`}
+                    className={styles.googleStars}
+                    role="img"
+                    style={
+                      {
+                        "--google-rating-width": `${(googleRating / 5) * 100}%`,
+                      } as CSSProperties
+                    }
+                  >
+                    <span aria-hidden="true">★★★★★</span>
+                  </span>
+                  <strong>{googleRating.toFixed(1)} / 5</strong>
+                </div>
+                <span className={styles.reviewCount}>
+                  Google rating · {googleTestimonials.length} featured reviews
+                </span>
+                <a
+                  className={styles.googleReviewsLink}
+                  href={googleReviewsUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  View all Google Reviews <span aria-hidden="true">↗</span>
+                </a>
               </div>
             </div>
 
@@ -647,11 +640,7 @@ export default function Home() {
               </div>
 
               <div className={styles.bookingFrame}>
-                <iframe
-                  title="TLC online appointment booking"
-                  src={bookingUrl}
-                  loading="lazy"
-                />
+                <BookingEmbed bookingUrl={bookingUrl} />
               </div>
             </div>
           </div>

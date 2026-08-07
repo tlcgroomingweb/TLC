@@ -4,6 +4,11 @@ export const bookingUrl =
 export const mapDirectionsUrl =
   "https://www.google.com/maps/search/?api=1&query=TLC+Grooming+%26+Sharpening+Services%2C+5303+Canotek+Rd%2C+Gloucester%2C+ON";
 
+export const googleReviewsUrl =
+  "https://www.google.com/maps/search/?api=1&query=TLC+Grooming+%26+Sharpening+Services%2C+5303+Canotek+Rd%2C+Gloucester%2C+ON";
+
+export const googleRating = 4.5;
+
 export const showcaseHomepageOnly = false;
 
 export const site = {

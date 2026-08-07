@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { redirect } from "next/navigation";
 import { showcaseHomepageOnly } from "@/lib/site";
 import lingApricotPoodle from "../references/ling/1.jpg";
@@ -212,7 +211,7 @@ export default function OurTeamPage() {
   }
 
   return (
-    <main className={styles.page}>
+    <main className={`${styles.page} ${styles.teamPage}`}>
       <section className={styles.pageIntro}>
         <div className={styles.shell}>
           <div className={styles.pageIntroGrid}>
