@@ -190,6 +190,10 @@
   transform: rotate(-0.7deg);
 }
 
+.teamPage .eyebrow {
+  transform: none;
+}
+
 .eyebrow::before {
   width: 8px;
   height: 8px;

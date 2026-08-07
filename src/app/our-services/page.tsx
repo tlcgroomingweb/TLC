@@ -49,7 +49,7 @@ const groomingPackages = [
       "Gentle, attentive handling",
     ],
     prices: [
-      ["X-small", "Up to 12 lb", "$40"],
+      ["X small", "Up to 12 lb", "$40"],
       ["Small", "13–20 lb", "$50"],
       ["Medium", "21–40 lb", "$65"],
       ["Large", "41–90 lb", "$95"],
@@ -68,7 +68,7 @@ const groomingPackages = [
       "Full-body tidy",
     ],
     prices: [
-      ["X-small", "Up to 12 lb", "$60"],
+      ["X small", "Up to 12 lb", "$60"],
       ["Small", "13–20 lb", "$70"],
       ["Medium", "21–40 lb", "$85"],
       ["Large", "41–90 lb", "$110"],
@@ -87,7 +87,7 @@ const groomingPackages = [
       "Finishing accessory by request",
     ],
     prices: [
-      ["X-small", "Up to 12 lb", "$75"],
+      ["X small", "Up to 12 lb", "$75"],
       ["Small", "13–20 lb", "$85"],
       ["Medium", "21–40 lb", "$100"],
       ["Large", "41–90 lb", "$135"],
@@ -116,7 +116,7 @@ const walkIns = [
 
 const sizeGuide = [
   {
-    size: "X-small",
+    size: "X small",
     weight: "Up to 12 lb",
     examples: "Pug, Chihuahua, Mini Pinscher, Jack Russell",
   },
