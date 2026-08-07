@@ -32,7 +32,7 @@ export function SiteFooter() {
                 Gentle, professional grooming for Ottawa dogs who feel like
                 family.
               </p>
-              <span className={styles.heritage}>Caring since 1986</span>
+              <span className={styles.heritage}>loving paws since 1986</span>
             </div>
 
             <section className={styles.footerSection}>

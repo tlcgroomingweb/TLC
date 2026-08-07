@@ -275,7 +275,7 @@ export default function Home() {
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
                 <div className={styles.eyebrow}>
-                  <span /> Caring for Ottawa dogs since 1986
+                  <span /> Ottawa trusted grooming expert since 1986
                 </div>
                 <h1>
                   Gentle grooming for dogs who feel like <em>family.</em>
