@@ -750,7 +750,7 @@
 .memberRole {
   background: var(--surface-soft);
   color: var(--teal-dark);
-  transform: rotate(-1deg);
+  transform: none;
 }
 
 .memberBody h2 {

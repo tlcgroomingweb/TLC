@@ -640,7 +640,11 @@ export default function Home() {
               </div>
 
               <div className={styles.bookingFrame}>
-                <BookingEmbed bookingUrl={bookingUrl} />
+                <BookingEmbed
+                  bookingUrl={bookingUrl}
+                  phoneDisplay={site.phoneDisplay}
+                  phoneHref={site.phoneHref}
+                />
               </div>
             </div>
           </div>

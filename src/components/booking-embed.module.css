@@ -2,6 +2,17 @@
   min-height: 600px;
   background: #f7fbfd;
 }
+.failureActions {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 22px;
+}
+
+.secureBookingButton,
+.phoneButton,
 .retryButton {
   display: inline-flex;
   min-height: 44px;
@@ -14,6 +25,22 @@
   transition: box-shadow 160ms ease, transform 160ms ease;
 }
 
+.secureBookingButton {
+  width: 100%;
+  gap: 9px;
+  background: var(--brand);
+  box-shadow: 0 10px 24px rgba(1, 121, 181, 0.2);
+  color: white;
+}
+
+.phoneButton {
+  border: 1px solid rgba(1, 121, 181, 0.24);
+  background: white;
+  color: var(--teal-dark);
+}
+
+.secureBookingButton:hover,
+.phoneButton:hover,
 .retryButton:hover {
   box-shadow: 0 13px 28px rgba(1, 121, 181, 0.22);
   transform: translateY(-2px);
@@ -97,9 +124,8 @@
 }
 
 .retryButton {
-  margin-top: 20px;
   border: 1px solid rgba(1, 121, 181, 0.25);
-  background: white;
+  background: var(--surface-soft);
   color: var(--teal-dark);
   cursor: pointer;
 }
@@ -127,6 +153,11 @@
     border-radius: 22px 22px 36px 22px;
     padding: 28px 22px;
   }
+
+  .phoneButton,
+  .retryButton {
+    flex: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -134,6 +165,8 @@
     animation: none;
   }
 
+  .secureBookingButton,
+  .phoneButton,
   .retryButton {
     transition: none;
   }

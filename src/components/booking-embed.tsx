@@ -7,11 +7,17 @@ const LOAD_TIMEOUT_MS = 10_000;
 
 type BookingEmbedProps = {
   bookingUrl: string;
+  phoneDisplay: string;
+  phoneHref: string;
 };
 
 type LoadState = "idle" | "loading" | "ready" | "slow";
 
-export function BookingEmbed({ bookingUrl }: BookingEmbedProps) {
+export function BookingEmbed({
+  bookingUrl,
+  phoneDisplay,
+  phoneHref,
+}: BookingEmbedProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hasStarted, setHasStarted] = useState(false);
   const [loadKey, setLoadKey] = useState(0);
@@ -96,14 +102,33 @@ export function BookingEmbed({ bookingUrl }: BookingEmbedProps) {
                   <span className={styles.slowIcon} aria-hidden="true">
                     !
                   </span>
-                  <strong>Booking is taking longer than expected.</strong>
+                  <strong>Booking system is taking longer than expected.</strong>
                   <p>
                     A privacy setting or network delay may be blocking the
-                    embedded form. Try loading it again.
+                    embedded form. You can continue securely in a new window,
+                    call us, or retry the embedded form.
                   </p>
-                  <button className={styles.retryButton} onClick={retry} type="button">
-                    Try loading again
-                  </button>
+                  <div className={styles.failureActions}>
+                    <a
+                      className={styles.secureBookingButton}
+                      href={bookingUrl}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Open secure booking in a new window
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                    <a className={styles.phoneButton} href={phoneHref}>
+                      Call {phoneDisplay}
+                    </a>
+                    <button
+                      className={styles.retryButton}
+                      onClick={retry}
+                      type="button"
+                    >
+                      Retry
+                    </button>
+                  </div>
                 </>
               )}
             </div>

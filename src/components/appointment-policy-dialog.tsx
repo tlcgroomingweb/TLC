@@ -42,16 +42,18 @@ export function AppointmentPolicyDialog() {
           </button>
 
           <span className={styles.kicker}>Appointment policies</span>
-          <h2 id="appointment-policy-title">Late &amp; No-Show Policy</h2>
+          <h2 id="appointment-policy-title">Late Arrivals &amp; No-Shows</h2>
           <p
             className={styles.policyText}
             id="appointment-policy-description"
           >
-            <strong>$50 no-show fee</strong> and{" "}
-            <strong>$10 late fee</strong> may apply to grooming services.
+            To help us stay on schedule, a <strong>$15 late fee</strong> may
+            apply to late arrivals, and a <strong>$50 fee</strong> may apply to
+            missed appointments.
           </p>
           <p className={styles.supportingText}>
-            We appreciate as much notice as possible when plans change.
+            We understand plans can change. Please give us as much notice as
+            possible if you need to cancel or reschedule.
           </p>
 
           <button
