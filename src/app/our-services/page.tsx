@@ -155,7 +155,10 @@ export default function OurServicesPage() {
             <div>
               <span className={styles.eyebrow}>Dog grooming at TLC</span>
               <h1>
-                Grooming services <em>&amp; pricing.</em>
+                <span className={styles.introHeadlineLead}>
+                  Grooming services
+                </span>
+                <em>&amp; pricing.</em>
               </h1>
             </div>
 

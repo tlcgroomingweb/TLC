@@ -227,6 +227,14 @@
   font-weight: 400;
 }
 
+.introHeadlineLead,
+.servicesPage .pageIntro h1 em,
+.teamPage .pageIntro h1 em {
+  display: block;
+  width: fit-content;
+  white-space: nowrap;
+}
+
 .servicesPage .pageIntro h1,
 .teamPage .pageIntro h1,
 .servicesPage .sectionHeading h2,
@@ -1224,6 +1232,14 @@
 
   .pageIntro h1 {
     font-size: clamp(2.75rem, 12vw, 3.7rem);
+  }
+
+  .teamPage .pageIntro h1 {
+    font-size: clamp(2.15rem, 10.5vw, 3.7rem);
+  }
+
+  .servicesPage .pageIntro h1 {
+    font-size: clamp(2rem, 9.8vw, 3.7rem);
   }
 
   .primaryButton {

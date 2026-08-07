@@ -218,7 +218,10 @@ export default function OurTeamPage() {
             <div>
               <span className={styles.eyebrow}>Our grooming team</span>
               <h1>
-                The hands behind <em>thoughtful care.</em>
+                <span className={styles.introHeadlineLead}>
+                  The hands behind
+                </span>
+                <em>thoughtful care.</em>
               </h1>
             </div>
 
