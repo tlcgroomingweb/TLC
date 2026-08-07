@@ -190,6 +190,7 @@
   transform: rotate(-0.7deg);
 }
 
+.servicesPage .eyebrow,
 .teamPage .eyebrow {
   transform: none;
 }
